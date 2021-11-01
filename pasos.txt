@@ -1,0 +1,19 @@
+rails new \
+  --database postgresql \
+  --webpack \
+  -m https://raw.githubusercontent.com/lewagon/rails-templates/master/devise.rb \
+  SecretosDeCiudad
+
+
+rails g model ModelName column:type user:references
+
+# For instance
+rails g model Place name location description:text
+
+rails g model Review comment rating:integer
+
+rails db:migrate
+
+rails g migration addColumnToUser first_name last_name phone_number
+
+rails g model Ruta duration:integer name places_interest description:text available_dates:date place:references review:references user:references
