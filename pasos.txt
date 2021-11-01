@@ -8,12 +8,39 @@ rails new \
 rails g model ModelName column:type user:references
 
 # For instance
+
+rails g migration addColumnToUser first_name last_name phone_number:integer
+
 rails g model Place name location description:text
 
 rails g model Review comment rating:integer
 
 rails db:migrate
 
-rails g migration addColumnToUser first_name last_name phone_number
+rails g model Route duration:integer name places_interest description:text available_dates:date place:references review:references user:references
 
-rails g model Ruta duration:integer name places_interest description:text available_dates:date place:references review:references user:references
+rails db:migrate
+
+rails g model Booking check_in:date status_pago:boolean user:references route:references
+
+rails g model connection route:references place:references
+
+
+
+#rails g divise admin   ??????  roles?????
+
+
+
+#############controladores
+
+# Generic syntax
+rails g controller model_name_plural
+
+# For instance
+rails g controller routes
+
+rails g controller bookings
+
+rails g controller reviews
+
+rails g controller places
