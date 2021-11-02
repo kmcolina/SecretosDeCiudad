@@ -44,3 +44,6 @@ rails g controller bookings
 rails g controller reviews
 
 rails g controller places
+
+
+rake db:rollback

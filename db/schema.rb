@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2021_11_01_203102) do
     t.string "name"
     t.string "places_interest"
     t.text "description"
-    t.date "available_dates"
+    t.date "available_dates", default: [], array: true
     t.bigint "review_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
