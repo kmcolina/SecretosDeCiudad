@@ -16,6 +16,7 @@ class RoutesController < ApplicationController
   end
 
   def show
+    @review = Review.new(route_id: @route)
   end
 
   def create
@@ -51,6 +52,6 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:name, :duration, :places_interest, :description, :available_dates, :user_id, :rol)
+    params.require(:route).permit(:name, :duration, :places_interest, :description, :available_dates, :user_id, :rol, :price)
   end
 end

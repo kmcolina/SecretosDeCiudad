@@ -1,9 +1,17 @@
-admin = User.create(email: 'admin@admin.com', password: '123456', rol: 'admin')
+admin = User.new(email: 'admin@admin.com', password: '123456', rol: 'admin')
 admin.save!
-guide = User.create(email: 'guide@guide.com', password: '123456', rol: 'guide')
+guide = User.new(email: 'guide@guide.com', password: '123456', rol: 'guide')
 guide.save!
 
+<<<<<<< HEAD
 
 a = Connections.new
 place1 = Place.new(name: 'plaza bolivar', description: 'plaza en el casco historico', address: 'av este 2, caracas' )
 place1.save!
+=======
+route = Route.new(name: 'Ruta 1', description: 'Ruta 1 description', duration: 2, places_interest: 'Plaza, Sambil, Edificio', available_dates: ['2021-10-06', '2021-11-06'])
+route.save!
+
+route2 = Route.new(name: 'Ruta 2', description: 'Ruta 2 description', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates: ['2021-10-02', '2021-11-06'])
+route2.save!
+>>>>>>> 6cbbb80a8fbd5a2421934e762dda20cb9e12e866
