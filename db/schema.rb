@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_11_01_203102) do
     t.boolean "status_pago"
     t.bigint "user_id"
     t.bigint "route_id"
+    t.bigint "review_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["review_id"], name: "index_bookings_on_review_id"
     t.index ["route_id"], name: "index_bookings_on_route_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
@@ -37,8 +39,10 @@ ActiveRecord::Schema.define(version: 2021_11_01_203102) do
 
   create_table "places", force: :cascade do |t|
     t.string "name"
-    t.string "location"
+    t.string "address"
     t.text "description"
+    t.float "latitude"
+    t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -56,11 +60,9 @@ ActiveRecord::Schema.define(version: 2021_11_01_203102) do
     t.string "places_interest"
     t.text "description"
     t.date "available_dates", default: [], array: true
-    t.bigint "review_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["review_id"], name: "index_routes_on_review_id"
     t.index ["user_id"], name: "index_routes_on_user_id"
   end
 
@@ -75,14 +77,15 @@ ActiveRecord::Schema.define(version: 2021_11_01_203102) do
     t.string "first_name"
     t.string "last_name"
     t.integer "phone_number"
+    t.string "rol"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "reviews"
   add_foreign_key "bookings", "routes"
   add_foreign_key "bookings", "users"
   add_foreign_key "connections", "places"
   add_foreign_key "connections", "routes"
-  add_foreign_key "routes", "reviews"
   add_foreign_key "routes", "users"
 end

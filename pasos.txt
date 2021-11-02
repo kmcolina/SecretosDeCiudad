@@ -47,3 +47,12 @@ rails g controller places
 
 
 rake db:rollback
+
+
+#########creando el user devise
+
+rails generate migration add_admin_to_users admin:boolean
+
+
+
+rails g devise:views admins/devise

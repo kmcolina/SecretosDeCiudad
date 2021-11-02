@@ -5,6 +5,7 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.boolean :status_pago
       t.references :user, foreign_key: true
       t.references :route, foreign_key: true
+      t.references :review, foreign_key: true
 
       t.timestamps
     end

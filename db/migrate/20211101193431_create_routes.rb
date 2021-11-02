@@ -6,7 +6,6 @@ class CreateRoutes < ActiveRecord::Migration[6.1]
       t.string :places_interest
       t.text :description
       t.date :available_dates, array: true, default: []
-      t.references :review, foreign_key: true
       t.references :user, foreign_key: true
 
       t.timestamps
