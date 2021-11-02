@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 2021_11_01_203102) do
   end
 
   create_table "connections", force: :cascade do |t|
-    t.bigint "route_id", null: false
-    t.bigint "place_id", null: false
+    t.bigint "route_id"
+    t.bigint "place_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["place_id"], name: "index_connections_on_place_id"
