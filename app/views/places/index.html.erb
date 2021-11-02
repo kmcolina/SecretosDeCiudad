@@ -1,0 +1,27 @@
+<div class="banner" >
+  <div class="text-center">
+    <h1>All places</h1>
+    <p>Enjoy</p>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="header">
+  <p class = "btn btn-primary"><%= link_to "New place", new_place_path(@place) %></p>
+  </div>
+  <div class="cards">
+    <% @places.each do |places| %>
+      <div class="card">
+        <div class="card-body">
+
+          <div id="name"><%= places.name %>
+            <p><%= places.description %></p>
+          </div>
+          <div class="btn btn-primary"><%= link_to 'View details', places %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+</div>
