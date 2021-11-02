@@ -1,13 +1,12 @@
 class ReviewsController < ApplicationController
   def create
     @route = Route.find(params[:route_id])
-    @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
-    @review.booking.route = @route
+    @review.route = @route
     if @review.save
       redirect_to route_path(@route)
     else
-      render "bookings/bookings"
+      render "routes/show"
     end
     # @review = Review.new(review_params)
     # @review = @objeto_acuatico.reviews.build(review_params)
@@ -21,6 +20,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rating)
+    params.require(:review).permit(:comment, :rating, :route_id)
   end
 end

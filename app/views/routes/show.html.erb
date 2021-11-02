@@ -1,1 +1,30 @@
 <h1>Routes Show</h1>
+
+<ul class="list-show">
+    <li><strong>Name: </strong><%= @route.name %></li>
+    <li><strong>Description: </strong><%= @route.description %></li>
+    <li><strong>Lugares: </strong><%= @route.places_interest %></li>
+    <li><strong>Duración: </strong><%= @route.duration %> hrs</li>
+    <li><strong>Fechas: </strong><% @route.available_dates.each do |date|%>
+      <%= date %>
+    <% end %>
+    </li>
+</ul>
+
+<div class="row" id="reviews">
+  <div class="col-12 col-md-6">
+    <h3>Reviews</h3>
+    <% if @route.reviews.empty? %>
+      <small><em class="text-muted">Be the first to comment!</em></small>
+    <% end %>
+    <% @route.reviews.each do |review| %>
+      <div>
+        <% review.rating.times do %>
+          <i class="fas fa-star fa-star-yellow"></i>
+          <% end %>
+          <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+      </div>
+        <p class = "comment" id="review-<%= review.id %>"> <%= review.comment %> </p>
+        <hr>
+      <% end %>
+</div>
