@@ -28,3 +28,6 @@
         <hr>
       <% end %>
 </div>
+
+<p class = "btn btn-primary"><%= link_to "Editar", edit_route_path(@route) %></p>
+<small class = "btn btn-dark"><%= link_to "Delete", route_path(@route), method: :delete, data: { confirm: "Are you sure?" } %> </small>
