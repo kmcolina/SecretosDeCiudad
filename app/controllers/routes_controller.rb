@@ -4,11 +4,9 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index
-    if current_user && User.find(current_user.id).rol == "admin"
-      # admin
-      render 'admin'
-    elsif current_user && User.find(current_user.id).rol == "guide"
-      # guide
+    if current_user && current_user.admin?
+      render 'admins/admin'
+    elsif current_user && current_user.guide?
       @guide_routes = Route.where(user_id: current_user.id)
       render 'guide'
     else
