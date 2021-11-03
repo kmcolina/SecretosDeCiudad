@@ -53,6 +53,9 @@ route1.save!
 route2 = Route.new(name: 'Ruta 2', description: 'Ruta 2 description', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates: ['2021-10-02', '2021-11-06'], price: 9)
 route2.save!
 
+# route3 = Route.new(name: 'Ruta 3', description: 'Ruta 3 description', duration: 4, places_interest: 'Plaza 3, Sambil 3, Edificio 3', available_dates: ['2021-10-02', '2021-11-06'], price: 30, user_id: 5)
+# route3.save!
+
 #creando coneccion
 
 #asociando la ruta 1 con 3 places
@@ -78,7 +81,9 @@ booking1 = Booking.new(user_id:usuario.id, check_in: '2021-10-30')
 booking1.id
 #creo reviews
 
-
+#asignar guía a ruta
+# route3 = Route.find(1).update(user_id:2)
+# route3.save!
 
 puts "Proceso de creacion exitoso"
 

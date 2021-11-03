@@ -9,6 +9,7 @@ class RoutesController < ApplicationController
       render 'admin'
     elsif current_user && User.find(current_user.id).rol == "guide"
       # guide
+      @guide_routes = Route.where(user_id: current_user.id)
       render 'guide'
     else
       @routes = Route.all
