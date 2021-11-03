@@ -4,14 +4,8 @@ class RoutesController < ApplicationController
   before_action :set_route, only: [:show, :edit, :update, :destroy]
 
   def index
-    if current_user && current_user.admin?
-      render 'admins/admin'
-    elsif current_user && current_user.guide?
-      @guide_routes = Route.where(user_id: current_user.id)
-      render 'guide'
-    else
-      @routes = Route.all
-    end
+    @routes = Route.all
+    @routes = current_user.routes.all if current_user && current_user.guide?
   end
 
   def show

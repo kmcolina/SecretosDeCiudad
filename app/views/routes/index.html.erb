@@ -1,14 +1,7 @@
-<h1>Routes Index</h1>
-
-<div class="cards">
-    <% @routes.each do |route| %>
-      <div class="card">
-        <div class="card-body">
-          <div><%= route.name %>
-            <p>Descripción: <%= route.description %></p>
-          </div>
-          <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
-        </div>
-      </div>
-    <% end %>
-  </div>
+<% if user_signed_in? %>
+  <%= render "routes/partials/admin" if current_user.admin? %>
+  <%= render "routes/partials/guide" if current_user.guide? %>
+  <%= render "routes/partials/common" if !current_user.admin? && !current_user.guide? %>
+  <%else%>
+  <%= render "routes/partials/common" %>
+<% end %>
