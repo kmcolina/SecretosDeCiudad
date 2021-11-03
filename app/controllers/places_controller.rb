@@ -7,17 +7,17 @@ class PlacesController < ApplicationController
 
   def new
     @place = Place.new
-    @route = Route.find(params[:route_id])
-    @place.route = @route
+    # @route = Route.find(params[:route_id])
+    # @place.route = @route
   end
 
 
   def create
-    @route = Route.find(params[:route_id])
+    # @route = Route.find(params[:route_id])
     @place = Place.new(place_params)
-    @place.route =  @route
+    # @place.route =  @route
     if @place.save
-      redirect_to route_path(@route)
+      redirect_to places_path(@route)
     else
       render :new
     end
