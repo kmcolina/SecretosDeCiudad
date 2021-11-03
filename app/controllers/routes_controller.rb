@@ -17,9 +17,9 @@ class RoutesController < ApplicationController
 
   def show
     places = Place.all
-    @lugares = []
     @review = Review.new(route_id: @route)
     @connection = Connection.where(route_id: @route)
+    @lugares = []
     @connection.each do |conection|
       @lugares << places.find(conection.place_id)
     end
