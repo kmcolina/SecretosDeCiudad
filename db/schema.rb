@@ -51,7 +51,9 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "route_id"
+    t.bigint "user_id"
     t.index ["route_id"], name: "index_reviews_on_route_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "routes", force: :cascade do |t|
@@ -87,5 +89,6 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
   add_foreign_key "connections", "places"
   add_foreign_key "connections", "routes"
   add_foreign_key "reviews", "routes"
+  add_foreign_key "reviews", "users"
   add_foreign_key "routes", "users"
 end
