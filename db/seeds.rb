@@ -47,10 +47,10 @@ place3 = Place.new(name: 'Concejo municipal', description: 'Dentro se ella se en
 place3.save!
 
 # creando rutas
-route1 = Route.new(name: 'Ruta 1', description: 'Ruta 1 description', duration: 2, places_interest: 'Plaza, Sambil, Edificio', available_dates: ['2021-10-06', '2021-11-06'])
+route1 = Route.new(name: 'Ruta 1', description: 'Ruta 1 description', duration: 2, places_interest: 'Plaza, Sambil, Edificio', available_dates: ['2021-10-06', '2021-11-06'], price: 8)
 route1.save!
 
-route2 = Route.new(name: 'Ruta 2', description: 'Ruta 2 description', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates: ['2021-10-02', '2021-11-06'])
+route2 = Route.new(name: 'Ruta 2', description: 'Ruta 2 description', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates: ['2021-10-02', '2021-11-06'], price: 9)
 route2.save!
 
 #creando coneccion
@@ -81,3 +81,6 @@ booking1.id
 
 
 puts "Proceso de creacion exitoso"
+
+
+#ESTA LINEA ES NUEVA PRUEBA
