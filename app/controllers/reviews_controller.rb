@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @route = Route.find(params[:route_id])
     @review = Review.new(review_params)
     @review.route = @route
+    @review.user = current_user
     if @review.save
       redirect_to route_path(@route)
     else
@@ -20,6 +21,6 @@ class ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:comment, :rating, :route_id)
+    params.require(:review).permit(:comment, :rating)
   end
 end
