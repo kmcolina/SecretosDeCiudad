@@ -5,6 +5,14 @@
     <li><strong>Description: </strong><%= @route.description %></li>
     <li><strong>Lugares: </strong><%= @route.places_interest %></li>
     <li><strong>Duración: </strong><%= @route.duration %> hrs</li>
+    <li><strong>Places: </strong><%@lugares.each do |lugar| %>
+      <ul>
+        <li><%= lugar.name %></li>
+        <li><%= lugar.address %></li>
+        <li><%= lugar.description %></li>
+      </ul>
+    <% end %>
+    </li>
     <li><strong>Fechas: </strong><% @route.available_dates.each do |date|%>
       <%= date %>
     <% end %>

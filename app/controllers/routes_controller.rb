@@ -16,7 +16,13 @@ class RoutesController < ApplicationController
   end
 
   def show
+    places = Place.all
+    @lugares = []
     @review = Review.new(route_id: @route)
+    @connection = Connection.where(route_id: @route)
+    @connection.each do |conection|
+      @lugares << places.find(conection.place_id)
+    end
   end
 
   def create
