@@ -19,8 +19,10 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.date "check_in"
     t.boolean "status_pago"
     t.bigint "user_id"
+    t.bigint "route_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["route_id"], name: "index_bookings_on_route_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
@@ -57,7 +59,6 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.string "name"
     t.string "places_interest"
     t.text "description"
-    t.float "price"
     t.date "available_dates", default: [], array: true
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -81,6 +82,7 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "routes"
   add_foreign_key "bookings", "users"
   add_foreign_key "connections", "places"
   add_foreign_key "connections", "routes"
