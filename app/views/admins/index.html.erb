@@ -1,0 +1,18 @@
+<h1>Admin Index</h1>
+
+<p class = "btn btn-primary"><%= link_to "Crear", new_route_path %></p>
+
+<div class="cards">
+    <% @routes.each do |route| %>
+      <div class="card">
+        <div class="card-body">
+          <div><%= route.name %>
+            <p>Descripción: <%= route.description %></p>
+          </div>
+          <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
+          <p class = "btn btn-primary"><%= link_to "Editar", edit_route_path(route) %></p>
+          <small class = "btn btn-dark"><%= link_to "Delete", route_path(route), method: :delete, data: { confirm: "Are you sure?" } %> </small>
+        </div>
+      </div>
+    <% end %>
+  </div>

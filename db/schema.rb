@@ -62,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.string "places_interest"
     t.text "description"
     t.float "price"
-    t.date "available_dates", default: [], array: true
+    t.string "available_dates"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

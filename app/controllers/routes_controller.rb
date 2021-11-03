@@ -5,7 +5,8 @@ class RoutesController < ApplicationController
 
   def index
     if current_user && current_user.admin?
-      render 'admins/admin'
+      @routes = Route.all
+      render 'admins/index'
     elsif current_user && current_user.guide?
       @guide_routes = Route.where(user_id: current_user.id)
       render 'guide'
@@ -15,12 +16,30 @@ class RoutesController < ApplicationController
   end
 
   def show
-    places = Place.all
-    @review = Review.new(route_id: @route)
-    @connection = Connection.where(route_id: @route)
-    @lugares = []
-    @connection.each do |conection|
-      @lugares << places.find(conection.place_id)
+    if current_user && current_user.admin?
+      places = Place.all
+      @connection = Connection.where(route_id: @route)
+      @lugares = []
+      @connection.each do |conection|
+        @lugares << places.find(conection.place_id)
+      end
+      @fechas_all = []
+      fechas = @route.available_dates
+      array_fechas = fechas.split(',')
+      array_fechas.each do |fecha|
+        @fechas_all << Date.strptime(fecha, "%Y%m%d")
+      end
+      render 'admins/show'
+    else
+      places = Place.all
+      @review = Review.new(route_id: @route)
+      @connection = Connection.where(route_id: @route)
+      @lugares = []
+      @connection.each do |conection|
+        @lugares << places.find(conection.place_id)
+      end
+      fechas = @route.available_dates
+      @array_fechas = fechas.split(',')
     end
   end
 
@@ -57,6 +76,6 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:name, :duration, :places_interest, :description, :available_dates, :user_id, :rol, :price)
+    params.require(:route).permit(:name, :duration, :places_interest, :description, :user_id, :rol, :price, :available_dates)
   end
 end
