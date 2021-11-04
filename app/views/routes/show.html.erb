@@ -1,48 +1,5 @@
 <h1>user Show</h1>
 
-    <% if @route.photo.attached? %>
-      <%= cl_image_tag @route.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
-    <% else %>
-      <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-<ul class="list-show">
-    <li><strong>Name: </strong><%= @route.name %></li>
-    <li><strong>Description: </strong><%= @route.description %></li>
-    <li><strong>Lugares: </strong><%= @route.places_interest %></li>
-    <li><strong>Duración: </strong><%= @route.duration %> hrs</li>
-
-
-    <li><strong>Places: </strong><%@lugares.each do |lugar| %>
-      <ul>
-        <% if lugar.photo.attached? %>
-          <%= cl_image_tag lugar.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
-        <% else %>
-          <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
-        <% end %>
-
-        <li><%= lugar.name %> <%= lugar.address %><%= lugar.description %></li>
-      </ul>
-
-
-
-    <% end %>
-    </li>
-    <li><strong>Fechas: </strong><% @fechas_all.each do |date|%>
-      <%= date %>
-    <% end %>
-    </li>
-</ul>
-
-
-  <div id="map" class="card"
-     style="width: 50%; height: 300px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-       </div>
-  </div>
-<h1>Show</h1>
-
 <div class="container">
   <div class="row">
     <%# Mitad de pantalla %>
@@ -57,7 +14,11 @@
         </li>
         <li><%@lugares.each do |lugar| %>
           <ul class="card-show">
-            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+            <% if lugar.photo.attached? %>
+              <%= cl_image_tag lugar.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
+            <% end %>
             <li id="name-show"><%= lugar.name %></li>
             <li><%= lugar.description %></li>
             <li><strong>Dirección: </strong><%= lugar.address %></li>
@@ -101,4 +62,11 @@
       </div>
     </div>
   </div>
+
+  <div id="map" class="card"
+     style="width: 50%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
 </div>
