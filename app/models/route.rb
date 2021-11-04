@@ -4,5 +4,9 @@ class Route < ApplicationRecord
   belongs_to :user, optional: true
   has_many :places
   has_many :reviews, dependent: :destroy
+
   validates :places_interest, :duration, :description, :available_dates, :name, presence: true
+
+  has_one_attached :photo
+
 end

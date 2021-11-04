@@ -19,6 +19,7 @@
         <%= f.input :price %>
         <%= f.input :available_dates %>
         <%= f.input :duration %>
+        <%= f.input :user_id, collection: User.where(rol: 'guide'), label_method: :email  %>
         <%= f.submit value:'Update', class:'btn btn-primary'%>
         <%= link_to 'Back', root_path, class:'btn btn-dark'%>
       <% end %>
