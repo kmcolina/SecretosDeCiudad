@@ -1,0 +1,29 @@
+.btn-dark {
+  border-radius: 8px;
+  background-color: #206A5D;
+
+  &:hover {
+    background-color: #133f38;
+  }
+}
+
+#letter-ligth {
+  color: #F1F1E8;
+}
+
+.btn-light {
+  border-radius: 8px;
+  background-color: #F1F1E8;
+
+  &:hover {
+    background-color: #BFDCAE;
+  }
+}
+
+#letter-dark {
+  color: #206A5D;
+}
+
+.btn {
+  border-width: 0px;
+}

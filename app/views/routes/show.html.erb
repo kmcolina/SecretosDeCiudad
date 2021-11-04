@@ -1,6 +1,10 @@
-<h1>Show</h1>
-
 <div class="container">
+  <div class="header">
+    <%= link_to routes_path do %>
+      <i class="fas fa-chevron-left"></i>
+    <% end %>
+    <h1>Show</h1>
+  </div>
   <div class="row">
     <%# Mitad de pantalla %>
     <div class="col-md-6">
@@ -63,7 +67,7 @@
     <div class="card-guide-info">
       <h2>Título del card del guía</h2>
       <p>Descripción del guía</p>
-      <a href="#" class="btn btn-primary">Reservar</a>
+      <a href="#" class="btn btn-dark" id="letter-ligth">Reservar</a>
     </div>
   </div>
   <%# Reviews %>
@@ -92,7 +96,7 @@
               <%= f.input :comment, placeholder: "Add your review here..." %>
               <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: "review_rating" } %>
               <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
-              <%= f.submit class: "btn btn-primary p-1" %>
+              <%= f.submit class: "btn btn-dark", value: "Review" %>
               <small><em class="text-muted">Login to post a review!</em></small>
             <% end %>
         </div>
