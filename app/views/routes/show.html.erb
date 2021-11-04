@@ -1,5 +1,3 @@
-<h1>user Show</h1>
-
 <div class="container">
   <div class="row">
     <%# Mitad de pantalla %>
@@ -14,11 +12,7 @@
         </li>
         <li><%@lugares.each do |lugar| %>
           <ul class="card-show">
-            <% if lugar.photo.attached? %>
-              <%= cl_image_tag lugar.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
-            <% end %>
+            <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
             <li id="name-show"><%= lugar.name %></li>
             <li><%= lugar.description %></li>
             <li><strong>Dirección: </strong><%= lugar.address %></li>
@@ -62,45 +56,43 @@
       </div>
     </div>
   </div>
-
-  <div id="map" class="card"
-     style="width: 50%; height: 300px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="card-guide">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+    <div class="card-guide-info">
+      <h2>Título del card del guía</h2>
+      <p>Descripción del guía</p>
+      <a href="#" class="btn btn-primary">Reservar</a>
+    </div>
   </div>
-
-</div>
-<div class="row" id="reviews">
-
+  <%# Reviews %>
   <div class="row" id="reviews">
     <div class="col-12 col-md-6">
-      <h3>Reviews</h3>
-      <% if @route.reviews.empty? %>
-        <small><em class="text-muted">Be the first to comment!</em></small>
-      <% end %>
-      <% @route.reviews.each do |review| %>
-        <div>
-          <% review.rating.times do %>
-            <i class="fas fa-star fa-star-yellow"></i>
+        <h3>Reviews</h3>
+        <% if @route.reviews.empty? %>
+          <small><em class="text-muted">Be the first to comment!</em></small>
+        <% end %>
+        <% @route.reviews.each do |review| %>
+          <div>
+            <% review.rating.times do %>
+              <i class="fas fa-star fa-star-yellow"></i>
             <% end %>
             <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
-        </div>
-          <p class = "comment" id="review-<%= review.id %>"> <%= review.comment %> </p>
-          <hr>
+          </div>
+            <p class = "comment" id="review-<%= review.id %>"> <%= review.comment %> </p>
+            <hr>
         <% end %>
-  </div>
-
-  <div class="col-12 col-md-6">
-      <h3>Add a Review</h3>
-          <div class="bg-white rounded p-3 card">
+    </div>
+    <div class="col-12 col-md-6">
+        <h3>Add a Review</h3>
+        <div class="bg-white rounded p-3 card">
             <%= simple_form_for([@route, @review]) do |f| %>
               <%= f.input :comment, placeholder: "Add your review here..." %>
               <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: "review_rating" } %>
-                <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
-                <%= f.submit class: "btn btn-primary p-1" %>
-
-                <small><em class="text-muted">Login to post a review!</em></small>
-
+              <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
+              <%= f.submit class: "btn btn-primary p-1" %>
+              <small><em class="text-muted">Login to post a review!</em></small>
             <% end %>
-          </div>
+        </div>
     </div>
+  </div>
+</div>
