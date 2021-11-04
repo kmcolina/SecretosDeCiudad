@@ -68,11 +68,13 @@
       <h2>Título del card del guía</h2>
       <p>Descripción del guía</p>
 
-     <p class = "btn btn-primary"><%= link_to "Reservar", new_route_booking_path(@route) %></p>
+
+     <%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %>
+
     </div>
   </div>
 
-      
+
     </div>
   </div>
 
@@ -114,7 +116,7 @@
 
               <%= f.submit class: "btn btn-dark", value: "Review" %>
 
-              <%= f.submit class: "btn btn-primary p-1" %>
+
 
               <small><em class="text-muted">Login to post a review!</em></small>
             <% end %>
