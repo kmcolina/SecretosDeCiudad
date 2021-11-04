@@ -18,11 +18,13 @@ class RoutesController < ApplicationController
   def show
     if current_user && current_user.admin?
       places = Place.all
-      # @connection = Connection.where(route_id: @route)
+      @places_route = Place.where(route_id: @route)
       @lugares = []
-      # @connection.each do |conection|
-      #   @lugares << places.find(conection.place_id)
-      # end
+
+      @places_route.each do |conection|
+        @lugares << places.find(conection.id)
+      end
+
       @fechas_all = []
       fechas = @route.available_dates
       array_fechas = fechas.split(',')
@@ -32,19 +34,25 @@ class RoutesController < ApplicationController
       render 'admins/show'
     else
       places = Place.all
+       @places_route = Place.where(route_id: @route)
       @review = Review.new(route_id: @route)
-      # @connection = Connection.where(route_id: @route)
       @lugares = []
-      # @connection.each do |conection|
-      #   @lugares << places.find(conection.place_id)
-      # end
+
+      @places_route.each do |conection|
+        @lugares << places.find(conection.id)
+      end
+      @fechas_all = []
       fechas = @route.available_dates
-      @array_fechas = fechas.split(',')
+      array_fechas = fechas.split(',')
+      array_fechas.each do |fecha|
+        @fechas_all << Date.strptime(fecha, "%Y%m%d")
+      end
     end
   end
 
   def create
     @route = Route.new(route_params)
+    @usuario = User.all
     if @route.save
       redirect_to route_path(@route)
     else
@@ -54,6 +62,7 @@ class RoutesController < ApplicationController
 
   def new
     @route = Route.new
+    @usuario = User.all
   end
 
   def update
@@ -76,7 +85,6 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:name, :duration, :places_interest, :description, :user, :rol, :price, :available_dates)
-
+    params.require(:route).permit(:name, :duration, :places_interest, :description, :place_id, :user_id, :route_id, :price, :available_dates)
   end
 end
