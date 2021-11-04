@@ -1,7 +1,7 @@
 class RoutesController < ApplicationController
   # CRUD
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :set_route, only: [:show, :update, :destroy]
 
   def index
     if current_user && current_user.admin?
@@ -61,21 +61,38 @@ class RoutesController < ApplicationController
   end
 
   def new
-    @route = Route.new
-    @usuario = User.all
+    if current_user && current_user.admin?
+      @route = Route.new
+      @usuario = User.all
+    else
+      redirect_to routes_path
+    end
   end
 
   def update
-    @route.update(route_params)
-    redirect_to route_path(@route)
+    if current_user && current_user.admin?
+      @route.update(route_params)
+      redirect_to route_path(@route)
+    else
+     redirect_to routes_path
+    end
   end
 
   def edit
+    if current_user && current_user.admin?
+      @route = Route.find(params[:id])
+    else
+     redirect_to routes_path
+    end
   end
 
   def destroy
-    @route.destroy
-    redirect_to routes_path
+    if current_user && current_user.admin?
+      @route.destroy
+      redirect_to routes_path
+    else
+     redirect_to routes_path
+    end
   end
 
   private
