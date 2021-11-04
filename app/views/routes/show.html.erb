@@ -61,9 +61,17 @@
     <div class="card-guide-info">
       <h2>Título del card del guía</h2>
       <p>Descripción del guía</p>
-      <a href="#" class="btn btn-primary">Reservar</a>
+      <p class = "btn btn-primary"><%= link_to "Reservar", new_route_booking_path(@route) %></p>
     </div>
   </div>
+
+  <%# mapa %>
+  <div id="map" class="card"
+     style="width: 50%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
   <%# Reviews %>
   <div class="row" id="reviews">
     <div class="col-12 col-md-6">
