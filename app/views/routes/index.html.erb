@@ -21,3 +21,19 @@
   </div>
 
 <%= console %>
+<section class="wrapper">
+  <div class="container">
+    <div class="cards">
+          <% @routes.each do |route| %>
+            <div class="card card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+              <div class="card-img-overlay">
+                <h3 id="name"><%= route.name %></h3>
+                <%= link_to route_path(route) do %>
+                  <i class="fas fa-chevron-right"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+    </div>
+  </div>
+</section>
