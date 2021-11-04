@@ -11,42 +11,47 @@ class RoutesController < ApplicationController
       @guide_routes = Route.where(user_id: current_user.id)
       render 'guide'
     else
-      @routes = Route.all
+      @routess = Route.all
+      @routes = []
+      @routess.each do |ruta|
+        if  @places_route = Place.where(route_id: ruta) != []
+            @routes << ruta
+        end
+      end
+    end
+  end
+
+  def data_show
+    places = Place.all
+    @places_route = Place.where(route_id: @route)
+    @lugares = []
+
+    @places_route.each do |conection|
+      @lugares << places.find(conection.id)
+    end
+
+    @fechas_all = []
+    fechas = @route.available_dates
+    array_fechas = fechas.split(',')
+    array_fechas.each do |fecha|
+      @fechas_all << Date.strptime(fecha, "%Y%m%d")
+    end
+    # mapa
+    @placess = Place.all
+    @markers =  @places_route.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+        }
     end
   end
 
   def show
     if current_user && current_user.admin?
-      places = Place.all
-      @places_route = Place.where(route_id: @route)
-      @lugares = []
-
-      @places_route.each do |conection|
-        @lugares << places.find(conection.id)
-      end
-
-      @fechas_all = []
-      fechas = @route.available_dates
-      array_fechas = fechas.split(',')
-      array_fechas.each do |fecha|
-        @fechas_all << Date.strptime(fecha, "%Y%m%d")
-      end
+      data_show
       render 'admins/show'
     else
-      places = Place.all
-       @places_route = Place.where(route_id: @route)
-      @review = Review.new(route_id: @route)
-      @lugares = []
-
-      @places_route.each do |conection|
-        @lugares << places.find(conection.id)
-      end
-      @fechas_all = []
-      fechas = @route.available_dates
-      array_fechas = fechas.split(',')
-      array_fechas.each do |fecha|
-        @fechas_all << Date.strptime(fecha, "%Y%m%d")
-      end
+      data_show
     end
   end
 
