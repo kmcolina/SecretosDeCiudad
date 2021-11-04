@@ -19,10 +19,12 @@
             </ul>
           </div>
         <% end %>
-        <%# <%= f.input :photo, as: :file %>
+        <%= f.input :photo, as: :file  %>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :address %>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
         <%= f.association :route %>
         <%= f.submit value:'Update', class:'btn btn-primary'%>
         <%= link_to 'Back', places_path, class:'btn btn-dark'%>

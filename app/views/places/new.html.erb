@@ -19,6 +19,9 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :address %>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
+        <%= f.input :address %>
         <%= f.association :route %>
         <%= f.submit value:'Create', class:'btn btn-primary'%>
         <%= link_to 'Back', :back, class:'btn btn-dark'%>
