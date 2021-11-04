@@ -26,15 +26,6 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
-  create_table "connections", force: :cascade do |t|
-    t.bigint "route_id"
-    t.bigint "place_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["place_id"], name: "index_connections_on_place_id"
-    t.index ["route_id"], name: "index_connections_on_route_id"
-  end
-
   create_table "places", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -43,6 +34,8 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "route_id"
+    t.index ["route_id"], name: "index_places_on_route_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -87,8 +80,7 @@ ActiveRecord::Schema.define(version: 2021_11_02_212249) do
 
   add_foreign_key "bookings", "routes"
   add_foreign_key "bookings", "users"
-  add_foreign_key "connections", "places"
-  add_foreign_key "connections", "routes"
+  add_foreign_key "places", "routes"
   add_foreign_key "reviews", "routes"
   add_foreign_key "reviews", "users"
   add_foreign_key "routes", "users"

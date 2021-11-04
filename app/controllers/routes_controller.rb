@@ -18,11 +18,11 @@ class RoutesController < ApplicationController
   def show
     if current_user && current_user.admin?
       places = Place.all
-      @connection = Connection.where(route_id: @route)
+      # @connection = Connection.where(route_id: @route)
       @lugares = []
-      @connection.each do |conection|
-        @lugares << places.find(conection.place_id)
-      end
+      # @connection.each do |conection|
+      #   @lugares << places.find(conection.place_id)
+      # end
       @fechas_all = []
       fechas = @route.available_dates
       array_fechas = fechas.split(',')
@@ -33,11 +33,11 @@ class RoutesController < ApplicationController
     else
       places = Place.all
       @review = Review.new(route_id: @route)
-      @connection = Connection.where(route_id: @route)
+      # @connection = Connection.where(route_id: @route)
       @lugares = []
-      @connection.each do |conection|
-        @lugares << places.find(conection.place_id)
-      end
+      # @connection.each do |conection|
+      #   @lugares << places.find(conection.place_id)
+      # end
       fechas = @route.available_dates
       @array_fechas = fechas.split(',')
     end

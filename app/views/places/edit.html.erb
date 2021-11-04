@@ -1,7 +1,5 @@
 <h1>VISTA DE EDITAR</h1>
-<% if policy(@place).create? %>
-  <%= link_to "editar", place_path(@place) %>
-<% end %>
+
 
 
 <%# <h1>ObjetoAcuaticos#new</h1>
@@ -25,6 +23,7 @@
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :address %>
+        <%= f.association :route %>
         <%= f.submit value:'Update', class:'btn btn-primary'%>
         <%= link_to 'Back', places_path, class:'btn btn-dark'%>
       <% end %>

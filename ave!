@@ -1,0 +1,11 @@
+=> [32m#<Route:0x00007fe45c30d1b0[0m
+ id: [1;36mnil[0m,
+ duration: [1;34m2[0m,
+ name: [31m[1;31m"[0m[31mRuta 1[1;31m"[0m[31m[0m,
+ places_interest: [31m[1;31m"[0m[31mPlaza, Sambil, Edificio[1;31m"[0m[31m[0m,
+ description: [31m[1;31m"[0m[31mRuta 1 description[1;31m"[0m[31m[0m,
+ price: [1;35m8.0[0m,
+ available_dates: [31m[1;31m"[0m[31m[[1;35m\"[0m[31m2021-10-06[1;35m\"[0m[31m, [1;35m\"[0m[31m2021-11-06[1;35m\"[0m[31m][1;31m"[0m[31m[0m,
+ user_id: [1;36mnil[0m,
+ created_at: [1;36mnil[0m,
+ updated_at: [1;36mnil[0m[32m>[0m

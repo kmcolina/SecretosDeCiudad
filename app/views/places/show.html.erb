@@ -14,12 +14,12 @@
       <li><strong>Addres: </strong><%= @place.address %></li>
     </ul>
     <div class="d-flex justify-content-center">
-      <% if current_user && (current_user.id === @place.user_id)  %>
-          <p class = "btn btn-primary"><%= link_to "Editar", edit_place_path(@place) %></p>
-      <% end %>
 
-      <% if current_user && (current_user.id === @place.user_id) %>
+          <p class = "btn btn-primary"><%= link_to "Editar", edit_place_path(@place) %></p>
+
+
+
         <small class = "btn btn-dark"><%= link_to "Delete", place_path(@place), method: :delete, data: { confirm: "Are you sure?" } %> </small>
-      <% end %>
+
     </div>
   </div>
