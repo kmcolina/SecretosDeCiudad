@@ -6,14 +6,14 @@ class Place < ApplicationRecord
 
   has_one_attached :photo
 
-  geocoded_by :location
-  after_validation :geocode, if: :will_save_change_to_location?
+  # geocoded_by :location
+  # after_validation :geocode, if: :will_save_change_to_location?
 
-  def markers
-    {
-      lat: self.latitude,
-      lng: self.longitude
-    }
-  end
+  # def markers
+  #   {
+  #     lat: self.latitude,
+  #     lng: self.longitude
+  #   }
+  # end
 
 end
