@@ -6,7 +6,7 @@ class CreateRoutes < ActiveRecord::Migration[6.1]
       t.string :places_interest
       t.text :description
       t.float :price
-      t.date :available_dates, array: true, default: []
+      t.string :available_dates
       t.references :user, foreign_key: true
 
       t.timestamps

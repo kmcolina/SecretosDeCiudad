@@ -1,8 +1,12 @@
 class PlacesController < ApplicationController
+  before_action :set_place, only: %i[edit update show]
 
-    def index
-    @places = Place.all
-
+  def index
+    if current_user && current_user.admin?
+      @places = Place.all
+    else
+      redirect_to routes_path
+    end
   end
 
   def new
@@ -11,6 +15,9 @@ class PlacesController < ApplicationController
     # @place.route = @route
   end
 
+
+  def show
+  end
 
   def create
     # @route = Route.find(params[:route_id])
@@ -21,6 +28,15 @@ class PlacesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+     @place = Place.find(params[:id])
+    @place.update(place_params)
+    redirect_to place_path(@place)
+  end
+
+  def edit
   end
 
   private
