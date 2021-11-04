@@ -1,0 +1,25 @@
+
+<div class="container  " style="margin-top: 10px">
+
+  <div class="cards-show ">
+
+  <div class="card">
+
+      <div class="container-show">
+        <h2><%= @place.name %></h2>
+      </div>
+    </div>
+    <ul class="list-show">
+      <li><strong>Description: </strong><%= @place.description %></li>
+      <li><strong>Addres: </strong><%= @place.address %></li>
+    </ul>
+    <div class="d-flex justify-content-center">
+
+          <p class = "btn btn-primary"><%= link_to "Editar", edit_place_path(@place) %></p>
+
+
+
+        <small class = "btn btn-dark"><%= link_to "Delete", place_path(@place), method: :delete, data: { confirm: "Are you sure?" } %> </small>
+
+    </div>
+  </div>

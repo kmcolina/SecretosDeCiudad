@@ -1,0 +1,14 @@
+<h1>Guide Index</h1>
+
+<div class="cards">
+    <% @guide_routes.each do |route| %>
+      <div class="card">
+        <div class="card-body">
+          <div><%= route.name %>
+            <p>Descripción: <%= route.description %></p>
+          </div>
+          <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>

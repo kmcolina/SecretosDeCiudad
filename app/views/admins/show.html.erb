@@ -1,0 +1,28 @@
+<h1>Admin Show</h1>
+
+                  <% if @route.photo.attached? %>
+             <%= cl_image_tag @route.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
+          <% else %>
+           <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
+          <% end %>
+
+<ul class="list-show">
+    <li><strong>Name: </strong><%= @route.name %></li>
+    <li><strong>Description: </strong><%= @route.description %></li>
+    <li><strong>Lugares: </strong><%= @route.places_interest %></li>
+    <li><strong>Duración: </strong><%= @route.duration %> hrs</li>
+
+
+    <li><strong>Places: </strong><%@lugares.each do |lugar| %>
+      <ul>
+        <li><%= lugar.name %></li>
+        <li><%= lugar.address %></li>
+        <li><%= lugar.description %></li>
+      </ul>
+    <% end %>
+    </li>
+    <li><strong>Fechas: </strong><% @fechas_all.each do |date|%>
+      <%= date %>
+    <% end %>
+    </li>
+</ul>

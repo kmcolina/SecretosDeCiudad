@@ -1,0 +1,23 @@
+<h1>Admin Index</h1>
+
+<p class = "btn btn-primary"><%= link_to "Crear", new_route_path %></p>
+
+<div class="cards">
+    <% @routes.each do |route| %>
+      <div class="card">
+        <div class="card-body">
+          <% if route.photo.attached? %>
+             <%= cl_image_tag route.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
+          <% else %>
+           <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <div><%= route.name %>
+            <p>Descripción: <%= route.description %></p>
+          </div>
+          <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
+          <p class = "btn btn-primary"><%= link_to "Editar", edit_route_path(route) %></p>
+          <small class = "btn btn-dark"><%= link_to "Delete", route_path(route), method: :delete, data: { confirm: "Are you sure?" } %> </small>
+        </div>
+      </div>
+    <% end %>
+  </div>

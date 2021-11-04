@@ -1,0 +1,31 @@
+<h1>Places#new</h1>
+<p>Find me in app/views/places/new.html.erb</p>
+
+
+<div class="container col-md-5" style="margin-top: 10px">
+  <div class="bg-white rounded p-3">
+    <h5 class="new-post">New place</h5>
+      <%= simple_form_for(@place) do |f| %>
+        <% if @place.errors.any? %>
+          <div class="errors-container">
+            <ul>
+              <% @place.errors.full_messages.each do |message| %>
+                <% message %>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= f.input :photo, as: :file %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :address %>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
+        <%= f.association :route %>
+        <%= f.submit value:'Create', class:'btn btn-primary'%>
+        <%= link_to 'Back', :back, class:'btn btn-dark'%>
+      <% end %>
+  </div>
+
+  <%= console %>
+</div>
