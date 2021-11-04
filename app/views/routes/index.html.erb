@@ -1,4 +1,5 @@
-<h1>Routes Index</h1>
+<div class="min-vh-80">
+  <h1>Routes Index</h1>
 
 <section class="wrapper">
   <div class="container">
@@ -17,3 +18,17 @@
     </div>
   </div>
 </section>
+    <div class="cards">
+        <% @routes.each do |route| %>
+          <div class="card">
+            <div class="card-body">
+              <div><%= route.name %>
+                <p>Descripción: <%= route.description %></p>
+              </div>
+              <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>
