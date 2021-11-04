@@ -1,7 +1,7 @@
 class RoutesController < ApplicationController
   # CRUD
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_route, only: [:show, :edit, :update, :destroy]
+  before_action :set_route, only: [:show, :update, :destroy]
 
   def index
     if current_user && current_user.admin?
@@ -11,42 +11,48 @@ class RoutesController < ApplicationController
       @guide_routes = Route.where(user_id: current_user.id)
       render 'guide'
     else
-      @routes = Route.all
+      @routess = Route.all
+      @routes = []
+      @routess.each do |ruta|
+        if  @places_route = Place.where(route_id: ruta) != []
+            @routes << ruta
+        end
+      end
+    end
+  end
+
+  def data_show
+    @review = Review.new(route_id: @route)
+    places = Place.all
+    @places_route = Place.where(route_id: @route)
+    @lugares = []
+
+    @places_route.each do |conection|
+      @lugares << places.find(conection.id)
+    end
+
+    @fechas_all = []
+    fechas = @route.available_dates
+    array_fechas = fechas.split(',')
+    array_fechas.each do |fecha|
+      @fechas_all << Date.strptime(fecha, "%Y%m%d")
+    end
+    # mapa
+    @placess = Place.all
+    @markers =  @places_route.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+        }
     end
   end
 
   def show
     if current_user && current_user.admin?
-      places = Place.all
-      @places_route = Place.where(route_id: @route)
-      @lugares = []
-
-      @places_route.each do |conection|
-        @lugares << places.find(conection.id)
-      end
-
-      @fechas_all = []
-      fechas = @route.available_dates
-      array_fechas = fechas.split(',')
-      array_fechas.each do |fecha|
-        @fechas_all << Date.strptime(fecha, "%Y%m%d")
-      end
+      data_show
       render 'admins/show'
     else
-      places = Place.all
-       @places_route = Place.where(route_id: @route)
-      @review = Review.new(route_id: @route)
-      @lugares = []
-
-      @places_route.each do |conection|
-        @lugares << places.find(conection.id)
-      end
-      @fechas_all = []
-      fechas = @route.available_dates
-      array_fechas = fechas.split(',')
-      array_fechas.each do |fecha|
-        @fechas_all << Date.strptime(fecha, "%Y%m%d")
-      end
+      data_show
     end
   end
 
@@ -61,21 +67,38 @@ class RoutesController < ApplicationController
   end
 
   def new
-    @route = Route.new
-    @usuario = User.all
+    if current_user && current_user.admin?
+      @route = Route.new
+      @usuario = User.all
+    else
+      redirect_to routes_path
+    end
   end
 
   def update
-    @route.update(route_params)
-    redirect_to route_path(@route)
+    if current_user && current_user.admin?
+      @route.update(route_params)
+      redirect_to route_path(@route)
+    else
+     redirect_to routes_path
+    end
   end
 
   def edit
+    if current_user && current_user.admin?
+      @route = Route.find(params[:id])
+    else
+     redirect_to routes_path
+    end
   end
 
   def destroy
-    @route.destroy
-    redirect_to routes_path
+    if current_user && current_user.admin?
+      @route.destroy
+      redirect_to routes_path
+    else
+     redirect_to routes_path
+    end
   end
 
   private
@@ -85,6 +108,6 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:name, :duration, :places_interest, :description, :place_id, :user_id, :route_id, :price, :available_dates)
+    params.require(:route).permit(:name, :duration, :places_interest, :description, :place_id, :user_id, :route_id, :price, :available_dates, :photo)
   end
 end

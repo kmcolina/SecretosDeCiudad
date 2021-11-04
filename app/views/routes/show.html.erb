@@ -67,9 +67,23 @@
     <div class="card-guide-info">
       <h2>Título del card del guía</h2>
       <p>Descripción del guía</p>
-      <a href="#" class="btn btn-dark" id="letter-ligth">Reservar</a>
+
+     <p class = "btn btn-primary"><%= link_to "Reservar", new_route_booking_path(@route) %></p>
     </div>
   </div>
+
+      
+    </div>
+  </div>
+
+  <%# mapa %>
+  <div id="map" class="card"
+     style="width: 50%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
+
   <%# Reviews %>
   <div class="row" id="reviews">
     <div class="col-12 col-md-6">
@@ -89,6 +103,7 @@
         <% end %>
     </div>
 
+
     <div class="col-12 col-md-6">
         <h3>Add a Review</h3>
         <div class="bg-white rounded p-3 card">
@@ -96,7 +111,11 @@
               <%= f.input :comment, placeholder: "Add your review here..." %>
               <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: "review_rating" } %>
               <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
+
               <%= f.submit class: "btn btn-dark", value: "Review" %>
+
+              <%= f.submit class: "btn btn-primary p-1" %>
+
               <small><em class="text-muted">Login to post a review!</em></small>
             <% end %>
         </div>

@@ -1,26 +1,28 @@
-<h1>Routes Edit</h1>
 
-<div class="container col-md-5" style="margin-top: 10px">
-  <div class="bg-white rounded p-3">
-    <h5 class="new-post">New route</h5>
-      <%= simple_form_for(@route) do |f| %>
-        <% if @route.errors.any? %>
-          <div class="errors-container">
-            <ul>
-              <% @route.errors.full_messages.each do |message| %>
-                <% message %>
-              <% end %>
-            </ul>
-          </div>
+  <h1>Routes Edit</h1>
+
+  <div class="container col-md-5 " style="margin-top: 10px">
+    <div class="bg-white rounded p-3">
+      <h5 class="new-post">New route</h5>
+        <%= simple_form_for(@route) do |f| %>
+          <% if @route.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @route.errors.full_messages.each do |message| %>
+                  <% message %>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.input :name %>
+          <%= f.input :description %>
+          <%= f.input :places_interest %>
+          <%= f.input :price %>
+          <%= f.input :available_dates %>
+          <%= f.input :duration %>
+          <%= f.input :user_id, collection: User.where(rol: 'guide'), label_method: :email  %>
+          <%= f.submit value:'Update', class:'btn btn-primary'%>
+          <%= link_to 'Back', root_path, class:'btn btn-dark'%>
         <% end %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :places_interest %>
-        <%= f.input :price %>
-        <%= f.input :available_dates %>
-        <%= f.input :duration %>
-        <%= f.submit value:'Update', class:'btn btn-primary'%>
-        <%= link_to 'Back', root_path, class:'btn btn-dark'%>
-      <% end %>
+    </div>
   </div>
-</div>

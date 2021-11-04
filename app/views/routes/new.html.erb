@@ -14,17 +14,16 @@
             </ul>
           </div>
         <% end %>
+        <%= f.input :photo, as: :file %>
         <%= f.input :name %>
         <%= f.input :description %>
         <%= f.input :places_interest %>
         <%= f.input :price %>
         <%= f.input :duration %>
         <%= f.input :available_dates %>
-        <%# <%= f.association :user %> %>
+        <%= f.input :user_id, collection: User.where(rol: 'guide'), label_method: :email  %>
         <%= f.submit value:'Create', class:'btn btn-primary'%>
         <%= link_to 'Back', root_path, class:'btn btn-dark'%>
       <% end %>
   </div>
 </div>
-
-<%=  console %>

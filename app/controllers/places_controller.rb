@@ -2,7 +2,11 @@ class PlacesController < ApplicationController
   before_action :set_place, only: %i[edit update show]
 
   def index
-    @places = Place.all
+    if current_user && current_user.admin?
+      @places = Place.all
+    else
+      redirect_to routes_path
+    end
   end
 
   def new
@@ -42,7 +46,7 @@ class PlacesController < ApplicationController
   end
 
   def place_params
-    params.require(:place).permit(:name, :address, :description, :route_id)
+    params.require(:place).permit(:name, :address, :description,:latitude, :longitude, :route_id)
   end
 
 end
