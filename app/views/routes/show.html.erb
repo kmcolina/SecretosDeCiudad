@@ -23,6 +23,9 @@
 
         <li><%= lugar.name %> <%= lugar.address %><%= lugar.description %></li>
       </ul>
+
+
+
     <% end %>
     </li>
     <li><strong>Fechas: </strong><% @fechas_all.each do |date|%>
@@ -30,3 +33,11 @@
     <% end %>
     </li>
 </ul>
+
+
+  <div id="map" class="card"
+     style="width: 50%; height: 300px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+       </div>
+  </div>

@@ -46,15 +46,21 @@ route2.save!
 
 
 # creado lugares
-place1 = Place.new(name: 'plaza bolivar', description: 'plaza en el casco historico', address: 'esquina la torre, caracas', route_id: route1.id  )
+place1 = Place.new(name: 'plaza bolivar', description: 'plaza en el casco historico', address: 'esquina la torre, caracas', route_id: route1.id, latitude: 10.5060739, longitude: -66.9150769  )
 place1.save!
 
-place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de gran importancia durante los años previos y posteriores a la independencia de la nacion', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route1.id )
+place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de gran importancia durante los años previos y posteriores a la independencia de la nacion', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route1.id, latitude: 10.506335, longitude: -66.9161692)
 place2.save!
 
-place3 = Place.new(name: 'Concejo municipal', description: 'Dentro se ella se encuentra la capilla santa rosa de lima, donde se declaró la Independencia de Venezuela el 5 de julio de 1811.', address: 'esquina las monjas, caracas' , route_id: route1.id)
+place3 = Place.new(name: 'Concejo municipal', description: 'Dentro se ella se encuentra la capilla santa rosa de lima, donde se declaró la Independencia de Venezuela el 5 de julio de 1811.', address: 'esquina las monjas, caracas' , route_id: route1.id, latitude: 10.5053666, longitude: -66.9154536)
 place3.save!
 
+
+# place4 = Place.new(name: 'Concejo municipal', description: 'Dentro se ella se encuentra la capilla santa rosa de lima, donde se declaró la Independencia de Venezuela el 5 de julio de 1811.' , route_id: route1.id, latitude:10.5061992 , longitude: -66.9153028)
+# place4.save!
+
+# place4 = Place.new(name: 'Concejo municipal', address: "esquina principal, caracas 1010, venezuela" ,description: 'Dentro se ella se encuentra la capilla santa rosa de lima, donde se declaró la Independencia de Venezuela el 5 de julio de 1811.' , route_id: route1.id, latitude:10.5061992 , longitude: -66.9153028)
+# place4.save!
 
 # route3 = Route.new(name: 'Ruta 3', description: 'Ruta 3 description', duration: 4, places_interest: 'Plaza 3, Sambil 3, Edificio 3', available_dates: ['2021-10-02', '2021-11-06'], price: 30, user_id: 5)
 # route3.save!
