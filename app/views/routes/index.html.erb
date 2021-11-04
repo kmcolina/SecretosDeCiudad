@@ -1,14 +1,18 @@
 <h1>Routes Index</h1>
 
-<div class="cards">
-    <% @routes.each do |route| %>
-      <div class="card">
-        <div class="card-body">
-          <div><%= route.name %>
-            <p>Descripción: <%= route.description %></p>
-          </div>
-          <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
-        </div>
-      </div>
-    <% end %>
+<section class="wrapper">
+  <div class="container">
+    <div class="cards">
+          <% @routes.each do |route| %>
+            <div class="card card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
+              <div class="card-img-overlay">
+                <h3 id="name"><%= route.name %></h3>
+                <%= link_to route_path(route) do %>
+                  <i class="fas fa-chevron-right"></i>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+    </div>
   </div>
+</section>
