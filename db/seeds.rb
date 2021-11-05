@@ -147,6 +147,24 @@ puts "Iniciando creacion de datos en la BD"
   route5.save!
 
 
+  # imagenes para los lugares de la ruta 1
+
+  file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa_Natal_Del_Libertador_Simon_Bolivar.JPG/1280px-Casa_Natal_Del_Libertador_Simon_Bolivar.JPG')
+
+  place1.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place1.save!
+
+
+  file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Casa_Amarilla_de_Caracas_-_2015.JPG/800px-Casa_Amarilla_de_Caracas_-_2015.JPG')
+
+  place2.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place2.save!
+
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1593436243794-e0e6eefcef57?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29sb25pYWx8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  place3.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place3.save!
 
 # creo bookings
   # para la ruta 0
