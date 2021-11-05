@@ -177,15 +177,19 @@ puts "Iniciando creacion de datos en la BD"
   commt = ["Maravilloso, Me encanto", "Volvere a repetir", "Woa cuanta historia, la hice por mi cuenta", "No esta mal", "Pueden agregar mas datos de interes a algunos lugares?", "Increible todas estas joyas", "Me encanto la ruta", "Esperando una proxima guiatura, es magnifico"]
 
   #rating
-  rat = 4..5
+  ratig = [4,5]
 
   # genero un times random sobre los array
-
   review = Review.new(user_id:usuario.id,route_id:route5.id)
   review.save!
 
-  10.times do
-
+  40.times do
+    user = usr.sample
+    rutta = ruta.sample
+    coment = commt.sample
+    rati = ratig.sample
+    review = Review.new(user_id:user,route_id:rutta,comment:coment, rating: rati)
+    review.save!
 
   end
 
