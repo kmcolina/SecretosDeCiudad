@@ -180,15 +180,14 @@ puts "Iniciando creacion de datos en la BD"
   ratig = [4,5]
 
   # genero un times random sobre los array
-  review = Review.new(user_id:usuario.id,route_id:route5.id)
-  review.save!
 
   40.times do
     user = usr.sample
     rutta = ruta.sample
     coment = commt.sample
     rati = ratig.sample
-    review = Review.new(user_id:user,route_id:rutta,comment:coment, rating: rati)
+
+    review = Review.new(comment:coment, rating:rati,  route_id:rutta,user_id:user)
     review.save!
 
   end
