@@ -10,6 +10,7 @@
 }
 
 .second-col {
+  margin-top: 10px;
   width: 45%;
   margin-left: 5px;
   padding: 5px;
@@ -18,6 +19,7 @@
 .scd-col-card-guide {
   display: flex;
   justify-content: center;
+  width: 45%;
 }
 
 #reviews {
@@ -32,4 +34,39 @@
 #map{
   position: sticky;
   top: 0;
+}
+
+#add-review {
+  width: 50%;
+  border-radius: 8px;
+}
+
+#h3-review {
+  margin-top: 20px;
+}
+
+//Banner
+
+.banner-show {
+  background-size: cover;
+  background-position: 50% 70%;
+  padding: 70px 0;
+}
+
+.banner-show h1 {
+  //margin: 0;
+  margin-top: -10px;
+  color: #F1F1E8;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.banner-show p {
+  font-size: 20px;
+  color: #F1F1E8;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-align: center;
 }
