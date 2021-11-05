@@ -53,7 +53,12 @@
 
             <li><%@lugares.each do |lugar| %>
               <ul class="card-show">
+                <% if lugar.photo.attached? %>
+                  <%= cl_image_tag lugar.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+                <% end %>
+
                 <li id="name-show"><%= lugar.name %></li>
                 <li><%= lugar.description %></li>
                 <li><strong>Dirección: </strong><%= lugar.address %></li>
