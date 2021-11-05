@@ -7,5 +7,29 @@
     margin-right: 10px;
     color: #206A5D;
   }
+}
 
+.second-col {
+  width: 45%;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+.scd-col-card-guide {
+  display: flex;
+  justify-content: center;
+}
+
+#reviews {
+  margin-top: 20px;
+}
+
+.first-col {
+  width: 50%;
+  margin-right: 10px;
+}
+
+#map{
+  position: sticky;
+  top: 0;
 }

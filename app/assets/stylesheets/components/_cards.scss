@@ -128,24 +128,31 @@
   }
 
   #name-show{
-      font-size: 20px;
+    font-size: 20px;
    }
 
 }
 
 .list-date {
   list-style: none;
+  padding-left: 10px;
 }
 
 .ul-show {
   list-style: none;
   margin: 0;
   padding: 0;
+  padding-left: 10px;
+
+  .li-description {
+    padding-left: 10px;
+  }
 }
 
 ul .card-show {
   margin: 0;
   padding: 0;
+  padding-left: 10px;
   padding-top: 20px;
 }
 
@@ -160,11 +167,13 @@ ul .card-show {
 
 #trending-show{
   padding-top: 10px;
+  margin-left: 25px;
+  margin-right: 20px;
 }
 
 //GUIDE
 .card-guide {
-  width: 30%;
+  width: 70%;
   height: auto;
   border-radius: 8px;
   margin-top: 15px;
