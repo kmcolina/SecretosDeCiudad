@@ -128,24 +128,32 @@
   }
 
   #name-show{
-      font-size: 20px;
+    font-size: 20px;
    }
 
 }
 
 .list-date {
   list-style: none;
+  padding-left: 10px;
 }
 
 .ul-show {
   list-style: none;
   margin: 0;
   padding: 0;
+  margin-top: 10px;
+  padding-left: 10px;
+
+  .li-description {
+    padding-left: 10px;
+  }
 }
 
 ul .card-show {
   margin: 0;
   padding: 0;
+  padding-left: 10px;
   padding-top: 20px;
 }
 
@@ -160,11 +168,13 @@ ul .card-show {
 
 #trending-show{
   padding-top: 10px;
+  margin-left: 25px;
+  margin-right: 20px;
 }
 
 //GUIDE
 .card-guide {
-  width: 30%;
+  width: 100%;
   height: auto;
   border-radius: 8px;
   margin-top: 15px;
@@ -172,16 +182,51 @@ ul .card-show {
   box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px;
+  //justify-content: space-between;
+  // padding: 10px;
 
   .card-guide-info{
-    padding-left: 10px;
-    text-align: center;
-    h2 {
+    //text-align: center;
+    padding-left: 20px;
+    padding-top: 5px;
+
+    h3 {
       font-size: 18px;
       padding: 0;
+      margin-top: 5px;
+      font-weight: bold;
+    }
+
+    h4 {
+      font-size: 14px;
+      padding: 0;
+      margin-top: 5px;
+    }
+
+    p {
+      //text-align: left;
       margin: 0;
+      //margin-left: 10px;
+      font-size: 12px;
+    }
+
+    li {
+      list-style: none;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    #btn-book {
+      text-align: right;
+      margin-top: 10px;
+      margin-right: -30px;
     }
   }
+}
+
+.card-photo {
+  border-radius: 8px;
+  height: 100%;
+  width: 45%;
+  object-fit: cover;
 }
