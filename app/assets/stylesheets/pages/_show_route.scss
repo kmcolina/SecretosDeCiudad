@@ -1,18 +1,21 @@
-.header {
-  display: flex;
-
+.banner-show {
   i {
-    font-size: 35px;
+    font-size: 25px;
     margin-top: 5px;
     margin-right: 10px;
-    color: #206A5D;
+    color: #F1F1E8;
+    opacity: .3;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
 
 .second-col {
   margin-top: 10px;
   width: 45%;
-  margin-left: 5px;
+  margin-left: 2px;
   padding: 5px;
 }
 
