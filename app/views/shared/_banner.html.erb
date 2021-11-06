@@ -1,12 +1,11 @@
-<div class="banner">
-  <%# <%= video_tag("videos/video_caracas.mp4", controls: false, preload: "auto", autoplay: true, muted: true, loop: true, class:"video") %>
+<%# <div class="banner">
 
-  <%= cl_video_tag("ciudad_uzdpf2", :controls => true, :transformation=>[
-    {:overlay=>"video:ski_jump", :flags=>"splice", :effect=>"reverse"},
-    {:overlay=>"video:ski_jump", :flags=>"splice", :effect=>"accelerate:-50"},
-    {:effect=>"brightness:10", :radius=>"max"}
-    ]) %>
-    <%# <%= cl_image_tag("sample") %>
+  <video loop muted autoplay preload="auto" >
+
+    <source src="https://res.cloudinary.com/dmsb7zzg3/video/upload/v1636234105/ciudad_uzdpf2.mp4">
+
+
+  </video>
    <div class="container titulos">
     <h1> <strong>SECRETOS DE CIUDAD</strong></h1>
     <p>Explora, Disfruta, Vive la Ciudad</p>
@@ -18,5 +17,38 @@
         COMENZAR
     </a>
     <%# <a class="btn btn-flat" href="#">Apply now</a> %>
-  </div>
+<%#   </div>
 </div>
+ %>
+  <div id="hero">
+
+
+                  <div class="texture"></div>
+
+                  <video
+                  loop
+                  muted
+                  autoplay
+                  preload="auto"
+                  >
+                        <source src="https://res.cloudinary.com/dmsb7zzg3/video/upload/v1636234105/ciudad_uzdpf2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                  </video>
+
+
+
+                  <div class="caption">
+
+                        <h1>SECRETOS DE CIUDAD</h1>
+                        <p>Explora, Disfruta, Vive la Ciudad</p>
+                           <a href="#prueba" class="btn-neon">
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+        <span id="span4"></span>
+        COMENZAR
+    </a>
+
+                  </div>
+
+      </div>

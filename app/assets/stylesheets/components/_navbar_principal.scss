@@ -2,6 +2,8 @@
   background-color: rgba(32, 106, 93, 0.8) !important;
   box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3);
   width: 100%;
+  position:relative;
+  z-index:20;
 }
 #radio1,#radio2,#radio3,#radio4{
     display: none;
