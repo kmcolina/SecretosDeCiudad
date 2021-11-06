@@ -112,6 +112,60 @@ puts "Iniciando creacion de datos en la BD"
     place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: 'se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.506699, longitude: -66.9157967)
     place9.save!
 
+
+  # cargando imagen de cloudinary a mis rutas
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1596512489788-e9408b84274a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhc2NvJTIwaGlzdG9yaWNvfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route0.photo.attach(io: file_1, filename: 'route_0.jpg', content_type: 'image/jpg')
+  route0.save!
+
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1491156855053-9cdff72c7f85?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG11c2V1bXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route1.photo.attach(io: file_1, filename: 'route_1.jpg', content_type: 'image/jpg')
+  route1.save!
+
+  file_1 = URI.open('https://images.unsplash.com/15/castle.JPG?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cGFsYWNpbyUyMGRlJTIwbGFzJTIwYWNhZGVtaWFzfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route2.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
+  route2.save!
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1500228630616-d6905f33ad1a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGFycXVlJTIwY2VudHJhbCUyMGNhcmFjYXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route3.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
+  route3.save!
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1594381006435-36a22f96087e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0ZWRyYWx8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route4.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
+  route4.save!
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1590802810354-a785c3c50dcf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyYWNhc3xlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route5.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
+  route5.save!
+
+
+  # imagenes para los lugares de la ruta 1
+
+  file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa_Natal_Del_Libertador_Simon_Bolivar.JPG/1280px-Casa_Natal_Del_Libertador_Simon_Bolivar.JPG')
+
+  place1.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place1.save!
+
+
+  file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Casa_Amarilla_de_Caracas_-_2015.JPG/800px-Casa_Amarilla_de_Caracas_-_2015.JPG')
+
+  place2.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place2.save!
+
+
+  file_1 = URI.open('https://images.unsplash.com/photo-1593436243794-e0e6eefcef57?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29sb25pYWx8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  place3.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place3.save!
+
 # creo bookings
   # para la ruta 0
     booking1 = Booking.new(user_id:usuario.id, check_in: '2021-11-08', route_id:route0.id )
