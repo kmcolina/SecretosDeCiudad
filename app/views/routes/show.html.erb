@@ -1,6 +1,8 @@
   <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1576470290805-d094d04aba29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);">
     <div class="container">
-      <h1><strong><%= @route.name %></strong></h1>
+      <h1><%= link_to routes_path do %>
+        <i class="fas fa-chevron-left"></i>
+      <% end %><strong><%= @route.name %></strong></h1>
       <p>Secretos de Ciudad</p>
     </div>
 </div>
@@ -12,7 +14,7 @@
       <div class="row">
         <div>
           <ul class="ul-show">
-            <li class="li-description"><strong>Descripción: </strong><%= @route.description %></li>
+            <li class="li-description"><%= @route.description %></li>
 
             <%# Tendencias %>
             <div id="trending-show">
@@ -51,7 +53,12 @@
 
             <li><%@lugares.each do |lugar| %>
               <ul class="card-show">
+                <% if lugar.photo.attached? %>
+                  <%= cl_image_tag lugar.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                <% else %>
                 <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+                <% end %>
+
                 <li id="name-show"><%= lugar.name %></li>
                 <li><%= lugar.description %></li>
                 <li><strong>Dirección: </strong><%= lugar.address %></li>
