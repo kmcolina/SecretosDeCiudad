@@ -1,5 +1,12 @@
 <div class="banner">
-  <%= video_tag("videos/video_caracas.mp4", controls: false, preload: "auto", autoplay: true, muted: true, loop: true, class:"video") %>
+  <%# <%= video_tag("videos/video_caracas.mp4", controls: false, preload: "auto", autoplay: true, muted: true, loop: true, class:"video") %>
+
+  <%= cl_video_tag("ciudad_uzdpf2", :controls => true, :transformation=>[
+    {:width=>0.4, :angle=>20},
+    {:overlay=>"cloudinary_icon_white", :width=>60, :opacity=>50,
+     :gravity=>"south_east", :y=>15, :x=>60}
+    ]) %>
+
    <div class="container titulos">
     <h1> <strong>SECRETOS DE CIUDAD</strong></h1>
     <p>Explora, Disfruta, Vive la Ciudad</p>
