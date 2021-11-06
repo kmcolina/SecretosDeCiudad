@@ -1,5 +1,36 @@
 .header .navbar {
-  background-color: rgba(191, 220, 174, 0.5) !important;
-  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.2);
+  background-color: rgba(32, 106, 93, 0.8) !important;
+  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3);
   width: 100%;
+}
+#radio1,#radio2,#radio3,#radio4{
+    display: none;
+}
+#radio1:checked ~ .tab1,
+#radio2:checked ~ .tab2,
+#radio3:checked ~ .tab3,
+#radio4:checked ~ .tab4
+{
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+.content div:after{
+    position: absolute;
+    content: "";
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid #fff;
+    bottom: 100%;
+    left: 28px;
+}
+.content .tab2:after{
+    left: 122px;
+}
+.content .tab3:after{
+    left: 210px;
+}
+.content .tab4:after{
+    left: 303px;
 }
