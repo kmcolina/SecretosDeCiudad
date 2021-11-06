@@ -2,3 +2,20 @@
   background-color: #BFDCAE;
   color: #206A5D;
 }
+
+.table {
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+.td-link {
+  color:#206A5D;
+  font-weight: bold;
+  &:hover{
+    color:#BFDCAE;
+    text-decoration: none;
+  }
+}
+
+td  {
+  color:#206A5D;
+}
