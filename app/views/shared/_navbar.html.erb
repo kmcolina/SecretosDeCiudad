@@ -18,14 +18,14 @@
           <%= link_to "Messages", "#", class: "nav-link color-letters" %>
         </li>
         <li class="nav-item dropdown">
-          <% if current_user.avatar.attached? %>
+          <% if current_user && current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
             <%= image_tag "https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5vbnltb3VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-          <%= if current_user && current_user.admin? %>
+          <% if current_user && current_user.admin? %>
             <%= link_to "Create Route", "#", class: "dropdown-item" %>
             <%= link_to "Create Place", "#", class: "dropdown-item" %>
             <%= link_to "Create Guide", "#", class: "dropdown-item" %>
@@ -34,7 +34,7 @@
             <%= link_to "Edit My Profile", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <% else %>
-            <%= link_to "Edit My Profile", "edit_user_registration_path", class: "dropdown-item" %>
+            <%= link_to "Edit My Profile", edit_user_registration_path, class: "dropdown-item" %>
             <%= link_to "My next Routes", bookings_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           <% end %>
@@ -59,3 +59,4 @@
     </ul>
   </div>
 </div>
+
