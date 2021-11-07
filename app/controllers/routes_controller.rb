@@ -2,20 +2,19 @@ class RoutesController < ApplicationController
   # CRUD
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_route, only: [:show, :update, :destroy]
-
   def index
     if current_user && current_user.admin?
       @routes = Route.all
       render 'admins/index'
     elsif current_user && current_user.guide?
       @guide_routes = Route.where(user_id: current_user.id)
-      render 'guide'
+      render 'guides/index'
     else
       @routess = Route.all
       @routes = []
       @routess.each do |ruta|
         if  @places_route = Place.where(route_id: ruta) != []
-            @routes << ruta
+          @routes << ruta
         end
       end
     end
@@ -26,17 +25,16 @@ class RoutesController < ApplicationController
     places = Place.all
     @places_route = Place.where(route_id: @route)
     @lugares = []
-
     @places_route.each do |conection|
       @lugares << places.find(conection.id)
     end
-
     @fechas_all = []
     fechas = @route.available_dates
     array_fechas = fechas.split(',')
     array_fechas.each do |fecha|
       @fechas_all << Date.strptime(fecha, "%Y%m%d")
     end
+
     # mapa
     @placess = Place.all
     @markers =  @places_route.map do |flat|
@@ -51,6 +49,10 @@ class RoutesController < ApplicationController
     if current_user && current_user.admin?
       data_show
       render 'admins/show'
+    elsif current_user && current_user.guide?
+      @guide_routes = Route.where(user_id: current_user.id)
+      data_show
+      render 'guides/show'
     else
       data_show
     end

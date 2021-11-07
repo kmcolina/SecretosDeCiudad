@@ -13,9 +13,16 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
     <%= render 'shared/navbar' %>
+    <%else%>
+    <%= render 'shared/nav_principal' %>
+    <% end %>
+
     <%= render 'shared/flashes' %>
       <%= yield %>
      <%= render "shared/footer" %>
   </body>
+  <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <script>var scroll = new SmoothScroll('a[href*="#"]', {speed:1800 });</script>
 </html>

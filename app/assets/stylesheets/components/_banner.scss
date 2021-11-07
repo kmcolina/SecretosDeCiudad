@@ -1,33 +1,179 @@
-.banner {
-  background-size: cover;
-  background-position: center;
-  padding: 80px 0;
+#hero {
+            height:100vh;
+            width:100%;
+            display:flex;
+            align-items:center;
+            justify-content: center;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
+#hero::after {
+      width:100%;
+      height:100%;
+      content: '';
+      position:absolute;
+      z-index:10;
+      top:0;
+      left:0;
+      background:rgba(0,0,0,0.5)
 }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+
+#hero video {
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:5;
+      object-fit:cover;
+      font-family:'object-fit: cover';
 }
-.video{
- width: 100%;
- height: 70vh;
- position: absolute;
- display: flex;
- justify-content: center;
- object-fit: cover;
- top: 0;
- z-index: -2;
+
+
+#hero .texture {
+      width:100%;
+      height:100%;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:15;
 }
-.titulos{
-  text-align: center;
+
+
+#hero .caption {
+
+      position:relative;
+      z-index:20;
+      text-align:center;
+      color:#ffffff;
+}
+
+
+
+#hero .caption h1 {
+
+      text-transform: uppercase;
+      font-size:2em;
+      font-family: 'Oswald', sans-serif;
+      margin-bottom:0.5rem;
+      letter-spacing: 2px;
+}
+
+#hero .caption h2 {
+      font-weight:400;
+      font-size:1.5rem;
+      margin:0;
+      font-family: 'PT Sans', sans-serif;
+      letter-spacing: 2px;
+}
+
+
+
+
+@media screen and (min-width:768px)
+{
+      #hero .caption h1 {
+            font-size:2.5rem;
+      }
+
+      #hero .caption h2 {
+            font-size:1.75rem;
+      }
+}
+
+
+
+
+@media screen and (min-width:992px)
+{
+      #hero .caption h1 {
+            font-size:3rem;
+      }
+
+      #hero .caption h2 {
+            font-size:2rem;
+      }
+}
+
+
+
+@media screen and (min-width:1200px)
+{
+      #hero .caption h1 {
+            font-size:4rem;
+      }
+
+      #hero .caption h2 {
+            font-size:2.5rem;
+      }
+}
+.btn-neon{
+    position: relative;
+    display: inline-block;
+    padding: 15px 30px;
+    color: #fff;
+    letter-spacing: 2px;
+    text-decoration: none;
+    font-size: 24px;
+    overflow: hidden;
+    transition: 0.2s;
+    background-color: rgba(32, 106, 93, 0.8) ;
+}
+.btn-neon:hover{
+    background: #95eea8;
+    box-shadow: 0 0 10px rgba(32, 106, 93, 0.8), 0 0 40px rgba(32, 106, 93, 0.8), 0 0 80px rgba(32, 106, 93, 0.8);
+    transition-delay: 0.2s;
+    text-decoration: none;
+    color: black;
+ }
+.btn-neon span{
+    position: absolute;
+    display: block;
+}
+#span1{
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent,rgba(32, 106, 93, 0.8));
+ }
+ .btn-neon:hover #span1{
+    left: 100%;
+    transition: 1s;
+}
+ #span3{
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent,rgba(32, 106, 93, 0.8));
+}
+ .btn-neon:hover #span3{
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+#span2{
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg,transparent,rgba(32, 106, 93, 0.8));
+}
+.btn-neon:hover #span2{
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+#span4{
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg,transparent,rgba(32, 106, 93, 0.8));
+}
+.btn-neon:hover #span4{
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
 }
