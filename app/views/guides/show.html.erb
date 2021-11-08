@@ -2,8 +2,8 @@
     <div class="container">
       <h1><%= link_to routes_path do %>
         <i class="fas fa-chevron-left"></i>
-      <% end %><strong>My routes calendar</strong></h1>
-      <p>Secretos de Ciudad</p>
+      <% end %><strong><%= @route.name %></strong></h1>
+      <p><%= @fecha %></p>
     </div>
 </div>
 
@@ -12,27 +12,12 @@
   <div class="sidebar-sticky border-right">
             <ul class="nav flex-column">
               <li>
-                <%= link_to "View all", routes_path, class:"nav-link title"%>
-              </li>
-              <li>
-                <%= link_to "Ruta 1", routes_path, class:"nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Ruta 2", routes_path, class:"nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Ruta 3", routes_path, class:"nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Ruta 4", routes_path, class:"nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Ruta 5", routes_path, class:"nav-link" %>
+                <%= link_to "Ver todo", routes_path, class:"nav-link title"%>
               </li>
             </ul>
   </div>
 
-  <div class="container">
+  <div class="container mt-5">
     <div class="container d-flex justify-content-between">
       <div class="first-col-guide">
         <%# Cards %>
@@ -41,8 +26,6 @@
             <%# Header Column %>
             <div class="ul-guide">
               <div class="text-header d-flex justify-content-between mt-3">
-                <p><strong><%= @route.name %></strong></p>
-                <p><strong><%= @route.duration %> hrs</strong></p>
               </div>
 
               <%# mapa %>
@@ -54,7 +37,7 @@
 
               <%# Descripción %>
               <div>
-                <p class="mt-2"><%= @route.description %></p>
+                <p class="mt-2"><%= @route.description %> <strong> Duracion de la ruta: <%= @route.duration %> hrs</strong></p>
               </div>
 
               <%# Tendencias %>
@@ -97,30 +80,16 @@
       </div>
 
       <div class="second-col-guide">
-        <div class="card-user border-bottom">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
-          <div class="card-user-info">
-            <h3>Username</h3>
-            <h4>user@email.com</h4>
+        <% @usr.each  do |usuario|%>
+          <div class="card-user border-bottom">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
+            <div class="card-user-info">
+
+              <h4><%= usuario.email %></h4>
+            </div>
           </div>
-        </div>
-        <div class="card-user border-bottom">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
-          <div class="card-user-info">
-            <h3>Username</h3>
-            <h4>user@email.com</h4>
-          </div>
-        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
-<%= @usr_bookings %>
-
-<% @usr.each  do |usuario|%>
-<%= usuario.email %>
-<% end %>
-
-
-<%= console %>

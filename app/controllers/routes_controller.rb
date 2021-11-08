@@ -72,28 +72,24 @@ class RoutesController < ApplicationController
   def usr_book
     # tengo aca la ruta @guide_routes
     # busco en los booking los route id que hacen math
-    @usr_bookings = []
+
+    @usr_fechas_book = []
     @guide_routes.each do |ruta|
-       @usr_bookings << Booking.where(route_id: ruta.id)
+        @usr_bookings  =  Booking.where(route_id: ruta.id)
+        @usr_fechas_book << @usr_bookings.where(check_in: params[:fecha])
     end
 
     # filtro por fecha
-    @fechas_all
-    @fecha = Route.where(avaibparams[:fecha])
-    # Booking.where(check_in: )
-    @usr_bookings.each do |book|
-
-    end
-
 
     # busco a los usuarios que hacen match con esa ruta
     @usr = []
-    @usr_bookings.each do |user|
+    @usr_fechas_book.each do |user|
       user.each do |usr|
          @usr << User.find(usr.user_id)
       end
     end
 
+    @fecha = params[:fecha]
 
 
   end
