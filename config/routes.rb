@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
   resources :places
   resources :bookings, only: :index
+  get '/routes/:id/:fecha', to: 'routes#show', as: 'guide_show'
 end

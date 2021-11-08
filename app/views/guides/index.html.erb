@@ -8,24 +8,11 @@
   <%# Sidebar %>
   <div class="sidebar-sticky border-right">
     <ul class="nav flex-column">
-      <li>
-        <%= link_to "View all", routes_path, class:"nav-link title"%>
-      </li>
-      <li>
-        <%= link_to "Ruta 1", routes_path, class:"nav-link" %>
-      </li>
-      <li>
-        <%= link_to "Ruta 2", routes_path, class:"nav-link" %>
-      </li>
-      <li>
-        <%= link_to "Ruta 3", routes_path, class:"nav-link" %>
-      </li>
-      <li>
-        <%= link_to "Ruta 4", routes_path, class:"nav-link" %>
-      </li>
-      <li>
-        <%= link_to "Ruta 5", routes_path, class:"nav-link" %>
-      </li>
+      <li class= "nav-link title">Rutas</li>
+      <% @guide_routes.each do |route| %>
+          <li><%= link_to route.name, route_path(route), class:"nav-link" %> </li>
+
+      <% end %>
     </ul>
   </div>
 
@@ -35,29 +22,35 @@
       <table class="table">
         <thead class="thead-green">
           <tr>
-            <th scope="col">ROUTE NAME</th>
-            <th scope="col">AVAILABLE DATES</th>
-            <th scope="col">DURATION</th>
+            <th scope="col">Fecha de la Ruta</th>
+            <th scope="col">Duraccion</th>
           </tr>
         </thead>
         <tbody>
           <% @guide_routes.each do |route| %>
             <tr>
-              <td><%= link_to route.name, route_path(route), class:"td-link" %></td>
               <% @fechas_all = [] %>
               <% fechas= route.available_dates %>
                   <% array_fechas = fechas.split(',')  %>
-                  <% array_fechas.each do |fecha|         @fechas_all << Date.strptime(fecha, "%Y%m%d")
+                  <% array_fechas.each do |fecha|  @fechas_all << Date.strptime(fecha, "%Y%m%d")
                   end %>
-              <td><% @fechas_all.each do |date|%>
-                      /<%= date %>/
-                    <% end %></td>
-              <%# array_item[0..3] => 2021 %>
-              <td><%= route.duration %> hrs </td>
+              <% @fechas_all.each do |date|%>
+
+                      <tr><td><%= link_to date , guide_show_path(route,date), class:"nav-link"%> </td>
+                      <td><%= route.duration %> hrs </td>
+                    <% end %>
+              </tr>
             </tr>
           <% end %>
+
+
+
+
         </tbody>
       </table>
     </div>
   </div>
 </div>
+
+
+<%= console %>
