@@ -19,17 +19,19 @@
   <%# Tabla %>
   <div class="container mt-3">
     <div class="min-vh-80">
+     <% @guide_routes.each do |route| %>
+
       <table class="table">
         <thead class="thead-green">
+        <p class ="title d-flex justify-content-center"><%=route.name %></p>
           <tr>
             <th scope="col">Fecha de la Ruta</th>
             <th scope="col">Duraccion</th>
           </tr>
         </thead>
         <tbody>
-          <% @guide_routes.each do |route| %>
             <tr>
-              <td class="td-link"><%=route.name %></td>
+
               <% @fechas_all = [] %>
               <% fechas= route.available_dates %>
               <% array_fechas = fechas.split(',')  %>
@@ -45,8 +47,6 @@
               <% end %>
             </tr>
           <% end %>
-
-
 
 
         </tbody>
