@@ -3,6 +3,21 @@
 <div class="min-vh-80 m-t-5">
 <section class="wrapper">
   <div class="container">
+
+          <div class="search-form-control form-group">
+          <%= form_tag routes_path, method: :get do  %>
+            <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Busca un destino" %>
+
+            <%= button_tag(type: "submit", class: "btn") do %>
+                <i class="fas fa-search"></i>
+            <% end %>
+
+          <% end %>
+        </div>
+
     <div class="cards">
           <% @routes.each do |route| %>
             <div class="card card-has-bg click-col d-flex flex-column" style="background-image:url(<%= cl_image_path route.photo.key %>);">

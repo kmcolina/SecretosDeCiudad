@@ -10,11 +10,26 @@ class RoutesController < ApplicationController
       @guide_routes = Route.where(user_id: current_user.id)
       render 'guides/index'
     else
-      @routess = Route.all
-      @routes = []
-      @routess.each do |ruta|
-        if  @places_route = Place.where(route_id: ruta) != []
-          @routes << ruta
+      # barra de busqueda
+      @place = Place.all
+      if params[:query].present?
+        @lugar_ruta = Place.search_by_name_and_address(params[:query])
+        # rutas que tienen asignado lugares
+
+        @routes = []
+        @lugar_ruta.each do |lugar|
+          if lugar.route_id != []
+            @routes << Route.find(lugar.route_id)
+          end
+        end
+      else
+        # rutas que tienen asignado lugares
+        @routess = Route.all
+        @routes = []
+        @routess.each do |ruta|
+          if  @places_route = Place.where(route_id: ruta) != []
+            @routes << ruta
+          end
         end
       end
     end
