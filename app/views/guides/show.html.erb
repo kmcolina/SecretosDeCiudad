@@ -17,7 +17,7 @@
             </ul>
   </div>
 
-  <div class="container mt-5">
+  <div class="container mt-5 mb-5">
     <div class="container d-flex justify-content-between">
       <div class="first-col-guide">
         <%# Cards %>
@@ -37,7 +37,7 @@
 
               <%# Descripción %>
               <div>
-                <p class="mt-2"><%= @route.description %> <strong> Duracion de la ruta: <%= @route.duration %> hrs</strong></p>
+                <p class="mt-2"><%= @route.description %> <strong> Duración de la ruta: <%= @route.duration %> hrs</strong></p>
               </div>
 
               <%# Tendencias %>
@@ -80,11 +80,16 @@
       </div>
 
       <div class="second-col-guide">
+        <p class = "title-table">Usuarios que reservaron</p>
         <% @usr.each  do |usuario|%>
           <div class="card-user border-bottom">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
+          <% @foto = User.find(usuario.id) %>
+            <% if @foto.avatar.attached? %>
+              <%= cl_image_tag @foto.avatar.key , class: "avatar ", alt: "avatar"%>
+            <% else %>
+              <%= image_tag "https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5vbnltb3VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+            <% end %>
             <div class="card-user-info">
-
               <h4><%= usuario.email %></h4>
             </div>
           </div>
