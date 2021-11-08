@@ -1,4 +1,23 @@
-<h1>Admin Show</h1>
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1576470290805-d094d04aba29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);">
+    <div class="container">
+      <p>Rutas</p>
+    </div>
+</div>
+    <%# Sidebar %>
+    <div class="sidebar-sticky border-right">
+      <ul class="nav flex-column">
+        <li>
+          <%= link_to "Ver Rutas", routes_path, class: 'nav-link title' %>
+        </li>
+        <li>
+          <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
+        </li>
+        <li>
+          <%= link_to "Ver Pagos", routes_path, class:"nav-link title" %>
+        </li>
+      </ul>
+    </div>
+
 
                   <% if @route.photo.attached? %>
              <%= cl_image_tag @route.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
