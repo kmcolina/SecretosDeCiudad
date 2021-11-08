@@ -2,15 +2,17 @@
   <h1>My Bookings</h1>
 </div>
 
-
 <div class="container" >
   <div class="cards">
     <% @bookings.each do |booking| %>
       <div class="card">
         <div class="card-body">
-
           <p style="margin-top: 15px"><strong><%= booking.route.name %></strong></p>
           <p><strong>Check-In: </strong><%= booking.check_in %></p>
+          <% if booking.status_pago.nil? %>
+            <p><strong>Pago: </strong>Por pagar</p>
+            <%= link_to "Pagar",  edit_booking_path(booking), class: "btn-primary" %>
+          <%end %>
         </div>
       </div>
     <% end %>
