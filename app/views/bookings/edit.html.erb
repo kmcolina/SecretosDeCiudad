@@ -1,8 +1,37 @@
 
-<div class="container col-md-5" style="margin-top: 10px">
-  <div class="bg-white rounded p-3">
-    <h5 class="new-post">New post</h5>
-      <%= simple_form_for(@booking) do |f| %>
+<div class="container col-md-12 mt-5">
+    <h1 class="d-flex justify-content-center">Medios de Pago</h1>
+    <div class="cards d-flex justify-content-center">
+      <div class="card">
+        <div class="card-pago">
+        <p  class="text-center"><i class="fab fa-cc-visa icon-visa fa-10x"></i></p>
+          <p  class="text-center"><strong>BANCO DE VENEZUELA</strong></p>
+          <p><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
+          <p><strong>NUMERO:</strong> 0102-0000-02154-0000-0045</p>
+          <p><strong>RIF</strong>J-1234540040</p>
+          <p class="text-center mt-5"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %>$</p>
+        </div>
+      </div>
+       <div class="card">
+        <div class="card-pago">
+        <p  class="text-center"><i class="fas fa-mobile-alt icon-visa fa-10x"></i></p>
+          <p  class="text-center"><strong>PAGO MOVIL BANESCO</strong></p>
+          <p><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
+          <p><strong>RIF</strong>J-1234540040</p>
+          <p><strong>Numero:</strong> 04241235898</p>
+          <p class="text-center mt-5"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %>$</p>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="container col-md-6 mt-2">
+  <h1 class="d-flex justify-content-center">Numero de Referencia</h1>
+  <div class="cards d-flex justify-content-center">
+    <div class="card">
+      <div class="card-pago">
+        <%= simple_form_for(@booking) do |f| %>
         <% if @booking.errors.any? %>
           <div class="errors-container">
             <ul>
@@ -12,10 +41,12 @@
             </ul>
           </div>
         <% end %>
-       <%#  <%= f.input :photo, as: :file %>
+       <% #  <%= f.input :photo, as: :file %>
         <%= f.input :pago_user %>
-        <%= f.submit value: "Update", class: "btn btn-primary" %>
-        <%= link_to "Back", route_bookings_path(@booking.route), class: "btn btn-dark" %>
+        <%= f.submit value: "Update", class: "btn btn-dark" %>
+        <%= link_to "Back", bookings_path, class: "btn btn-dark " %>
       <% end %>
+      </div>
+    </div>
   </div>
 </div>
