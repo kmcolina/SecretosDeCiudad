@@ -1,11 +1,42 @@
-  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @route.photo.key %>);">
-    <div class="container">
-      <h1><%= link_to routes_path do %>
-        <i class="fas fa-chevron-left"></i>
-      <% end %><strong><%= @route.name %></strong></h1>
-      <p>Secretos de Ciudad</p>
+
+<%# Tendencias %>
+<div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= cl_image_tag  @route.photo.key, class:"d-block w-100" %>
+      </div>
+
+      <%@lugares.each do |lugar| %>
+        <div class="carousel-item ">
+          <%= cl_image_tag lugar.photo.key, class:"d-block w-100" %>
+        </div>
+      <% end %>
     </div>
+
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
+
+<div class="container">
+  <h1><%= link_to routes_path do %>
+    <i class="fas fa-chevron-left"></i>
+  <% end %><strong><%= @route.name %></strong></h1>
+  <p>Secretos de Ciudad</p>
+</div>
+
 
 <div class="container">
 
