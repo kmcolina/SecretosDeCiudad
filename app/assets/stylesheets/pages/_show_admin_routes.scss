@@ -1,0 +1,19 @@
+.list-show-admin-routes {
+  list-style: none;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#route-header {
+  width: 70%;
+}
+
+#route-description {
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
