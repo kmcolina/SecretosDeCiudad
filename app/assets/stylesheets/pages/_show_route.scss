@@ -13,10 +13,7 @@
 }
 
 .second-col {
-  margin-top: 10px;
-  width: 45%;
-  margin-left: 2px;
-  padding: 5px;
+grid-template-columns: 1fr;
 }
 
 .scd-col-card-guide {
@@ -31,8 +28,7 @@
 }
 
 .first-col {
-  width: 50%;
-  margin-right: 10px;
+grid-template-columns: 1fr 1fr 1fr;
 }
 
 #map{

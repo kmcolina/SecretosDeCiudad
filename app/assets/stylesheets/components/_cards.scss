@@ -388,3 +388,10 @@ main {
   padding: 15px;
   margin-bottom: 0;
 }
+
+
+.column-show{
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr;
+  grid-gap: 40px;
+}
