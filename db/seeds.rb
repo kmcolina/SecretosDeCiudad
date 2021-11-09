@@ -67,7 +67,7 @@ puts "Iniciando creacion de datos en la BD"
   route2 = Route.new(name: 'Arquitectura con estilo', description: 'Una ruta llena de estructuras arquitectonicas de distintos estilos neogótico, Neoclásico y neobarroco que se encuentran muy cerca unos de otros y que ademas tienen una historia que contar', duration: 2, places_interest: 'Cafeteria, Centro Comercial', available_dates:'20211015,20211120', price: 10, user_id: guide2.id)
   route2.save!
 
-  route3 = Route.new(name: 'Rascacielos', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica, muy cerca de ellos le siguen grandes edificios que no se quedan atras.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
+  route3 = Route.new(name: 'Rascacielos en Caracas', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica, muy cerca de ellos le siguen grandes edificios que no se quedan atras.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
   route3.save!
 
   route4 = Route.new(name: 'Los 7 Templos', description: 'Tradiciones de semana santa que son joyas arquitectonicas que guarda la ciudad, estilo Neoclasico, Neogótico, historias y leyendas que se unen', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211002,20211106', price: 10,user_id: guide3.id)
@@ -75,6 +75,10 @@ puts "Iniciando creacion de datos en la BD"
 
   route5 = Route.new(name: 'Las esquinas de Caracas', description: 'Una caracteristica particular de la ciudad, la torre, principal, las monjas, sociedad, descubre el porque de estos curiosos nombres', duration: 6, places_interest: 'Cafe bolivar, Restaurante, Cocada', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
   route5.save!
+
+  route6 = Route.new(name: 'Inspiracion Parisina', description: 'Caracas y Paris tiene muchas mas cosas en comun de lo que imaginas, calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
+  route6.save!
+
 
 
 
@@ -113,7 +117,9 @@ puts "Iniciando creacion de datos en la BD"
     place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: 'se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.506699, longitude: -66.9157967)
     place9.save!
 
-
+   #para la ruta 6
+    place10 = Place.new(name: 'Arco de la Federación', description: 'monumento situado en el municipio libertador en el oeste del distrito metropolitano de Caracas, Venezuela, ubicado específicamente dentro del Parque Ezequiel Zamora (El Calvario) en el centro-oeste de la capital. Es de estilo colonial, inspirado en el arco del triunfo de Paris.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
+    place10.save!
   # cargando imagen de cloudinary a mis rutas
 
   file_1 = URI.open('https://images.unsplash.com/photo-1596512489788-e9408b84274a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhc2NvJTIwaGlzdG9yaWNvfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
@@ -148,6 +154,12 @@ puts "Iniciando creacion de datos en la BD"
   route5.save!
 
 
+  file_1 = URI.open('https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFyaXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route6.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
+  route6.save!
+
+
   # imagenes para los lugares de la ruta 1
 
   file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa_Natal_Del_Libertador_Simon_Bolivar.JPG/1280px-Casa_Natal_Del_Libertador_Simon_Bolivar.JPG')
@@ -166,6 +178,15 @@ puts "Iniciando creacion de datos en la BD"
 
   place3.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
   place3.save!
+
+
+  #imagenes para los lugares de la ruta 6
+
+    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/3/3d/Arco_federacion_libertador_caracas.jpg')
+
+  place10.photo.attach(io: file_1, filename: 'place_10.jpg', content_type: 'image/jpg')
+  place10.save!
+
 
 # creo bookings
   # para la ruta 0
