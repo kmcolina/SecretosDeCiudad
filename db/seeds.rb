@@ -77,6 +77,7 @@ puts "Iniciando creacion de datos en la BD"
   route5.save!
 
 
+
 # creado lugares
   #para la ruta 0 (casco historico)
     place1 = Place.new(name: 'plaza bolivar', description: 'uno de los espacios públicos más importantes y reconocidos de Venezuela, se encuentra ubicada en el centro histórico de esa ciudad, en ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini es una réplica de la estatua de la Plaza Bolívar de Lima en Perú realizada por la Fundición Müller. Mide 4 metros de altura, en ella Bolívar está sobre un caballo encabritado sostenido por sus patas traseras apoyado sobre el pedestal que posee dos gradas.', address: 'Esquina La Torre, caracas', route_id: route0.id, latitude: 10.5060739, longitude: -66.9150769  )
