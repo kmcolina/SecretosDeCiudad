@@ -45,6 +45,7 @@ class RoutesController < ApplicationController
   end
 
   def data_show
+   
     @review = Review.new(route_id: @route)
     places = Place.all
     @places_route = Place.where(route_id: @route)
@@ -58,6 +59,8 @@ class RoutesController < ApplicationController
     array_fechas.each do |fecha|
       @fechas_all << Date.strptime(fecha, "%Y%m%d")
     end
+
+
 
     # mapa
     @placess = Place.all
