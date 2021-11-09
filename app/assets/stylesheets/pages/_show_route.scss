@@ -76,6 +76,7 @@ grid-template-columns: 1fr 1fr 1fr;
   font-size: 32px;
   font-weight: bold;
   text-align: center;
+  text-transform: capitalize;
 }
 
 .banner-show p {
@@ -84,6 +85,7 @@ grid-template-columns: 1fr 1fr 1fr;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: center;
+  text-transform: capitalize;
 }
 
 

@@ -13,7 +13,6 @@
   margin-bottom: 40px;
 }
 
-
 .card{
   border: none;
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -188,6 +187,29 @@ ul .card-show {
   }
 }
 
+
+.card-show-shadow {
+  // overflow: hidden;
+  // background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 20px;
+  height: auto;
+  border-radius: 8px;
+
+  strong {
+    text-transform: capitalize;
+  }
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+
 //GUIDE
 .card-guide {
   width: 100%;
@@ -286,7 +308,12 @@ ul .card-show {
   color:#0530AD
 }
 
+
 //TESTING
+
+
+//CARDS SHOW ADMIN
+
 .app {
   position: relative;
   padding-left: .5em;
@@ -298,6 +325,7 @@ ul .card-show {
   background-position: 50% 50%;
   height: 28em;
   border-radius: 8px;
+
   box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
   p{
     text-align: justify;
@@ -307,6 +335,7 @@ ul .card-show {
   h3{
     text-align: center;
   }
+
 }
 
 header {
@@ -346,7 +375,10 @@ main {
   }
   .app {
     display: grid;
+
     margin: 3em auto;
+
+
     grid-template-rows: 3em 85%;
     grid-template-columns: 1.4fr 1fr;
     padding-left: 2em;
@@ -373,6 +405,7 @@ main {
   main {
     min-width: var(--main-column-width);
   }
+
 }
 
 
@@ -402,6 +435,37 @@ main {
  padding: 10px;
  padding-left: 40px;
  margin: 10px;
+
+
+
+//CARD MY BOOKING
+.name-booking{
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  // background: rgb(255,255,255);
+  color:white;
+  font-weight: bold;
+}
+.fecha-booking{
+   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  // background: rgb(255,255,255);
+  color:white;
+  font-weight: lighter;
+  margin-bottom: 40px;
+  font-size: small;
+
+}
+
+.pagar-booking{
+
+  background: linear-gradient(90deg, transparent,rgba(177, 59, 55, 0.8));
+  border-radius: 3px;
+  margin: 0;
+  padding: 4px;
+}
+.pago-div{
+  align-items: center;
+
+  color:red;
 
 
 }
