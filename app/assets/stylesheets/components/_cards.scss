@@ -8,6 +8,13 @@
 }
 .wrapper{margin:5vh}
 
+.cards-show-places {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  margin-bottom: 40px;
+}
+
 .card{
   border: none;
   transition: all 500ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -172,6 +179,37 @@ ul .card-show {
   margin-right: 20px;
 }
 
+//PLACES IN ADMIN
+.card-show-places {
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
+.card-show-shadow {
+  // overflow: hidden;
+  // background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 20px;
+  height: auto;
+  border-radius: 8px;
+
+  strong {
+    text-transform: capitalize;
+  }
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
 //GUIDE
 .card-guide {
   width: 100%;
@@ -271,6 +309,86 @@ ul .card-show {
 }
 
 
+//CARDS SHOW ADMIN
+.app {
+  position: relative;
+  padding-left: .5em;
+  width: 100%;
+  //background: hsl(220, 35%, 76%) 100% linear-gradient(hsl(252, 2%, 42%) 0%, hsl(0, 5%, 30%) 50%, hsl(220, 35%, 76%) 50%, hsl(220, 35%, 76%) 100%);
+  background: linear-gradient(180deg, rgba(75,101,135,1) 55%, rgba(32,106,93,1) 100%);
+  background-size: auto 10em ;
+  background-repeat: repeat-x;
+  background-position: 50% 50%;
+  height: 28em;
+  border-radius: 8px;
+}
+
+header {
+  position: relative;
+  height: 8em;
+  grid-row: 1 / 3;
+  grid-column: 2;
+  background-size: cover;
+  background-position: 50% 50%;
+
+  img {
+    display: block;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+}
+
+main {
+  //padding: var(--var-padding);
+  position: relative;
+  padding: 20px;
+  grid-row: 2;
+  grid-column: 1;
+  background: #fff;
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  h3 {
+    margin-top: 0;
+    font-weight: normal;
+  }
+}
+
+@media (min-width: 37.5em) {
+  :root {
+    --var-padding: 3em;
+  }
+  .app {
+    display: grid;
+    margin: 1em auto;
+    grid-template-rows: 3em 85%;
+    grid-template-columns: 1.4fr 1fr;
+    padding-left: 2em;
+    background-size: auto;
+
+    &::after {
+      position: absolute;
+      right: 1em;
+      left: 1em;
+      bottom: 0;
+      z-index: -1;
+      width: 95%;
+      height: 200px;
+      content: '';
+      box-shadow: 0 0 5em hsl(22, 23%, 40%);
+    }
+  }
+
+  header {
+    height: auto;
+    border-radius: 0px 8px 8px 0px;
+  }
+
+  main {
+    min-width: var(--main-column-width);
+  }
+
+
 //CARD MY BOOKING
 .name-booking{
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -289,6 +407,7 @@ ul .card-show {
 }
 
 .pagar-booking{
+
   background: linear-gradient(90deg, transparent,rgba(177, 59, 55, 0.8));
   border-radius: 3px;
   margin: 0;
@@ -296,4 +415,8 @@ ul .card-show {
 }
 .pago-div{
   align-items: center;
+
+  color:red;
+
+
 }
