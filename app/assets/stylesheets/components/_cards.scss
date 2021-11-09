@@ -189,6 +189,27 @@ ul .card-show {
   }
 }
 
+.card-show-shadow {
+  // overflow: hidden;
+  // background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  margin: 20px;
+  height: auto;
+  border-radius: 8px;
+
+  strong {
+    text-transform: capitalize;
+  }
+
+  img {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+}
+
 //GUIDE
 .card-guide {
   width: 100%;
@@ -287,7 +308,7 @@ ul .card-show {
   color:#0530AD
 }
 
-//TESTING
+//CARDS SHOW ADMIN
 .app {
   position: relative;
   padding-left: .5em;
@@ -338,7 +359,7 @@ main {
   }
   .app {
     display: grid;
-    margin: 3em auto;
+    margin: 1em auto;
     grid-template-rows: 3em 85%;
     grid-template-columns: 1.4fr 1fr;
     padding-left: 2em;

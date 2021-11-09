@@ -3,17 +3,17 @@
 }
 
 .header-section {
-  display: flex;
-  justify-content: space-between;
+  margin-top: 20px;
   padding: 10px;
+  list-style: none;
+
+  p {
+    text-align: justify;
+    font-size: 16px;
+  }
 }
 
-#route-header {
-  width: 70%;
-}
-
-#route-description {
-  width: 30%;
-  text-align: center;
-  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+#p-description {
+  margin-top: 10px;
+  text-align: justify;
 }
