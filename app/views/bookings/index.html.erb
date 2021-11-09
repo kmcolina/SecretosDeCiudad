@@ -2,17 +2,23 @@
   <h1>My Bookings</h1>
 </div>
 
-
-<div class="container" >
+<div class="container">
   <div class="cards">
     <% @bookings.each do |booking| %>
-      <div class="card">
-        <div class="card-body">
-
-          <p style="margin-top: 15px"><strong><%= booking.route.name %></strong></p>
-          <p><strong>Check-In: </strong><%= booking.check_in %></p>
+      <div class="card card-has-bg click-col p-4" style="background-image:url(<%= cl_image_path booking.route.photo.key %>);">
+        <div style="transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);  position:relative;
+          z-index:20;">
+          <div class="title-booking text-center d-flex align-items-center" style="height: 165px">
+            <h3 id="name-booking"><%= booking.route.name %></h3>
+          </div>
+          <div class="descriptio-booking d-flex justify-content-between">
+            <% if booking.status_pago.nil? %>
+              <p><strong>Pago Pendiente</strong></p>
+              <%= link_to "Pagar", edit_booking_path(booking), class: "btn btn-dark" %>
+            <% end %>
+          </div>
         </div>
-      </div>
+        </div>
     <% end %>
   </div>
 </div>

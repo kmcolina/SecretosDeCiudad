@@ -25,6 +25,16 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_pago_user)
+    redirect_to bookings_path
+  end
+
   private
 
   def set_booking
@@ -33,6 +43,10 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:check_in)
+  end
+
+  def booking_pago_user
+    params.require(:booking).permit(:pago_user)
   end
 
 

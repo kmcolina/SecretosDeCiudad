@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: rgb(32, 106, 93);
+   position:relative;
+  z-index:20;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -12,13 +14,20 @@
 }
 
 .btn-nav-color {
-  background-color: $green-claro;
+  background-color: rgba(191, 220, 174, 0.8)!important;
+  opacity: 0.6;
   margin-left: 3px;
   border-radius: 8px;
+  color:black;
 }
+.btn-nav-color:hover{
+  color:white;
+  background-color: rgba(191, 220, 174, 0.4)
+}
+
 .color-letters{
   color: $green-claro !important;
 }
 .logo{
-  width: 1000px;
+  width: 80%;
 }

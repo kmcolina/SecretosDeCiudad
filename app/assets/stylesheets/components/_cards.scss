@@ -6,7 +6,7 @@
   grid-gap: 16px;
   margin-bottom: 40px;
 }
-.wrapper{margin:10vh}
+.wrapper{margin:5vh}
 
 .card{
   border: none;
@@ -229,4 +229,51 @@ ul .card-show {
   height: 100%;
   width: 45%;
   object-fit: cover;
+}
+
+.card-user {
+  width: 80%;
+  height: 60px;
+  margin-top: 5px;
+  //box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+    .card-user-info{
+    //text-align: center;
+    padding-left: 20px;
+    padding-top: 5px;
+
+      h3 {
+        //text-align: left;
+        margin: 0;
+        padding: 0;
+        //margin-left: 10px;
+        font-size: 16px;
+      }
+
+      h4 {
+        //text-align: left;
+        margin: 0;
+        padding: 0;
+        //margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+}
+//CARD DE PAGO
+.card-pago{
+  padding: 40px;
+}
+.icon-visa{
+  color:#0530AD
+}
+
+
+//CARD MY BOOKING
+#name-booking{
+  transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+  // background: rgb(255,255,255);
+
 }
