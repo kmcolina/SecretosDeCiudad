@@ -8,72 +8,37 @@
 </div>
 
 <div class="container">
+
   <div class="container d-flex justify-content-between">
+
     <div class="first-col">
+
       <%# Cards %>
       <div class="row">
         <div>
           <ul class="ul-show">
-            <li class="li-description"><%= @route.description %></li>
-
-            <%# Tendencias %>
-            <div id="trending-show">
-              <div class="row">
-                <div>
-                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" alt="First slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" alt="Second slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" alt="Third slide">
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                  <strong>Tendencias: </strong><%= @route.places_interest %>
+          <p class=" card-description li-description mt-5"><%= @route.description %></p>
+          <div class="">
+            <%@lugares.each do |lugar| %>
+              <div class="card-show-places">
+                <div class="app">
+                  <header style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path lugar.photo.key %>);">
+                  </header>
+                  <main>
+                    <h3><%= lugar.name %></h3>
+                    <p><%= lugar.address %></p>
+                    <p><%= lugar.description %></p>
+                  </main>
                 </div>
               </div>
-            </div>
-
-      <div class="">
-        <%@lugares.each do |lugar| %>
-          <div class="card-show-places">
-            <div class="app">
-              <header style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path lugar.photo.key %>);">
-              </header>
-              <main>
-                <h3><%= lugar.name %></h3>
-                <p><%= lugar.address %></p>
-                <p><%= lugar.description %></p>
-              </main>
-            </div>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-
-
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="second-col">
+    <div class="second-col mt-5">
       <%# mapa %>
       <div id="map" class="card"
         style="height: 30%;"
@@ -88,14 +53,14 @@
     <div id="reviews">
       <%# Add Review %>
       <div class="d-flex justify-content-between">
-        <div id="add-review" class="bg-white rounded p-3 card">
-          <h3>Add a Review</h3>
+        <div id="add-review" >
+          <h3 class = "d-flex justify-content-center mb-3">¿Qué te pareció la ruta?</h3>
           <%= simple_form_for([@route, @review]) do |f| %>
-            <%= f.input :comment, placeholder: "Add your review here..." %>
-            <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: "review_rating" } %>
+            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false %>
+            <%= f.input :rating, as: :select, collection: (1..5), label: false, required: true, prompt: "What's your rating", input_html: { id: "review_rating", class: "estrella" } %>
             <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
-            <%= f.submit class: "btn btn-dark", value: "Review" %>
-            <small><em class="text-muted">Login to post a review!</em></small>
+            <%= f.submit class: "btn btn-dark", value: "Comentar" %>
+            <small><em class="text-muted">inicia sesión para comentar!</em></small>
           <% end %>
         </div>
 

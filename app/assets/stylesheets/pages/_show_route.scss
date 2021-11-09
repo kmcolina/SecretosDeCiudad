@@ -27,6 +27,7 @@
 
 #reviews {
   margin-top: 20px;
+
 }
 
 .first-col {
@@ -41,7 +42,14 @@
 
 #add-review {
   width: 50%;
-  border-radius: 8px;
+  border-radius: 8px !important;
+  border: none;
+  overflow:hidden;
+  border-radius:8px;
+
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+  margin: 10px;
+  padding:30px;
 }
 
 #h3-review {
@@ -72,4 +80,10 @@
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: center;
+}
+
+
+#review_comment {
+    border-radius: 20px;
+
 }
