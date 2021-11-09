@@ -272,8 +272,13 @@ ul .card-show {
 
 
 //CARD MY BOOKING
-#name-booking{
+.name-booking{
   transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
   // background: rgb(255,255,255);
+  background: linear-gradient(180deg, rgba(253, 249, 249, 0.7) 100%, rgb(225, 255, 250) 90%);
+  border-radius: 8px;
+}
 
+.pagar-booking{
+  color:red;
 }
