@@ -9,12 +9,24 @@
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <%= cl_image_tag  @route.photo.key, class:"d-block w-100" %>
+        <%= cl_image_tag  @route.photo.key, class:"d-block w-100", style: "opacity: 0.8" %>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container text-carousel">
+            <h1><strong><%= @route.name %></strong></h1>
+            <p>Secretos de Ciudad</p>
+          </div>
+        </div>
       </div>
 
       <%@lugares.each do |lugar| %>
         <div class="carousel-item ">
-          <%= cl_image_tag lugar.photo.key, class:"d-block w-100" %>
+          <%= cl_image_tag lugar.photo.key, class:"d-block w-100", style: "opacity: 0.8" %>
+          <div class="carousel-caption d-none d-md-block">
+            <div class="container text-carousel">
+              <h1><strong><%= @route.name %></strong></h1>
+              <p>Secretos de Ciudad</p>
+            </div>
+          </div>
         </div>
       <% end %>
     </div>
@@ -29,14 +41,6 @@
     </a>
   </div>
 </div>
-
-<div class="container">
-  <h1><%= link_to routes_path do %>
-    <i class="fas fa-chevron-left"></i>
-  <% end %><strong><%= @route.name %></strong></h1>
-  <p>Secretos de Ciudad</p>
-</div>
-
 
 <div class="container">
 
