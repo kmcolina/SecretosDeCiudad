@@ -7,6 +7,14 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :new]
   end
   resources :places
+
+  resources :bookings, only: :index
+  resources :guides, only: :index do
+    resources :users, only: [:create, :new]
+  end
+  resources :users, only: :index
+
   resources :bookings, only: [:index, :edit, :update]
   get '/routes/:id/:fecha', to: 'routes#show', as: 'guide_show'
+
 end
