@@ -67,7 +67,7 @@ puts "Iniciando creacion de datos en la BD"
   route2 = Route.new(name: 'Arquitectura con estilo', description: 'Una ruta llena de estructuras arquitectonicas de distintos estilos neogótico, Neoclásico y neobarroco que se encuentran muy cerca unos de otros y que ademas tienen una historia que contar', duration: 2, places_interest: 'Cafeteria, Centro Comercial', available_dates:'20211015,20211120', price: 10, user_id: guide2.id)
   route2.save!
 
-  route3 = Route.new(name: 'Rascacielos', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica, muy cerca de ellos le siguen grandes edificios que no se quedan atras.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
+  route3 = Route.new(name: 'Rascacielos en Caracas', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica, muy cerca de ellos le siguen grandes edificios que no se quedan atras.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
   route3.save!
 
   route4 = Route.new(name: 'Los 7 Templos', description: 'Tradiciones de semana santa que son joyas arquitectonicas que guarda la ciudad, estilo Neoclasico, Neogótico, historias y leyendas que se unen', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211002,20211106', price: 10,user_id: guide3.id)
@@ -76,13 +76,18 @@ puts "Iniciando creacion de datos en la BD"
   route5 = Route.new(name: 'Las esquinas de Caracas', description: 'Una caracteristica particular de la ciudad, la torre, principal, las monjas, sociedad, descubre el porque de estos curiosos nombres', duration: 6, places_interest: 'Cafe bolivar, Restaurante, Cocada', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
   route5.save!
 
+  route6 = Route.new(name: 'Inspiracion Parisina', description: 'Caracas y Paris tiene muchas mas cosas en comun de lo que imaginas, calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
+  route6.save!
+
+
+
 
 # creado lugares
   #para la ruta 0 (casco historico)
-    place1 = Place.new(name: 'plaza bolivar', description: 'uno de los espacios públicos más importantes y reconocidos de Venezuela, se encuentra ubicada en el centro histórico de esa ciudad, en ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini es una réplica de la estatua de la Plaza Bolívar de Lima en Perú realizada por la Fundición Müller. Mide 4 metros de altura, en ella Bolívar está sobre un caballo encabritado sostenido por sus patas traseras apoyado sobre el pedestal que posee dos gradas.', address: 'Esquina La Torre, caracas', route_id: route0.id, latitude: 10.5060739, longitude: -66.9150769  )
+    place1 = Place.new(name: 'Plaza Bolívar', description: 'Uno de los espacios públicos más importantes y reconocidos de Venezuela, se encuentra ubicada en el centro histórico de esa ciudad, en ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini es una réplica de la estatua de la Plaza Bolívar de Lima en Perú realizada por la Fundición Müller.', address: 'Esquina La Torre, Caracas', route_id: route0.id, latitude: 10.5060739, longitude: -66.9150769  )
     place1.save!
 
-    place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de gran importancia durante los años previos y posteriores a la independencia de la nacion, es un edificio de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes. El 16 de febrero de 1979, la Casa Amarilla es designada como Monumento Histórico Nacional.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.506335, longitude: -66.9161692)
+    place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de gran importancia durante los años previos y posteriores a la independencia de la nacion, es un edificio de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.506335, longitude: -66.9161692)
     place2.save!
 
     place3 = Place.new(name: 'Concejo Municipal', description: 'De estilo arquitectonico Ecléctico, francés. Antiguo seminario  y universidad Rey Felipe V de España. la capilla del seminario y universidad son escenario de tres días de deliberaciones del Congreso Constituyente que culminaron con la Firma del Acta de Independencia de Venezuela el 5 de julio de 1811.', address: 'Esquina Las Monjas, Caracas' , route_id: route0.id, latitude: 10.5053666, longitude: -66.9154536)
@@ -112,7 +117,9 @@ puts "Iniciando creacion de datos en la BD"
     place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: 'se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.506699, longitude: -66.9157967)
     place9.save!
 
-
+   #para la ruta 6
+    place10 = Place.new(name: 'Arco de la Federación', description: 'monumento situado en el municipio libertador en el oeste del distrito metropolitano de Caracas, Venezuela, ubicado específicamente dentro del Parque Ezequiel Zamora (El Calvario) en el centro-oeste de la capital. Es de estilo colonial, inspirado en el arco del triunfo de Paris.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
+    place10.save!
   # cargando imagen de cloudinary a mis rutas
 
   file_1 = URI.open('https://images.unsplash.com/photo-1596512489788-e9408b84274a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhc2NvJTIwaGlzdG9yaWNvfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
@@ -147,6 +154,12 @@ puts "Iniciando creacion de datos en la BD"
   route5.save!
 
 
+  file_1 = URI.open('https://images.unsplash.com/photo-1520939817895-060bdaf4fe1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cGFyaXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+  route6.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
+  route6.save!
+
+
   # imagenes para los lugares de la ruta 1
 
   file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa_Natal_Del_Libertador_Simon_Bolivar.JPG/1280px-Casa_Natal_Del_Libertador_Simon_Bolivar.JPG')
@@ -165,6 +178,15 @@ puts "Iniciando creacion de datos en la BD"
 
   place3.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
   place3.save!
+
+
+  #imagenes para los lugares de la ruta 6
+
+    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/3/3d/Arco_federacion_libertador_caracas.jpg')
+
+  place10.photo.attach(io: file_1, filename: 'place_10.jpg', content_type: 'image/jpg')
+  place10.save!
+
 
 # creo bookings
   # para la ruta 0

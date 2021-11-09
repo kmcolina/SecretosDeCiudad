@@ -13,10 +13,7 @@
 }
 
 .second-col {
-  margin-top: 10px;
-  width: 45%;
-  margin-left: 2px;
-  padding: 5px;
+grid-template-columns: 1fr;
 }
 
 .scd-col-card-guide {
@@ -27,11 +24,11 @@
 
 #reviews {
   margin-top: 20px;
+
 }
 
 .first-col {
-  width: 50%;
-  margin-right: 10px;
+grid-template-columns: 1fr 1fr 1fr;
 }
 
 #map{
@@ -41,11 +38,26 @@
 
 #add-review {
   width: 50%;
-  border-radius: 8px;
+  border-radius: 8px !important;
+  border: none;
+  overflow:hidden;
+  border-radius:8px;
+
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+  margin: 10px;
+  padding:30px;
 }
 
-#h3-review {
+.h3-review {
   margin-top: 20px;
+  justify-content: center;
+
+	background: linear-gradient(90deg, rgba(24,91,7,1) 0%, rgb(8, 145, 33) 52%, rgb(5, 128, 23) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    margin: 40px;
+
+
 }
 
 //Banner
@@ -74,4 +86,10 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   text-align: center;
   text-transform: capitalize;
+}
+
+
+#review_comment {
+    border-radius: 20px;
+
 }
