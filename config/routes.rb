@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
   resources :places
 
-  resources :bookings, only: :index
+  
   resources :guides, only: :index do
     resources :users, only: [:create, :new]
   end
