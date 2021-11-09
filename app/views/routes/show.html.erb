@@ -51,20 +51,23 @@
               </div>
             </div>
 
-            <li><%@lugares.each do |lugar| %>
-              <ul class="card-show">
-                <% if lugar.photo.attached? %>
-                  <%= cl_image_tag lugar.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% else %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-                <% end %>
+      <div class="">
+        <%@lugares.each do |lugar| %>
+          <div class="card-show-places">
+            <div class="app">
+              <header style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path lugar.photo.key %>);">
+              </header>
+              <main>
+                <h3><%= lugar.name %></h3>
+                <p><%= lugar.address %></p>
+                <p><%= lugar.description %></p>
+              </main>
+            </div>
+          </div>
+        <% end %>
+      </div>
 
-                <li id="name-show"><%= lugar.name %></li>
-                <li><%= lugar.description %></li>
-                <li><strong>Dirección: </strong><%= lugar.address %></li>
-              </ul>
-              <% end %>
-            </li>
+
           </ul>
         </div>
       </div>
