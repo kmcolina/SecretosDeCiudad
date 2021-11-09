@@ -5,15 +5,16 @@
 <div class="container">
   <div class="cards" >
     <% @bookings.each do |booking| %>
-      <div class="card card-has-bg click-col p-4" style="background-image:url(<%= cl_image_path booking.route.photo.key %>);">
+      <div class="card card-has-bg click-col p-4" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path booking.route.photo.key %>);">
         <div style="transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);  position:relative;
           z-index:20;">
-          <div class="title-booking text-center d-flex align-items-center" style="height: 165px">
+          <div class="title-booking text-center d-flex align-items-center flex-column" style="height: 165px">
+            <p class="fecha-booking">Fecha: <%= booking.check_in %></p>
             <h3 class="name-booking"><%= booking.route.name %></h3>
           </div>
-          <div class="descriptio-booking d-flex justify-content-between">
+          <div class="descriptio-booking d-flex justify-content-between pago-div">
             <% if booking.status_pago.nil? %>
-              <p class="name-booking pagar-booking"><strong>Pago Pendiente</strong></p>
+              <p class="name-booking pagar-booking"><strong>Pago Pendiente </strong></p>
               <%= link_to "Pagar", edit_booking_path(booking), class: "btn btn-dark" %>
             <% end %>
           </div>

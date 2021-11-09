@@ -36,3 +36,23 @@
 .content .tab4:after{
     left: 303px;
 }
+.letter-banner{
+  color:rgba(255, 255, 255, 0.575) !important;
+}
+.letter-banner:hover{
+  color:black !important;
+}
+
+.btn-nav-color2 {
+  background-color: rgba(191, 220, 174, 0.534)!important;
+  font-weight: bolder;
+  opacity: 0.6;
+  margin-left: 3px;
+  border-radius: 8px;
+  color:rgb(255, 255, 255) !important;
+}
+.btn-nav-color2:hover{
+  color:black !important;
+  background-color: rgba(191, 220, 174, 0.4);
+  opacity: 0.5;
+}
