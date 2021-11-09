@@ -6,7 +6,7 @@
   grid-gap: 16px;
   margin-bottom: 40px;
 }
-.wrapper{margin:10vh}
+.wrapper{margin:5vh}
 
 .card{
   border: none;
@@ -261,4 +261,11 @@ ul .card-show {
         font-size: 14px;
       }
     }
+}
+//CARD DE PAGO
+.card-pago{
+  padding: 40px;
+}
+.icon-visa{
+  color:#0530AD
 }
