@@ -48,8 +48,16 @@ grid-template-columns: 1fr 1fr 1fr;
   padding:30px;
 }
 
-#h3-review {
+.h3-review {
   margin-top: 20px;
+  justify-content: center;
+
+	background: linear-gradient(90deg, rgba(24,91,7,1) 0%, rgb(8, 145, 33) 52%, rgb(5, 128, 23) 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+    margin: 40px;
+
+
 }
 
 //Banner
