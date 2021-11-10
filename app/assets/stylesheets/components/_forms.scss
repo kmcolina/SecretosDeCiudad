@@ -55,6 +55,16 @@
   }
 }
 
+.form-links-forgot {
+  margin-bottom: 0;
+  padding-top: 20px;
+  text-align: end;
+
+  a {
+    color: #206A5D;
+  }
+}
+
 .form-login {
   background-color: rgba(255, 255, 255, 0.411);
   padding: 30px;
@@ -69,4 +79,14 @@
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+#back-arrow {
+  color: white;
+  opacity: 0.3;
+}
+
+.title-login{
+  text-align: center;
+  margin-top: 15px;
 }

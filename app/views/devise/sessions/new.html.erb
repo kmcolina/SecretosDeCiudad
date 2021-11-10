@@ -4,7 +4,7 @@
       <div id="login-img">
         <%= image_tag("https://res.cloudinary.com/dmsb7zzg3/image/upload/v1636423788/caracas1_wqenvk.png", class: "logo") %>
       </div>
-      <h5 class="new-post"><%= link_to root_path do %>
+      <h5 class="new-post title-login"><%= link_to root_path do %>
         <i class="fas fa-chevron-left" id="back-arrow"></i>
       <% end %> Iniciar Sesión</h5>
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
