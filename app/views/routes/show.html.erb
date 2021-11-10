@@ -14,6 +14,7 @@
           <div class="container text-carousel"  style="color:white">
             <h1><strong><%= @route.name %></strong></h1>
             <p>Secretos de Ciudad</p>
+            <h5 class = "container descrip text-justify"><%= @route.description %></h5>
           </div>
         </div>
       </div>
@@ -25,6 +26,7 @@ vxcvxcvx
             <div class="container text-carousel" style="color:white">
               <h1><strong><%= @route.name %></strong></h1>
               <p>Secretos de Ciudad</p>
+              <h5 class = "container descrip text-justify"><%= @route.description %></h5>
             </div>
           </div>
         </div>
@@ -42,14 +44,14 @@ vxcvxcvx
   </div>
 </div>
 
-<div class="container">
+<div class="container show-container-mar ">
 
   <div class="container column-show" >
       <%# Cards %>
       <div class="row">
         <div>
           <ul class="ul-show">
-          <p class=" card-description li-description mt-5"><%= @route.description %></p>
+
           <div class="">
             <%@lugares.each do |lugar| %>
               <div class="card-show-places">
@@ -85,30 +87,34 @@ vxcvxcvx
       <%# Add Review %>
       <div class="d-flex justify-content-between">
         <div id="add-review" >
-          <h3 class = "d-flex justify-content-center mb-3">¿Qué te pareció la ruta?</h3>
-          <%= simple_form_for([@route, @review]) do |f| %>
-            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false %>
+          <h3 class = "d-flex justify-content-center mb-3 review-show-marr">¿Qué te pareció la ruta?</h3>
+          <%= simple_form_for([@route, @review] ) do |f| %>
+            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false , :input_html => { :class => "review-show-mar" } %>
             <%= f.input :rating, as: :select, collection: (1..5), label: false, required: true, prompt: "What's your rating", input_html: { id: "review_rating", class: "estrella" } %>
             <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
+            <div class = "btn-show-mar">
             <%= f.submit class: "btn btn-dark", value: "Comentar" %>
+
             <small><em class="text-muted">inicia sesión para comentar!</em></small>
+          </div >
           <% end %>
         </div>
 
         <%# Card del guía %>
         <div class="scd-col-card-guide">
           <div class="card-guide">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-photo", alt: "avatar-large" %>
+
+            <% guide = @route.user_id %>
+            <% @foto_guide = User.find(guide) %>
+            <%= cl_image_tag @foto_guide.avatar.key , class: "card-photo", alt: "avatar-large" %>
+
             <div class="card-guide-info">
-              <h3>Título del card del guía</h2>
-              <h4>Descripción del guía</h3>
-              <p><strong>Duración: </strong><%= @route.duration %> hrs
-              </p>
-              <p><strong>Fechas disponibles: </strong><% @fechas_all.each do |date|%>
-                <li><%= date %></li>
-              <% end %>
-              </p>
-              <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
+              <h3><%= @route.name %></h3>
+              <h4><strong>Costo de la ruta:</strong> $<%= @route.price %></h4>
+              <p><strong>Duración: </strong><%= @route.duration %> hrs</p>
+              <div class="d-flex justify-content-center align-items-center">
+                <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
+              </div>
             </div>
           </div>
         </div>
@@ -116,7 +122,7 @@ vxcvxcvx
       </div>
 
       <%# View Reviews %>
-      <div >
+      <div class = "show-review-mar">
         <h3 class="h3-review d-flex justify-content-center;">Opiniones</h3>
         <% if @route.reviews.empty? %>
           <small><em class="text-muted">Be the first to comment!</em></small>
@@ -146,6 +152,3 @@ vxcvxcvx
     </div>
   </div>
 </div>
-
-
-<a href="https://wa.me/5211234567890?text=Saludos,%20espero%20la%20ruta%20con%20entusiasmo" class="whatsapp" target="_blank"> <i class="fab fa-whatsapp whatsapp-icon"></i></a>
