@@ -1,9 +1,10 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @route.photo.key %>);">
-  <div class="container">
-    <p><%= @route.name %></p>
-  </div>
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(<%= cl_image_path @route.photo.key %>);;
+box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+    <div class="container">
+      <h1 ><%= @route.name %></h1>
+      <p style><%= current_user.email %></p>
+    </div>
 </div>
-
 <div class="d-flex">
   <%# Sidebar %>
   <div class="sidebar-sticky border-right">
@@ -23,11 +24,11 @@
       </ul>
   </div>
 
-  <div class="container">
+  <div class="container mt-2">
 
     <ul class="p-0">
       <div>
-        <div class="header-section">
+        <div class="header-section mt-5">
           <p><%= @route.description %></p>
         </div>
         <div class="cards-show-places">

@@ -1,4 +1,5 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+<header class="header-2">
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-top">
  <%= link_to routes_path, class: "nav-item " do %>
     <%= image_tag("https://res.cloudinary.com/dmsb7zzg3/image/upload/v1636423788/caracas1_wqenvk.png", class: "logo") %>
   <% end %>
@@ -16,15 +17,15 @@
           <% if current_user && current_user.avatar.attached? %>
             <%= cl_image_tag current_user.avatar.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <% else %>
-            <%= image_tag "https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5vbnltb3VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle hover-imagen", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+            <%= image_tag "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c21pbGV8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle hover-imagen", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right drop-photo transition-elements" aria-labelledby="navbarDropdown">
 
           <% if current_user && current_user.admin? %>
-            <%= link_to "Crear Ruta", "#", class: "dropdown-item hover-letter" %>
-            <%= link_to "Crear Lugar", "#", class: "dropdown-item hover-letter" %>
-            <%= link_to "Crear Guia", "#", class: "dropdown-item hover-letter" %>
-            <%= link_to "Editar Perfil", "#", class: "dropdown-item hover-letter" %>
+            <%= link_to "Crear Ruta", new_route_path, class: "dropdown-item hover-letter" %>
+            <%= link_to "Crear Lugar",new_place_path, class: "dropdown-item hover-letter" %>
+            <%= link_to "Crear Guia", new_guide_user_path(1), class: "dropdown-item hover-letter" %>
+            <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item hover-letter" %>
           <%  elsif current_user && current_user.guide? %>
             <%= link_to "Editar Perfil", "#", class: "dropdown-item hover-letter" %>
@@ -55,3 +56,4 @@
     </ul>
   </div>
 </div>
+  </header>
