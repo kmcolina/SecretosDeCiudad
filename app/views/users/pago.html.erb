@@ -1,0 +1,69 @@
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1576470290805-d094d04aba29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);">
+    <div class="container">
+      <p>Administrar rutas</p>
+    </div>
+</div>
+
+<div class="d-flex">
+  <%# Sidebar %>
+  <div class="sidebar-sticky border-right">
+    <ul class="nav flex-column">
+      <li>
+        <%= link_to "Crear Ruta", new_route_path, class:"nav-link title" %>
+      </li>
+      <li>
+        <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
+      </li>
+      <li>
+        <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
+      </li>
+      <li>
+        <%= link_to "Ver Rutas", routes_path, class:"nav-link title" %>
+      </li>
+    </ul>
+  </div>
+
+  <%# Tabla %>
+  <div class="container">
+    <div class="">
+      <table class="table">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Fechas ruta</th>
+            <th scope="col">Numero Pago</th>
+            <th scope="col">Estado</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |book| %>
+            <tr>
+            <% usr = User.find(book.user_id)%>
+            <td><%=usr.email %></td>
+              <td><%=book.check_in%></td>
+              <td><%book.pago_user %></td>
+              <%if book.status_pago.nil?%>
+                  <td>Por Pagar</td>
+              <%else%>
+                <td>Pago</td>
+              <%end%>
+              <td> <p><%= link_to "Actualizar", update_pago_path(book), method: :patch %></p></td>
+              <td><%= link_to edit_booking_path(book) do %>
+                <i class="far fa-edit" style="color:#206A5D"></i><% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<%= console%>
