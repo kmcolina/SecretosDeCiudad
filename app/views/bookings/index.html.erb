@@ -1,8 +1,11 @@
-<div class="banner-bookings">
-  <h1>My Bookings</h1>
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/_hRCJ_agJuI/1600x900);;
+box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+    <div class="container">
+      <h1 >Mis Rutas</h1>
+      <p style><%= current_user.email %></p>
+    </div>
 </div>
-
-<div class="container">
+<div class="container mt-5" >
   <div class="cards" >
     <% @bookings.each do |booking| %>
       <div class="card card-has-bg click-col p-4" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path booking.route.photo.key %>);">
