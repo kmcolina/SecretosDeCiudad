@@ -1,4 +1,4 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/_hRCJ_agJuI/1600x900);;
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://source.unsplash.com/_hRCJ_agJuI/1600x900);;
 box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
     <div class="container">
       <h1 >Mis Rutas</h1>
@@ -8,7 +8,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
 <div class="container mt-5" >
   <div class="cards" >
     <% @bookings.each do |booking| %>
-      <div class="card card-has-bg click-col p-4" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path booking.route.photo.key %>);">
+      <div class="card card-has-bg click-col p-4" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path booking.route.photo.key %>);">
         <div style="transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);  position:relative;
           z-index:20;">
           <div class="title-booking text-center d-flex align-items-center flex-column" style="height: 165px">

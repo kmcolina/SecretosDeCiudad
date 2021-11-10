@@ -45,7 +45,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
             <% usr = User.find(book.user_id)%>
             <td><%=usr.email %></td>
               <td><%=book.check_in%></td>
-              <td><%book.pago_user %></td>
+              <td><%=book.pago_user %></td>
               <%if book.status_pago.nil?%>
                   <td>Por Pagar</td>
               <%else%>
