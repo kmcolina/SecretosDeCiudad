@@ -215,7 +215,7 @@ ul .card-show {
 //GUIDE
 .card-guide {
   width: 100%;
-  height: auto;
+  height: 250px;
   border-radius: 8px;
   margin-top: 15px;
   margin-bottom: 15px;
@@ -261,15 +261,14 @@ ul .card-show {
 
     #btn-book {
       text-align: right;
-      margin-top: 60px;
 
     }
   }
 }
 
 .card-photo {
-  border-radius: 8px;
-  height: 100%;
+  border-radius: 8px 0px 0px 8px;
+  height: 250px;
   width: 45%;
   object-fit: cover;
 }
@@ -569,6 +568,7 @@ main {
 	left: 0;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
+  background-size: cover;
 }
 
 .adelante{
