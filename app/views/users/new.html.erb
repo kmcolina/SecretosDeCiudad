@@ -1,4 +1,4 @@
-<div class="container col-md-7 mt-4 mb-4 d-flex">
+<div class="container col-md-7 mt-4 mb-4 d-flex forms-mar">
   <div class="form-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
   </div>
   <div class="form">
@@ -33,6 +33,7 @@
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
+        <div class="form-photo"><%= f.input :avatar, as: :file, label: :Foto, required: true %></div>
         <div class="form-section">
           <%= f.input :rol,
                       label: :Rol,

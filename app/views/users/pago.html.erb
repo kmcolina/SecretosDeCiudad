@@ -26,7 +26,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
   </div>
 
   <%# Tabla %>
-  <div class="container mt-5">
+  <div class="container mt-5 admin-pago">
     <div class="">
       <table class="table">
         <thead class="thead-green">
@@ -35,7 +35,6 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
             <th scope="col">Fechas ruta</th>
             <th scope="col">Numero Pago</th>
             <th scope="col">Estado</th>
-            <th></th>
             <th></th>
           </tr>
         </thead>
@@ -51,10 +50,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
               <%else%>
                 <td>Pago</td>
               <%end%>
-              <td> <p><%= link_to "Actualizar", update_pago_path(book), method: :patch %></p></td>
-              <td><%= link_to edit_booking_path(book) do %>
-                <i class="far fa-edit" style="color:#206A5D"></i><% end %>
-              </td>
+              <td> <p><%= link_to "Actualizar", update_pago_path(book), method: :patch, class: "btn btn-dark" %></p></td>
             </tr>
           <% end %>
         </tbody>
