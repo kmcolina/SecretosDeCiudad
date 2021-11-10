@@ -125,10 +125,10 @@ puts "Iniciando creacion de datos en la BD"
 
 
   #para la ruta 2
-    place5 = Place.new(name: 'Palacio de las Academias', description: 'Edificación Colonial con estilo neogótico de Caracas, Venezuela ubicada en la Avenida Universidad', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.504631, longitude: -66.9173472)
+    place5 = Place.new(name: 'Palacio de las Academias', description: 'Edificación Colonial con estilo neogótico de Caracas, Venezuela ubicada en la Avenida Universidad', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.5046717, longitude: -66.9168704)
     place5.save!
 
-    place6 = Place.new(name: 'Palacio Federal Legislativo', description: 'De estilo arquitectonico Neoclásico. El Capitolio Federal desde 1877 fue sede de los tres Poderes de la Nación.', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.504631, longitude: -66.9173472)
+    place6 = Place.new(name: 'Palacio Federal Legislativo', description: 'De estilo arquitectonico Neoclásico. El Capitolio Federal desde 1877 fue sede de los tres Poderes de la Nación.', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.505235, longitude: -66.9165726)
     place6.save!
 
   #para la ruta 3
