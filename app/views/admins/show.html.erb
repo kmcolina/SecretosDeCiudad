@@ -28,24 +28,24 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
 
     <ul class="p-0">
       <div>
-        <div class="header-section mt-5">
+        <div class="header-section mt-5 ">
           <p><%= @route.description %></p>
         </div>
         <div class="cards-show-places">
           <%@lugares.each do |lugar| %>
               <ul class="card-show-shadow">
-                <p><strong><%= lugar.name %></strong></p>
+                <p class = "d-flex justify-content-center texts-mar "><strong><%= lugar.name %></strong></p>
                 <% if lugar.photo.attached? %>
                   <%= cl_image_tag lugar.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                 <% else %>
                   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
                 <% end %>
-                <p><strong>Dirección: </strong><%= lugar.address %></p>
-                <p id="p-description"><%= lugar.description %></p>
+                <p class = " mar-texto-card "><strong>Dirección: </strong><%= lugar.address %></p>
+                <p id="p-description" ><%= lugar.description %></p>
               </ul>
           <% end %>
         </div>
-        <table class="table">
+        <table class="table extra-mar">
           <thead class="thead-green">
               <tr class="tr-places">
                 <th scope="col">DURACIÓN</th>
