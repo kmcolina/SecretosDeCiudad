@@ -107,11 +107,11 @@
             <% guide = @route.user_id %>
             <% @foto_guide = User.find(guide) %>
             <%= cl_image_tag @foto_guide.avatar.key , class: "card-photo", alt: "avatar-large" %>
-
             <div class="card-guide-info">
               <h3><%= @route.name %></h3>
               <h4><strong>Costo de la ruta:</strong> $<%= @route.price %></h4>
               <p><strong>Duración: </strong><%= @route.duration %> hrs</p>
+              <p><strong>Guia: </strong>nombre apellido</p>
               <div class="d-flex justify-content-center align-items-center">
                 <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
               </div>
