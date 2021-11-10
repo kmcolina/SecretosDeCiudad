@@ -87,13 +87,16 @@
       <%# Add Review %>
       <div class="d-flex justify-content-between">
         <div id="add-review" >
-          <h3 class = "d-flex justify-content-center mb-3">¿Qué te pareció la ruta?</h3>
-          <%= simple_form_for([@route, @review]) do |f| %>
-            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false %>
+          <h3 class = "d-flex justify-content-center mb-3 review-show-mar">¿Qué te pareció la ruta?</h3>
+          <%= simple_form_for([@route, @review] ) do |f| %>
+            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false , :input_html => { :class => "review-show-mar" } %>
             <%= f.input :rating, as: :select, collection: (1..5), label: false, required: true, prompt: "What's your rating", input_html: { id: "review_rating", class: "estrella" } %>
             <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
+            <div class = "btn-show-mar">
             <%= f.submit class: "btn btn-dark", value: "Comentar" %>
+
             <small><em class="text-muted">inicia sesión para comentar!</em></small>
+          </div >
           <% end %>
         </div>
 
@@ -102,15 +105,12 @@
           <div class="card-guide">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-photo", alt: "avatar-large" %>
             <div class="card-guide-info">
-              <h3>Título del card del guía</h2>
-              <h4>Descripción del guía</h3>
-              <p><strong>Duración: </strong><%= @route.duration %> hrs
-              </p>
-              <p><strong>Fechas disponibles: </strong><% @fechas_all.each do |date|%>
-                <li><%= date %></li>
-              <% end %>
-              </p>
-              <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
+              <h3><%= @route.name %></h3>
+              <h4><strong>Costo de la ruta:</strong> $<%= @route.price %></h4>
+              <p><strong>Duración: </strong><%= @route.duration %> hrs</p>
+              <div class="d-flex justify-content-center align-items-center">
+                <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
+              </div>
             </div>
           </div>
         </div>
