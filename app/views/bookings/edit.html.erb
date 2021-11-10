@@ -1,6 +1,11 @@
-
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/_hRCJ_agJuI/1600x900);;
+box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+    <div class="container">
+      <h1 >Medios de Pago</h1>
+      <p style><%= current_user.email %></p>
+    </div>
+</div>
 <div class="container col-md-12 mt-5">
-    <h1 class="d-flex justify-content-center">Medios de Pago</h1>
     <div class="cards d-flex justify-content-center">
       <div class="card">
         <div class="card-pago">
@@ -27,10 +32,10 @@
 
 
 <div class="container col-md-6 mt-2">
-  <h1 class="d-flex justify-content-center">Numero de Referencia</h1>
   <div class="cards d-flex justify-content-center">
     <div class="card">
       <div class="card-pago">
+      <p class =" title-table d-flex justify-content-center">Numero De Referencia</p>
         <%= simple_form_for(@booking) do |f| %>
         <% if @booking.errors.any? %>
           <div class="errors-container">
