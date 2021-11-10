@@ -18,7 +18,7 @@
           </div>
         </div>
       </div>
-vxcvxcvx
+
       <%@lugares.each do |lugar| %>
         <div class="carousel-item" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path lugar.photo.key %>); background-size: cover;">
 
@@ -47,38 +47,31 @@ vxcvxcvx
 <div class="container show-container-mar ">
 
   <div class="container column-show" >
-      <%# Cards %>
-      <div class="row">
-        <div>
-          <ul class="ul-show">
-
-          <div class="">
-            <%@lugares.each do |lugar| %>
-              <div class="card-show-places">
-                <div class="app">
-                  <header style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path lugar.photo.key %>);">
-                  </header>
-                  <main>
-                    <h3><%= lugar.name %></h3>
-                    <p><%= lugar.address %></p>
-                    <p><%= lugar.description %></p>
-                  </main>
-                </div>
-              </div>
-
-            <% end %>
+    <%# Cards %>
+    <div class="">
+    <%@lugares.each do |lugar| %>
+      <div class="tarjeta-wrap">
+        <div class="tarjeta">
+          <div class="adelante" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(<%= cl_image_path lugar.photo.key %>);">
+            <h3 class="name-flip-card"><%= lugar.name %></h3>
           </div>
-
-          </ul>
+          <div class="atras" style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url(<%= cl_image_path lugar.photo.key %>);">
+            <p><%= lugar.description %></p>
+          </div>
         </div>
       </div>
+    <% end %>
+	</div>
 
-      <%# mapa %>
-      <div id="map" class="card mt-5 mb-5"
+
+    <%# mapa %>
+    <div id="map" class="card mt-2 mb-5"
         style="height: 30%;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
+    </div>
   </div>
 
   <div class="container">
