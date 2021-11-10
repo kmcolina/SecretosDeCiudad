@@ -4,25 +4,22 @@
 <div class="m-t-5">
 <section class="wrapper">
   <div class="container">
+    <div class="search-form-control form-group">
+      <%= form_tag routes_path, method: :get do  %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Busca un destino" %>
 
-          <div class="search-form-control form-group">
-          <%= form_tag routes_path, method: :get do  %>
-            <%= text_field_tag :query,
-                params[:query],
-                class: "form-control",
-                placeholder: "Busca un destino" %>
-
-            <%= button_tag(type: "submit", class: "btn") do %>
-                <i class="fas fa-search"></i>
-            <% end %>
-
+          <%= button_tag(type: "submit", class: "btn") do %>
+              <i class="fas fa-search"></i>
           <% end %>
-        </div>
-<destacado>
- <h3 class = "d-flex justify-content-center">Rutas Destacadas</h3>
+      <% end %>
+    </div>
 
-</destacado>
-
+    <destacado>
+    <h3 class = "d-flex justify-content-center">Rutas Destacadas</h3>
+    </destacado>
 
     <div class="cards show-usr-mar">
           <% @routes.each do |route| %>
