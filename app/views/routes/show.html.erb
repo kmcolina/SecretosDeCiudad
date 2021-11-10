@@ -8,10 +8,10 @@
       <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <%= cl_image_tag  @route.photo.key, class:"d-block w-100"%>
+      <div class="carousel-item active" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path @route.photo.key %>); background-size: cover;">
+
         <div class="carousel-caption d-none d-md-block">
-          <div class="container text-carousel">
+          <div class="container text-carousel"  style="color:white">
             <h1><strong><%= @route.name %></strong></h1>
             <p>Secretos de Ciudad</p>
           </div>
@@ -19,10 +19,10 @@
       </div>
 
       <%@lugares.each do |lugar| %>
-        <div class="carousel-item ">
-          <%= cl_image_tag lugar.photo.key, class:"d-block w-100", style: "opacity: 0.8" %>
+        <div class="carousel-item" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path lugar.photo.key %>); background-size: cover;">
+
           <div class="carousel-caption d-none d-md-block">
-            <div class="container text-carousel">
+            <div class="container text-carousel" style="color:white">
               <h1><strong><%= @route.name %></strong></h1>
               <p>Secretos de Ciudad</p>
             </div>
