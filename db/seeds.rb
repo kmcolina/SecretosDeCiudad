@@ -1,7 +1,7 @@
 
 
 #limpiando la bd
-
+require 'open-uri'
 puts "eliminando todo de la BD"
 #elimino las referencias entre lugares y rutas
 # Connection.destroy_all
@@ -42,6 +42,32 @@ puts "Iniciando creacion de datos en la BD"
 
     guide3 = User.new(email: 'guide3@guide.com', password: '123456', rol: 'guide')
     guide3.save!
+
+    # asignando imagen a los guias
+
+    # para el guia 0
+
+      file_1 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+      guide.avatar.attach(io: file_1, filename: 'guide_0.jpg', content_type: 'image/jpg')
+      guide.save!
+
+    # para el guia 1
+      file_1 = URI.open('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+      guide1.avatar.attach(io: file_1, filename: 'guide_1.jpg', content_type: 'image/jpg')
+      guide1.save!
+
+    # para el guia 2
+      file_1 = URI.open('https://images.unsplash.com/photo-1521252659862-eec69941b071?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+      guide2.avatar.attach(io: file_1, filename: 'guide_2.jpg', content_type: 'image/jpg')
+      guide2.save!
+    # para el guia 3
+      file_1 = URI.open('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+
+      guide3.avatar.attach(io: file_1, filename: 'guide_3.jpg', content_type: 'image/jpg')
+      guide3.save!
 
   #usuarios finales
     usuario = User.new(email: 'usuario@usuario.com', password: '123456')
@@ -120,6 +146,8 @@ puts "Iniciando creacion de datos en la BD"
    #para la ruta 6
     place10 = Place.new(name: 'Arco de la Federación', description: 'monumento situado en el municipio libertador en el oeste del distrito metropolitano de Caracas, Venezuela, ubicado específicamente dentro del Parque Ezequiel Zamora (El Calvario) en el centro-oeste de la capital. Es de estilo colonial, inspirado en el arco del triunfo de Paris.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
     place10.save!
+
+
   # cargando imagen de cloudinary a mis rutas
 
   file_1 = URI.open('https://images.unsplash.com/photo-1596512489788-e9408b84274a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fGNhc2NvJTIwaGlzdG9yaWNvfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')

@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
     @booking.user_id = current_user.id
     @booking.route =  @route
     if @booking.save
-      redirect_to route_path(@route)
+      redirect_to bookings_path
     else
       render :new
     end
