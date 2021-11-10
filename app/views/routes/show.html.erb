@@ -14,6 +14,7 @@
           <div class="container text-carousel"  style="color:white">
             <h1><strong><%= @route.name %></strong></h1>
             <p>Secretos de Ciudad</p>
+            <h5 class = "container descrip text-justify"><%= @route.description %></h5>
           </div>
         </div>
       </div>
@@ -25,6 +26,7 @@
             <div class="container text-carousel" style="color:white">
               <h1><strong><%= @route.name %></strong></h1>
               <p>Secretos de Ciudad</p>
+              <h5 class = "container descrip text-justify"><%= @route.description %></h5>
             </div>
           </div>
         </div>
@@ -49,7 +51,7 @@
       <div class="row">
         <div>
           <ul class="ul-show">
-          <p class=" card-description li-description mt-5"><%= @route.description %></p>
+
           <div class="">
             <%@lugares.each do |lugar| %>
               <div class="card-show-places">
