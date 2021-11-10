@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <%= link_to routes_path, class: "nav-item " do %>
         <%= image_tag("https://res.cloudinary.com/dmsb7zzg3/image/upload/v1636423788/caracas1_wqenvk.png", class: "logo") %>
-        
+
       <% end %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -10,29 +10,25 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav m-auto">
+        <li class="nav-item">
+            <a class="nav-link letter-banner" href="#que_somos">¿Qué es Secretos de Ciudad?</a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Secretos<span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#"><span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#"></a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
+          <li class="nav-item ">
+            <li class="nav-item">
+            <a class="nav-link letter-banner" href="#que_somos">Contactanos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link disabled" href="#"></a>
           </li>
         </ul>
         <a class=" ">
-          <%= link_to "Login", new_user_session_path, class: "nav-link btn-nav-color " %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link btn-nav-color2 " %>
         </a>
         </div>
     </nav>

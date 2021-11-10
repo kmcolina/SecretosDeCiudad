@@ -18,20 +18,20 @@
         <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Pagos", routes_path, class:"nav-link title" %>
+        <%= link_to "Ver Pagos", pago_valid_path, class:"nav-link title" %>
       </li>
     </ul>
   </div>
 
   <%# Tabla %>
   <div class="container">
-    <div class="min-vh-80">
+    <div class="">
       <table class="table">
         <thead class="thead-green">
           <tr>
-            <th scope="col">ROUTE NAME</th>
-            <th scope="col">AVAILABLE DATES</th>
-            <th scope="col">DURATION</th>
+            <th scope="col">Ruta</th>
+            <th scope="col">Fechas disponibles</th>
+            <th scope="col">Duracion</th>
             <th></th>
             <th></th>
           </tr>
@@ -59,6 +59,7 @@
           <% end %>
         </tbody>
       </table>
+
     </div>
   </div>
 </div>
