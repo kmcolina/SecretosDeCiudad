@@ -136,7 +136,7 @@ puts "Iniciando creacion de datos en la BD"
     place7.save!
 
   #para la ruta 4
-    place8 = Place.new(name: 'Catedral de Caracas', description: 'Construida en 1665. Su fachada es de 1771, obra de Francisco Andrés de Meneses. Dañada por el terremoto de 1812.', address: 'Esquina La Torre, Caracas' , route_id: route4.id, latitude: 10.506324,, longitude: -66.9149134)
+    place8 = Place.new(name: 'Catedral de Caracas', description: 'Construida en 1665. Su fachada es de 1771, obra de Francisco Andrés de Meneses. Dañada por el terremoto de 1812.', address: 'Esquina La Torre, Caracas' , route_id: route4.id, latitude: 10.506324, longitude: -66.9149134)
     place8.save!
 
    #para la ruta 5
