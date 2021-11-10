@@ -5,9 +5,9 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
       <p style><%= current_user.email %></p>
     </div>
 </div>
-<div class="d-flex mt-4">
+<div class="d-flex">
   <%# Sidebar %>
-  <div class="sidebar-sticky border-right">
+  <div class="sidebar-sticky border-right mt-2">
     <ul class="nav flex-column">
       <li>
         <%= link_to "Crear Lugar", new_place_path, class:"nav-link title" %>
@@ -19,13 +19,13 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
         <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Pagos", routes_path, class:"nav-link title" %>
+        <%= link_to "Ver Pagos", pago_valid_path, class:"nav-link title" %>
       </li>
     </ul>
   </div>
 
   <%# Tabla %>
-  <div class="container">
+  <div class="container mt-5">
     <div class="">
       <table class="table">
         <thead class="thead-green">
