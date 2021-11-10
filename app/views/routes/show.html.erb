@@ -87,7 +87,7 @@
       <%# Add Review %>
       <div class="d-flex justify-content-between">
         <div id="add-review" >
-          <h3 class = "d-flex justify-content-center mb-3 review-show-mar">¿Qué te pareció la ruta?</h3>
+          <h3 class = "d-flex justify-content-center mb-3 review-show-marr">¿Qué te pareció la ruta?</h3>
           <%= simple_form_for([@route, @review] ) do |f| %>
             <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false , :input_html => { :class => "review-show-mar" } %>
             <%= f.input :rating, as: :select, collection: (1..5), label: false, required: true, prompt: "What's your rating", input_html: { id: "review_rating", class: "estrella" } %>
@@ -103,7 +103,11 @@
         <%# Card del guía %>
         <div class="scd-col-card-guide">
           <div class="card-guide">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-photo", alt: "avatar-large" %>
+
+            <% guide = @route.user_id %>
+            <% @foto_guide = User.find(guide) %>
+            <%= cl_image_tag @foto_guide.avatar.key , class: "card-photo", alt: "avatar-large" %>
+
             <div class="card-guide-info">
               <h3><%= @route.name %></h3>
               <h4><strong>Costo de la ruta:</strong> $<%= @route.price %></h4>
