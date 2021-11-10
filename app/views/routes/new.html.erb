@@ -16,7 +16,7 @@
           </div>
         <% end %>
         <div class="form-section">
-          <div class="form-photo"><%= f.input :photo, as: :file, label: :Foto %></div>
+          <div class="form-photo"><%= f.input :photo, as: :file, label: :Foto, required: true %></div>
           <%= f.input :name, label: :Nombre %>
           <%= f.input :description, label: :Descripción %>
           <%= f.input :places_interest, label: :Tendencias %>

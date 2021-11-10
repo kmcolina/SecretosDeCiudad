@@ -33,6 +33,7 @@
                       required: true,
                       input_html: { autocomplete: "new-password" } %>
         </div>
+        <div class="form-photo"><%= f.input :avatar, as: :file, label: :Foto, required: true %></div>
         <div class="form-section">
           <%= f.input :rol,
                       label: :Rol,
