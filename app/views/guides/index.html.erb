@@ -1,5 +1,5 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/-icmOdYWXuQ/1600x900);;
-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
     <div class="container">
       <h1 >Mi Calendario de Rutas</h1>
       <p style><%= current_user.email %></p>
@@ -19,14 +19,16 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
   </div>
 
   <%# Tabla %>
-  <div class="container mt-5">
+  <div class="container mt-5 edit-usr-mar">
         <% @guide_routes.each do |route| %>
 
       <table class="table">
         <thead class="thead-green">
-        <p class =" title-table d-flex justify-content-center"><%=route.name %></p>
-          <tr>
+
+        <p class =" title-table d-flex justify-content-center tables-mar title-gui-index"><%=route.name %></p>
+          <tr class = "table-index-guide">
             <th scope="col">Fecha de la ruta</th>
+
             <th scope="col">Duración</th>
           </tr>
         </thead>
