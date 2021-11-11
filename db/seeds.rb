@@ -113,7 +113,7 @@ puts "Iniciando creacion de datos en la BD"
     place1 = Place.new(name: 'Plaza Bolívar', description: '  En ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini.', address: 'Esquina La Torre, Caracas', route_id: route0.id, latitude: 10.5048301, longitude: -66.9141038  )
     place1.save!
 
-    place2 = Place.new(name: 'Casa Amarilla', description: '  Antiguo palacio de gobierno, de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.5063928, longitude: -66.9154011)
+    place2 = Place.new(name: 'Casa Amarilla', description: '  Antiguo palacio de gobierno, de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes.', address: 'Esquina de Principal, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.5063928, longitude: -66.9154011)
     place2.save!
 
     place3 = Place.new(name: 'Concejo Municipal', description: '  De estilo arquitectónico Ecléctico, Francés. Escenario donde se firmo del Acta de Independencia de Venezuela el 5 de julio de 1811.', address: 'Esquina Las Monjas, Caracas' , route_id: route0.id, latitude: 10.5060012, longitude: -66.9148397)
@@ -263,7 +263,7 @@ puts "Iniciando creacion de datos en la BD"
     booking4.save!
 
   # para la ruta 1
-    booking5 = Booking.new(user_id:usuario1.id, check_in: '2021-11-15', route_id:route1.id )
+    booking5 = Booking.new(user_id:usuario1.id, check_in: '2021-11-15', route_id:route1.id, pago_user: rand(25987539..99999999) )
     booking5.save!
 
     booking6 = Booking.new(user_id:usuario2.id, check_in: '2021-11-15', route_id:route1.id )

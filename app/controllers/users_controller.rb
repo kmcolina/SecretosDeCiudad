@@ -26,17 +26,16 @@ class UsersController < ApplicationController
   def pago
     if current_user && current_user.admin?
     @bookings = Booking.all.order(check_in: :desc, status_pago: :desc)
-    else 
+    else
       redirect_to routes_path
     end
   end
 
   def update_pago
     @pago = Booking.find(params[:id])
-    if :status_pago != true
-      
+    if @pago.status_pago != true
       @pago.update_attribute(:status_pago, true)
-    else 
+    elsif  @pago.status_pago == true
       @pago.update_attribute(:status_pago, false)
     end
     redirect_to pago_valid_path

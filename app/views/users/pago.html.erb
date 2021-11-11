@@ -42,7 +42,7 @@ box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
             <td><%=usr.email %></td>
               <td><%=book.check_in%></td>
               <td><%=book.pago_user %></td>
-              <%if book.status_pago.nil?%>
+              <%if book.status_pago.nil? || book.status_pago == false %>
                   <td>Por Pagar</td>
               <%else%>
                 <td>Pago</td>
