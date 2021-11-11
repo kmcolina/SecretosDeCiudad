@@ -263,7 +263,7 @@ puts "Iniciando creacion de datos en la BD"
     booking4.save!
 
   # para la ruta 1
-    booking5 = Booking.new(user_id:usuario1.id, check_in: '2021-11-15', route_id:route1.id )
+    booking5 = Booking.new(user_id:usuario1.id, check_in: '2021-11-15', route_id:route1.id, pago_user: rand(25987539..99999999) )
     booking5.save!
 
     booking6 = Booking.new(user_id:usuario2.id, check_in: '2021-11-15', route_id:route1.id )
