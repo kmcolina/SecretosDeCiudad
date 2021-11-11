@@ -11,16 +11,13 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
   <div class="sidebar-sticky border-right">
     <ul class="nav flex-column">
       <li>
-        <%= link_to "Crear Ruta", new_route_path, class:"nav-link title" %>
+        <%= link_to "Ver rutas", routes_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
+        <%= link_to "Ver guías", users_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
-      </li>
-      <li>
-        <%= link_to "Ver Rutas", routes_path, class:"nav-link title" %>
+        <%= link_to "Ver lugares", places_path, class:"nav-link title" %>
       </li>
     </ul>
   </div>
@@ -32,8 +29,8 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
         <thead class="thead-green">
           <tr>
             <th scope="col">Usuario</th>
-            <th scope="col">Fechas ruta</th>
-            <th scope="col">Numero Pago</th>
+            <th scope="col">Fechas de ruta</th>
+            <th scope="col">Número de pago</th>
             <th scope="col">Estado</th>
             <th></th>
           </tr>
