@@ -143,9 +143,9 @@ puts "Iniciando creacion de datos en la BD"
     place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: '  Se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento.', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.5066932, longitude: -66.9164852)
     place9.save!
 
-   #para la ruta 6
-    place10 = Place.new(name: 'Arco de la Federación', description: '  Monumento de estilo colonial, inspirado en el arco del triunfo de París.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
-    place10.save!
+  #  #para la ruta 6
+  #   place10 = Place.new(name: 'Arco de la Federación', description: '  Monumento de estilo colonial, inspirado en el arco del triunfo de París.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
+  #   place10.save!
 
 
   # cargando imagen de cloudinary a mis rutas
@@ -240,23 +240,23 @@ puts "Iniciando creacion de datos en la BD"
     place9.photo.attach(io: file_1, filename: 'place_9.jpg', content_type: 'image/jpg')
     place9.save!
 
-  #imagenes para los lugares de la ruta 6
+  # #imagenes para los lugares de la ruta 6
 
-    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/3/3d/Arco_federacion_libertador_caracas.jpg')
+  #   file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/3/3d/Arco_federacion_libertador_caracas.jpg')
 
-  place10.photo.attach(io: file_1, filename: 'place_10.jpg', content_type: 'image/jpg')
-  place10.save!
+  # place10.photo.attach(io: file_1, filename: 'place_10.jpg', content_type: 'image/jpg')
+  # place10.save!
 
 
 # creo bookings
   # para la ruta 0
-    booking1 = Booking.new(user_id:usuario.id, check_in: '2021-11-13', route_id:route0.id )
+    booking1 = Booking.new(user_id:usuario.id, check_in: '2021-11-13', route_id:route0.id , pago_user: rand(25987539..99999999))
     booking1.save!
 
     booking2 = Booking.new(user_id:usuario1.id, check_in: '2021-11-13', route_id:route0.id )
     booking2.save!
 
-    booking3 = Booking.new(user_id:usuario2.id, check_in: '2021-11-13', route_id:route0.id )
+    booking3 = Booking.new(user_id:usuario2.id, check_in: '2021-11-13', route_id:route0.id , pago_user: rand(25987539..99999999))
     booking3.save!
 
     booking4 = Booking.new(user_id:usuario3.id, check_in: '2021-11-13', route_id:route0.id )
@@ -270,7 +270,7 @@ puts "Iniciando creacion de datos en la BD"
     booking6.save!
 
   # para la ruta 2
-    booking7 = Booking.new(user_id:usuario.id, check_in: '2021-11-16', route_id:route2.id )
+    booking7 = Booking.new(user_id:usuario.id, check_in: '2021-11-16', route_id:route2.id , pago_user: rand(25987539..99999999))
     booking7.save!
 
     booking8 = Booking.new(user_id:usuario3.id, check_in: '2021-11-16', route_id:route2.id )
@@ -281,21 +281,21 @@ puts "Iniciando creacion de datos en la BD"
     booking9.id
     booking9.save!
 
-    booking10 = Booking.new(user_id:usuario2.id, check_in: '2021-11-20', route_id:route3.id )
+    booking10 = Booking.new(user_id:usuario2.id, check_in: '2021-11-20', route_id:route3.id , pago_user: rand(25987539..99999999))
     booking10.save!
 
   # para la ruta 4
     booking11 = Booking.new(user_id:usuario2.id, check_in: '2021-11-06', route_id:route4.id )
     booking11.save!
 
-    booking12 = Booking.new(user_id:usuario3.id, check_in: '2021-11-26', route_id:route5.id )
+    booking12 = Booking.new(user_id:usuario3.id, check_in: '2021-11-26', route_id:route5.id , pago_user: rand(25987539..99999999))
     booking12.save!
 
   # para la ruta 5
-    booking11 = Booking.new(user_id:usuario2.id, check_in: '2021-11-20', route_id:route5.id )
+    booking11 = Booking.new(user_id:usuario2.id, check_in: '2021-11-20', route_id:route5.id , pago_user: rand(25987539..99999999))
     booking11.save!
 
-    booking13 = Booking.new(user_id:usuario3.id, check_in: '2021-11-21', route_id:route5.id )
+    booking13 = Booking.new(user_id:usuario3.id, check_in: '2021-11-21', route_id:route5.id, pago_user: rand(25987539..99999999) )
     booking13.save!
 
     booking13 = Booking.new(user_id:usuario.id, check_in: '2021-11-21', route_id:route5.id )
