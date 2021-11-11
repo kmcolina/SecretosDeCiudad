@@ -1,10 +1,10 @@
-<div class="container col-md-7 mt-4 mb-4 d-flex">
-  <div class="form-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
+<div class="container col-md-7 mt-4 mb-4 d-flex ">
+  <div class="form-img edit-usr-mar" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
   </div>
-  <div class="form">
-    <h5 class="new-post"><%= link_to :back do %>
-      <i class="fas fa-chevron-left" id="back-arrow"></i>
-    <% end %> Mi perfil</h5>
+  <div class="form edit-usr-mar">
+    <h5 class="new-post d-flex justify-content-center"><%= link_to :back do %>
+      <i class="fas fa-chevron-left" id="back-arrow">  </i>
+    <% end %>  Mi perfil</h5>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
