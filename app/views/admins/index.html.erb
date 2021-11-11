@@ -1,67 +1,23 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/HTnycx0h_kk/1600x900);;
-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
-    <div class="container">
-      <h1 >Administrar Rutas</h1>
-      <p style><%= current_user.email %></p>
-    </div>
-</div>
+<h1>Admin Index</h1>
 
-<div class="d-flex mt-2">
-  <%# Sidebar %>
-  <div class="sidebar-sticky border-right">
-    <ul class="nav flex-column">
-      <li>
-        <%= link_to "Crear Ruta", new_route_path, class:"nav-link title" %>
-      </li>
-      <li>
-        <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
-      </li>
-      <li>
-        <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
-      </li>
-      <li>
-        <%= link_to "Ver Pagos", pago_valid_path, class:"nav-link title" %>
-      </li>
-    </ul>
-  </div>
+<p class = "btn btn-primary"><%= link_to "Crear", new_route_path %></p>
 
-  <%# Tabla %>
-  <div class="container mt-5 admin-pago" >
-    <div class="">
-      <table class="table">
-        <thead class="thead-green">
-          <tr>
-            <th scope="col">Ruta</th>
-            <th scope="col">Fechas disponibles</th>
-            <th scope="col">Duracion</th>
-            <th></th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @routes.each do |route| %>
-            <tr>
-              <td><%= link_to route.name, route_path(route), class:"td-link" %></td>
-              <% @fechas_all = [] %>
-              <% fechas= route.available_dates %>
-                  <% array_fechas = fechas.split(',')  %>
-                  <% array_fechas.each do |fecha|         @fechas_all << Date.strptime(fecha, "%Y%m%d")
-                  end %>
-              <td><% @fechas_all.each do |date|%>
-                      /<%= date %>/
-                    <% end %></td>
-              <td><%= route.duration %> hrs </td>
-              <td><%= link_to edit_route_path(route) do %>
-                <i class="far fa-edit" style="color:#206A5D"></i><% end %>
-              </td>
-              <td><%= link_to route_path(route), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="far fa-trash-alt" style="color:#206A5D"></i><% end %>
-              </td>
-            </tr>
+<div class="cards">
+    <% @routes.each do |route| %>
+      <div class="card">
+        <div class="card-body">
+          <% if route.photo.attached? %>
+             <%= cl_image_tag route.photo.key, class:'movie-img', height: 300, width: 400, crop: :fill %>
+          <% else %>
+           <%= image_tag "https://images.unsplash.com/photo-1522289849170-49c9c3c6a460?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=871&q=80" ,class:'movie-img', height: 300, width: 400, crop: :fill %>
           <% end %>
-        </tbody>
-      </table>
-
-    </div>
+          <div><%= route.name %>
+            <p>Descripción: <%= route.description %></p>
+          </div>
+          <div class="btn btn-primary"><%= link_to 'View details', route_path(route) %></div>
+          <p class = "btn btn-primary"><%= link_to "Editar", edit_route_path(route) %></p>
+          <small class = "btn btn-dark"><%= link_to "Delete", route_path(route), method: :delete, data: { confirm: "Are you sure?" } %> </small>
+        </div>
+      </div>
+    <% end %>
   </div>
-</div>

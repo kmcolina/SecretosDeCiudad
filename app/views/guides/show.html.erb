@@ -1,25 +1,38 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(<%= cl_image_path @route.photo.key %>);;
-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1576470290805-d094d04aba29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1032&q=80);">
     <div class="container">
       <h1><%= link_to routes_path do %>
         <i class="fas fa-chevron-left"></i>
-      <% end %><strong><%= @route.name %></strong></h1>
-      <p><%= @fecha %></p>
+      <% end %><strong>My routes calendar</strong></h1>
+      <p>Secretos de Ciudad</p>
     </div>
 </div>
 
 <div class="d-flex">
   <%# Sidebar %>
-  <div class="sidebar-sticky border-right mt-2">
+  <div class="sidebar-sticky border-right">
             <ul class="nav flex-column">
               <li>
-                <%= link_to "Ver todo", routes_path, class:"nav-link title"%>
-
+                <%= link_to "View all", routes_path, class:"nav-link title"%>
+              </li>
+              <li>
+                <%= link_to "Ruta 1", routes_path, class:"nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Ruta 2", routes_path, class:"nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Ruta 3", routes_path, class:"nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Ruta 4", routes_path, class:"nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Ruta 5", routes_path, class:"nav-link" %>
               </li>
             </ul>
   </div>
 
-  <div class="container mt-5 mb-5">
+  <div class="container">
     <div class="container d-flex justify-content-between">
       <div class="first-col-guide">
         <%# Cards %>
@@ -28,6 +41,8 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
             <%# Header Column %>
             <div class="ul-guide">
               <div class="text-header d-flex justify-content-between mt-3">
+                <p><strong><%= @route.name %></strong></p>
+                <p><strong><%= @route.duration %> hrs</strong></p>
               </div>
 
               <%# mapa %>
@@ -39,7 +54,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
 
               <%# Descripción %>
               <div>
-                <p class="mt-2"><%= @route.description %> <strong> Duración de la ruta: <%= @route.duration %> hrs</strong></p>
+                <p class="mt-2"><%= @route.description %></p>
               </div>
 
               <%# Tendencias %>
@@ -82,20 +97,20 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
       </div>
 
       <div class="second-col-guide">
-        <p class = "title-table">Usuarios que reservaron</p>
-        <% @usr.each  do |usuario|%>
-          <div class="card-user border-bottom">
-          <% @foto = User.find(usuario.id) %>
-            <% if @foto.avatar.attached? %>
-              <%= cl_image_tag @foto.avatar.key , class: "avatar ", alt: "avatar"%>
-            <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5vbnltb3VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
-            <% end %>
-            <div class="card-user-info">
-              <h4><%= usuario.email %></h4>
-            </div>
+        <div class="card-user border-bottom">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
+          <div class="card-user-info">
+            <h3>Username</h3>
+            <h4>user@email.com</h4>
           </div>
-        <% end %>
+        </div>
+        <div class="card-user border-bottom">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar", alt: "avatar" %>
+          <div class="card-user-info">
+            <h3>Username</h3>
+            <h4>user@email.com</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>

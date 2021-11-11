@@ -7,19 +7,5 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :new]
   end
   resources :places
-
-  
-  resources :guides, only: :index do
-    resources :users, only: [:create, :new]
-  end
-  resources :users, only: :index
-  get '/admin/pagos', to: 'users#pago', as: 'pago_valid'
-
   resources :bookings, only: [:index, :edit, :update]
-  get '/routes/:id/:fecha', to: 'routes#show', as: 'guide_show'
-
-  
-  patch '/booking/:id/update_pago', to: 'users#update_pago', as: 'update_pago'
-
-
 end

@@ -1,7 +1,7 @@
 
 
 #limpiando la bd
-require 'open-uri'
+
 puts "eliminando todo de la BD"
 #elimino las referencias entre lugares y rutas
 # Connection.destroy_all
@@ -31,43 +31,17 @@ puts "Iniciando creacion de datos en la BD"
     admin.save!
 
   # guias
-    guide = User.new(email: 'guide@guide.com', password: '123456', rol: 'guide',first_name: 'Natasha' , last_name: 'Holland')
+    guide = User.new(email: 'guide@guide.com', password: '123456', rol: 'guide')
     guide.save!
 
-    guide1 = User.new(email: 'guide1@guide.com', password: '123456', rol: 'guide',first_name: 'Bernardo' , last_name: 'Jordan')
+    guide1 = User.new(email: 'guide1@guide.com', password: '123456', rol: 'guide')
     guide1.save!
 
-    guide2 = User.new(email: 'guide2@guide.com', password: '123456', rol: 'guide',first_name: 'Andrea' , last_name:'Mendoza')
+    guide2 = User.new(email: 'guide2@guide.com', password: '123456', rol: 'guide')
     guide2.save!
 
-    guide3 = User.new(email: 'guide3@guide.com', password: '123456', rol: 'guide',first_name: 'Cesar' , last_name: 'Muñoz')
+    guide3 = User.new(email: 'guide3@guide.com', password: '123456', rol: 'guide')
     guide3.save!
-
-    # asignando imagen a los guias
-
-    # para el guia 0
-
-      file_1 = URI.open('https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2ZpbGV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-
-      guide.avatar.attach(io: file_1, filename: 'guide_0.jpg', content_type: 'image/jpg')
-      guide.save!
-
-    # para el guia 1
-      file_1 = URI.open('https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-
-      guide1.avatar.attach(io: file_1, filename: 'guide_1.jpg', content_type: 'image/jpg')
-      guide1.save!
-
-    # para el guia 2
-      file_1 = URI.open('https://images.unsplash.com/photo-1521252659862-eec69941b071?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2ZpbGUlMjBwaWN0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-
-      guide2.avatar.attach(io: file_1, filename: 'guide_2.jpg', content_type: 'image/jpg')
-      guide2.save!
-    # para el guia 3
-      file_1 = URI.open('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8cHJvZmlsZSUyMHBpY3R1cmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-
-      guide3.avatar.attach(io: file_1, filename: 'guide_3.jpg', content_type: 'image/jpg')
-      guide3.save!
 
   #usuarios finales
     usuario = User.new(email: 'usuario@usuario.com', password: '123456')
@@ -93,7 +67,7 @@ puts "Iniciando creacion de datos en la BD"
   route2 = Route.new(name: 'Arquitectura con estilo', description: 'Una ruta llena de estructuras arquitectonicas de distintos estilos neogótico, Neoclásico y neobarroco que se encuentran muy cerca unos de otros y que ademas tienen una historia que contar', duration: 2, places_interest: 'Cafeteria, Centro Comercial', available_dates:'20211015,20211120', price: 10, user_id: guide2.id)
   route2.save!
 
-  route3 = Route.new(name: 'Rascacielos en Caracas', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
+  route3 = Route.new(name: 'Rascacielos', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica, muy cerca de ellos le siguen grandes edificios que no se quedan atras.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
   route3.save!
 
   route4 = Route.new(name: 'Los 7 Templos', description: 'Tradiciones de semana santa que son joyas arquitectonicas que guarda la ciudad, estilo Neoclasico, Neogótico, historias y leyendas que se unen', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211002,20211106', price: 10,user_id: guide3.id)
@@ -102,50 +76,41 @@ puts "Iniciando creacion de datos en la BD"
   route5 = Route.new(name: 'Las esquinas de Caracas', description: 'Una caracteristica particular de la ciudad, la torre, principal, las monjas, sociedad, descubre el porque de estos curiosos nombres', duration: 6, places_interest: 'Cafe bolivar, Restaurante, Cocada', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
   route5.save!
 
-  route6 = Route.new(name: 'Inspiracion Parisina', description: 'Caracas y Paris tiene muchas mas cosas en comun de lo que imaginas, calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
-  route6.save!
-
-
-
 
 # creado lugares
   #para la ruta 0 (casco historico)
-    place1 = Place.new(name: 'Plaza Bolívar', description: 'En ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini.', address: 'Esquina La Torre, Caracas', route_id: route0.id, latitude: 10.5048301, longitude: -66.9141038  )
+    place1 = Place.new(name: 'plaza bolivar', description: 'uno de los espacios públicos más importantes y reconocidos de Venezuela, se encuentra ubicada en el centro histórico de esa ciudad, en ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini es una réplica de la estatua de la Plaza Bolívar de Lima en Perú realizada por la Fundición Müller. Mide 4 metros de altura, en ella Bolívar está sobre un caballo encabritado sostenido por sus patas traseras apoyado sobre el pedestal que posee dos gradas.', address: 'Esquina La Torre, caracas', route_id: route0.id, latitude: 10.5060739, longitude: -66.9150769  )
     place1.save!
 
-    place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.5063928, longitude: -66.9154011)
+    place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de gran importancia durante los años previos y posteriores a la independencia de la nacion, es un edificio de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes. El 16 de febrero de 1979, la Casa Amarilla es designada como Monumento Histórico Nacional.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.506335, longitude: -66.9161692)
     place2.save!
 
-    place3 = Place.new(name: 'Concejo Municipal', description: 'De estilo arquitectonico Ecléctico, Francés. Escenario donde se firmo del Acta de Independencia de Venezuela el 5 de julio de 1811.', address: 'Esquina Las Monjas, Caracas' , route_id: route0.id, latitude: 10.5060012, longitude: -66.9148397)
+    place3 = Place.new(name: 'Concejo Municipal', description: 'De estilo arquitectonico Ecléctico, francés. Antiguo seminario  y universidad Rey Felipe V de España. la capilla del seminario y universidad son escenario de tres días de deliberaciones del Congreso Constituyente que culminaron con la Firma del Acta de Independencia de Venezuela el 5 de julio de 1811.', address: 'Esquina Las Monjas, Caracas' , route_id: route0.id, latitude: 10.5053666, longitude: -66.9154536)
     place3.save!
 
  #para la ruta 1
-    place4 = Place.new(name: 'Museo de Bellas Artes', description: 'Su fundación data de 1918. Las dos estructuras que albergan al museo fueron diseñadas por el arquitecto Carlos Raúl Villanueva.', address: 'Plaza de los Museos, Bellas Artes, Caracas 1050' , route_id: route1.id, latitude: 10.5006126, longitude: -66.8991782)
+    place4 = Place.new(name: 'Museo de Bellas Artes', description: 'Su fundación data de 1918. Las dos estructuras que albergan al museo fueron diseñadas por el arquitecto Carlos Raúl Villanueva. En este espacio la Cinemateca Nacional dispone de una sala de exhibición.', address: 'Esquina La Torre, Caracas' , route_id: route1.id, latitude: 10.5007311, longitude: -66.8976947)
     place4.save!
 
 
   #para la ruta 2
-    place5 = Place.new(name: 'Palacio de las Academias', description: 'Edificación Colonial con estilo neogótico de Caracas, Venezuela ubicada en la Avenida Universidad', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.5046717, longitude: -66.9168704)
+    place5 = Place.new(name: 'Palacio de las Academias', description: 'Edificación Colonial con estilo neogótico de Caracas, Venezuela ubicada en la Avenida Universidad, Esquinas de La Bolsa a San Francisco', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.5049881, longitude: -66.9157309)
     place5.save!
 
-    place6 = Place.new(name: 'Palacio Federal Legislativo', description: 'De estilo arquitectonico Neoclásico. El Capitolio Federal desde 1877 fue sede de los tres Poderes de la Nación.', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.505235, longitude: -66.9165726)
+    place6 = Place.new(name: 'Palacio Federal Legislativo', description: 'De estilo arquitectonico Neoclásico. El Capitolio Federal desde 1877 fue sede de los tres Poderes de la Nación el Ejecutivo Federal, Legislativo y Judicial. Pero desde 1961 es de uso exclusivo del Poder Legislativo Nacional. Debido a su importancia histórica y cultural, la edificación fue declarada Patrimonio Nacional el 22 de agosto de 1997.', address: 'Esquina Las Mojas, Caracas' , route_id: route2.id, latitude: 10.505059, longitude: -66.9162468)
     place6.save!
 
   #para la ruta 3
-    place7 = Place.new(name: 'Torres Parque Central', description: 'Desde 1979 hasta 2003, ostentaron el título de los rascacielos más altos de América Latina.', address: 'Final Av. Bolivar, Caracas' , route_id: route3.id, latitude: 10.4986551, longitude: -66.9005484)
+    place7 = Place.new(name: 'Torres Parque Central', description: 'Nicolajs Sidorkovs y Federico Dubuc fueron los arquitectos de la Torre Este de Parque Central.​ Por más de 22 años, desde 1979 (cuando se inauguró la Torre Oeste) hasta 2003, ostentaron el título de los rascacielos más altos de América Latina.', address: 'Esquina La Torre, Caracas' , route_id: route3.id, latitude: 10.4986551, longitude: -66.9005484)
     place7.save!
 
   #para la ruta 4
-    place8 = Place.new(name: 'Catedral de Caracas', description: 'Construida en 1665. Su fachada es de 1771, obra de Francisco Andrés de Meneses. Dañada por el terremoto de 1812.', address: 'Esquina La Torre, Caracas' , route_id: route4.id, latitude: 10.506324, longitude: -66.9149134)
+    place8 = Place.new(name: 'Catedral de Caracas', description: 'Fue construida en 1665 por Juan de Medina, en sustitución de la pequeña iglesia destruida a causa del terremoto de 1641; concluida en el año 1674. Su fachada es de 1771, obra de Francisco Andrés de Meneses. Dañada por el terremoto de 1812 su torre (que da nombre a una de las esquinas de Caracas) fue reducida en tamaño.', address: 'Esquina La Torre, Caracas' , route_id: route4.id, latitude: 10.5061001, longitude: -66.9146226)
     place8.save!
 
    #para la ruta 5
-    place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: 'se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.5066932, longitude: -66.9164852)
+    place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: 'se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.506699, longitude: -66.9157967)
     place9.save!
-
-   #para la ruta 6
-    place10 = Place.new(name: 'Arco de la Federación', description: 'monumento situadode estilo colonial, inspirado en el arco del triunfo de Paris.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
-    place10.save!
 
 
   # cargando imagen de cloudinary a mis rutas
@@ -168,98 +133,51 @@ puts "Iniciando creacion de datos en la BD"
 
   file_1 = URI.open('https://images.unsplash.com/photo-1500228630616-d6905f33ad1a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8cGFycXVlJTIwY2VudHJhbCUyMGNhcmFjYXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-  route3.photo.attach(io: file_1, filename: 'route_3.jpg', content_type: 'image/jpg')
+  route3.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
   route3.save!
 
   file_1 = URI.open('https://images.unsplash.com/photo-1594381006435-36a22f96087e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2F0ZWRyYWx8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-  route4.photo.attach(io: file_1, filename: 'route_4.jpg', content_type: 'image/jpg')
+  route4.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
   route4.save!
 
   file_1 = URI.open('https://images.unsplash.com/photo-1590802810354-a785c3c50dcf?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y2FyYWNhc3xlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-  route5.photo.attach(io: file_1, filename: 'route_5.jpg', content_type: 'image/jpg')
+  route5.photo.attach(io: file_1, filename: 'route_2.jpg', content_type: 'image/jpg')
   route5.save!
-
-
-  file_1 = URI.open('https://images.unsplash.com/photo-1500313830540-7b6650a74fd0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGFyaXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-
-  route6.photo.attach(io: file_1, filename: 'route_6.jpg', content_type: 'image/jpg')
-  route6.save!
 
 
   # imagenes para los lugares de la ruta 1
 
-    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa_Natal_Del_Libertador_Simon_Bolivar.JPG/1280px-Casa_Natal_Del_Libertador_Simon_Bolivar.JPG')
+  file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Casa_Natal_Del_Libertador_Simon_Bolivar.JPG/1280px-Casa_Natal_Del_Libertador_Simon_Bolivar.JPG')
 
-    place1.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
-    place1.save!
-
-
-    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Casa_Amarilla_de_Caracas_-_2015.JPG/800px-Casa_Amarilla_de_Caracas_-_2015.JPG')
-
-    place2.photo.attach(io: file_1, filename: 'place_2.jpg', content_type: 'image/jpg')
-    place2.save!
+  place1.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place1.save!
 
 
-    file_1 = URI.open('https://images.unsplash.com/photo-1593436243794-e0e6eefcef57?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29sb25pYWx8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+  file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Casa_Amarilla_de_Caracas_-_2015.JPG/800px-Casa_Amarilla_de_Caracas_-_2015.JPG')
 
-    place3.photo.attach(io: file_1, filename: 'place_3.jpg', content_type: 'image/jpg')
-    place3.save!
-
-  #imagenes para los lugares de la ruta 2
-    file_1 = URI.open('https://oceandrive.com.ve/wp-content/uploads/2021/05/Dia-Museos-Caracas-Ocean-Drive-Venezuela-3.jpg')
-    place4.photo.attach(io: file_1, filename: 'place_4.jpg', content_type: 'image/jpg')
-    place4.save!
-
-    file_1 = URI.open('https://images.unsplash.com/photo-1636218685970-e7a147d9e925?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bmVvZ290aGljfGVufDB8MHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-    place5.photo.attach(io: file_1, filename: 'place_5.jpg', content_type: 'image/jpg')
-    place5.save!
-
-  #imagenes para los lugares de la ruta 3
-    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/6/60/Palacio_Federal_Legislativo_de_Venezuela.JPG')
-
-    place6.photo.attach(io: file_1, filename: 'place_6.jpg', content_type: 'image/jpg')
-    place6.save!
-  #imagenes para los lugares de la ruta 4
-
-    file_1 = URI.open('https://live.staticflickr.com/3634/3295755131_60a93fc48c_b.jpg')
-
-    place7.photo.attach(io: file_1, filename: 'place_7.jpg', content_type: 'image/jpg')
-    place7.save!
+  place2.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place2.save!
 
 
-    file_1 = URI.open('https://images.unsplash.com/photo-1560726113-4c3f67cfa9ec?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2FpbnRlJTIwY2hhcGVsbGV8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+  file_1 = URI.open('https://images.unsplash.com/photo-1593436243794-e0e6eefcef57?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y29sb25pYWx8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-    place8.photo.attach(io: file_1, filename: 'place_8.jpg', content_type: 'image/jpg')
-    place8.save!
-
-  #imagenes para los lugares de la ruta 5
-    file_1 = URI.open('https://images.unsplash.com/photo-1465929639680-64ee080eb3ed?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8bGlicmFyeXxlbnwwfDB8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
-
-    place9.photo.attach(io: file_1, filename: 'place_9.jpg', content_type: 'image/jpg')
-    place9.save!
-
-  #imagenes para los lugares de la ruta 6
-
-    file_1 = URI.open('https://upload.wikimedia.org/wikipedia/commons/3/3d/Arco_federacion_libertador_caracas.jpg')
-
-  place10.photo.attach(io: file_1, filename: 'place_10.jpg', content_type: 'image/jpg')
-  place10.save!
-
+  place3.photo.attach(io: file_1, filename: 'place_1.jpg', content_type: 'image/jpg')
+  place3.save!
 
 # creo bookings
   # para la ruta 0
-    booking1 = Booking.new(user_id:usuario.id, check_in: '2021-11-13', route_id:route0.id )
+    booking1 = Booking.new(user_id:usuario.id, check_in: '2021-11-08', route_id:route0.id )
     booking1.save!
 
-    booking2 = Booking.new(user_id:usuario1.id, check_in: '2021-11-13', route_id:route0.id )
+    booking2 = Booking.new(user_id:usuario1.id, check_in: '2021-11-08', route_id:route0.id )
     booking2.save!
 
-    booking3 = Booking.new(user_id:usuario2.id, check_in: '2021-11-13', route_id:route0.id )
+    booking3 = Booking.new(user_id:usuario2.id, check_in: '2021-11-08', route_id:route0.id )
     booking3.save!
 
-    booking4 = Booking.new(user_id:usuario3.id, check_in: '2021-11-13', route_id:route0.id )
+    booking4 = Booking.new(user_id:usuario3.id, check_in: '2021-11-08', route_id:route0.id )
     booking4.save!
 
   # para la ruta 1
@@ -288,7 +206,7 @@ puts "Iniciando creacion de datos en la BD"
     booking11 = Booking.new(user_id:usuario2.id, check_in: '2021-11-06', route_id:route4.id )
     booking11.save!
 
-    booking12 = Booking.new(user_id:usuario3.id, check_in: '2021-11-26', route_id:route5.id )
+    booking12 = Booking.new(user_id:usuario3.id, check_in: '2021-11-06', route_id:route5.id )
     booking12.save!
 
   # para la ruta 5
@@ -310,7 +228,7 @@ puts "Iniciando creacion de datos en la BD"
   ruta = [route0.id, route1.id, route2.id, route3.id, route4.id, route5.id]
 
   # comentario
-  commt = ["Maravilloso, Me encanto la caminata, esperando una nueva ruta", "Volvere a repetir, maravilloso el guia, muy atento y experto en la ruta", "Increible, cuanta historia, la hice por mi cuenta y quiero repetir con un guia.", "mis felicitaciones al guia, atencion personalizada en todo momento y contesto todas mis curiosidades sobre la ruta", "Me encanta su pagina, ¿pueden agregar mas datos de interés a algunos lugares?", "Increible todas estas joyas, muy amable el guia, volvere a repetir con ustedes", "Me encanto la ruta, nunca imagine que la ciudad tuviera tantos secretos.", "Esperando una proxima guiatura, es magnifico, los guia, la historia, los detalles que cuentan en los recorridos"]
+  commt = ["Maravilloso, Me encanto", "Volvere a repetir", "Woa cuanta historia, la hice por mi cuenta", "No esta mal", "Pueden agregar mas datos de interes a algunos lugares?", "Increible todas estas joyas", "Me encanto la ruta", "Esperando una proxima guiatura, es magnifico"]
 
   #rating
   ratig = [4,5]
