@@ -84,7 +84,7 @@ puts "Iniciando creacion de datos en la BD"
 
 
 # creando rutas
-  route0 = Route.new(name: 'Casco Histórico de Caracas', description: '  Una caminata al pasado, casa del Libertador Simón Bolívar, Plaza Bolívar, La Casa Amarilla, estilo arquitectónico colonial y neoclásico en una ruta que te traslada a grandes momentos históricos pre y post independentistas.', duration: 4, places_interest: 'Cafetería Páramo, Restaurante el Techo de la Ballena, Cocadas, Heladería', available_dates: '20211007,20211108,20211109', price: 20, user_id: guide.id)
+  route0 = Route.new(name: 'Casco Histórico de Caracas', description: '  Una caminata al pasado, casa del Libertador Simón Bolívar, Plaza Bolívar, La Casa Amarilla, estilo arquitectónico colonial y neoclásico en una ruta que te traslada a grandes momentos históricos pre y post independentistas.', duration: 4, places_interest: 'Cafetería Páramo, Restaurante el Techo de la Ballena, Cocadas, Heladería', available_dates: '20211007,20211108,20211109, 20211120,20211125,20211130', price: 20, user_id: guide.id)
   route0.save!
 
   route1 = Route.new(name: 'Ruta de los Museos - Caracas', description: '  Ruta por el Arte Contemporáneo, Arte Nacional y Artes plásticas que se combinan con estructuras arquitectónicas neoclásicas de más de 100 años y estructuras con diseño brutalista, una combinación única.', duration: 4, places_interest: 'Puesto de raspados, Panaderías, Restaurantes.', available_dates:'20211110,20211112', price: 15, user_id: guide1.id)

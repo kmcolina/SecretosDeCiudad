@@ -45,7 +45,7 @@ class RoutesController < ApplicationController
   end
 
   def data_show
-   
+
     @review = Review.new(route_id: @route)
     places = Place.all
     @places_route = Place.where(route_id: @route)
@@ -78,7 +78,7 @@ class RoutesController < ApplicationController
 
     @usr_fechas_book = []
     @guide_routes.each do |ruta|
-        @usr_bookings  =  Booking.where(route_id: ruta.id)
+        @usr_bookings  =  Booking.where(route_id: ruta.id).order(created_at: :desc)
         @usr_fechas_book << @usr_bookings.where(check_in: params[:fecha])
     end
 
