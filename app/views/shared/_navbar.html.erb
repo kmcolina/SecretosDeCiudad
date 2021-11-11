@@ -22,13 +22,13 @@
           <div class="dropdown-menu dropdown-menu-right drop-photo transition-elements" aria-labelledby="navbarDropdown">
 
           <% if current_user && current_user.admin? %>
-            <%= link_to "Crear Ruta", new_route_path, class: "dropdown-item hover-letter" %>
-            <%= link_to "Crear Lugar",new_place_path, class: "dropdown-item hover-letter" %>
-            <%= link_to "Crear Guia", new_guide_user_path(1), class: "dropdown-item hover-letter" %>
-            <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
+            <%= link_to "Crear ruta", new_route_path, class: "dropdown-item hover-letter" %>
+            <%= link_to "Crear lugar",new_place_path, class: "dropdown-item hover-letter" %>
+            <%= link_to "Crear guía", new_guide_user_path(1), class: "dropdown-item hover-letter" %>
+            <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item hover-letter" %>
           <%  elsif current_user && current_user.guide? %>
-            <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
+            <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item hover-letter" %>
           <% else %>
             <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>

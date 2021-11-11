@@ -82,13 +82,13 @@
         <div id="add-review" >
           <h3 class = "d-flex justify-content-center mb-3 review-show-marr">¿Qué te pareció la ruta?</h3>
           <%= simple_form_for([@route, @review] ) do |f| %>
-            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false , :input_html => { :class => "review-show-mar" } %>
+            <%= f.input :comment, placeholder: "Agrega tu comentario aquí..." , label: false , :input_html => { :class => "review-show-mar" } %>
             <%= f.input :rating, as: :select, collection: (1..5), label: false, required: true, prompt: "What's your rating", input_html: { id: "review_rating", class: "estrella" } %>
             <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
             <div class = "btn-show-mar">
             <%= f.submit class: "btn btn-dark", value: "Comentar" %>
 
-            <small><em class="text-muted">inicia sesión para comentar!</em></small>
+            <small><em class="text-muted"> ¡Inicia sesión para comentar!</em></small>
           </div >
           <% end %>
         </div>
@@ -104,7 +104,7 @@
               <h3><%= @route.name %></h3>
               <h4><strong>Costo de la ruta:</strong> $<%= @route.price %></h4>
               <p><strong>Duración: </strong><%= @route.duration %> hrs</p>
-              <p><strong>Guia: </strong>nombre apellido</p>
+              <p><strong>Guía: </strong><%=@foto_guide.first_name%> <%=@foto_guide.last_name%></p>
               <div class="d-flex justify-content-center align-items-center">
                 <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
               </div>
