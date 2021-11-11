@@ -102,8 +102,8 @@ puts "Iniciando creacion de datos en la BD"
   route5 = Route.new(name: 'Las esquinas de Caracas', description: '  Una característica particular de la ciudad; la torre, la principal, las monjas, la sociedad; descubre el porqué de estos curiosos nombres.', duration: 6, places_interest: 'Cafe Bolívar, Restaurante, Cocada', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
   route5.save!
 
-  route6 = Route.new(name: 'Inspiración Parisina', description: '  Caracas y París tienen muchas más cosas en común de lo que imaginas; calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
-  route6.save!
+  # route6 = Route.new(name: 'Inspiración Parisina', description: '  Caracas y París tienen muchas más cosas en común de lo que imaginas; calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
+  # route6.save!
 
 
 
@@ -182,10 +182,10 @@ puts "Iniciando creacion de datos en la BD"
   route5.save!
 
 
-  file_1 = URI.open('https://images.unsplash.com/photo-1500313830540-7b6650a74fd0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGFyaXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
+  # file_1 = URI.open('https://images.unsplash.com/photo-1500313830540-7b6650a74fd0?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cGFyaXN8ZW58MHwwfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-  route6.photo.attach(io: file_1, filename: 'route_6.jpg', content_type: 'image/jpg')
-  route6.save!
+  # route6.photo.attach(io: file_1, filename: 'route_6.jpg', content_type: 'image/jpg')
+  # route6.save!
 
 
   # imagenes para los lugares de la ruta 1
@@ -270,7 +270,7 @@ puts "Iniciando creacion de datos en la BD"
     booking6.save!
 
   # para la ruta 2
-    booking7 = Booking.new(user_id:usuario.id, check_in: '2021-11-16', route_id:route2.id , pago_user: rand(25987539..99999999))
+    booking7 = Booking.new(user_id:usuario.id, check_in: '2021-11-16', route_id:route2.id , pago_user: rand(25987539..99999999), status_pago: true)
     booking7.save!
 
     booking8 = Booking.new(user_id:usuario3.id, check_in: '2021-11-16', route_id:route2.id )
@@ -288,14 +288,14 @@ puts "Iniciando creacion de datos en la BD"
     booking11 = Booking.new(user_id:usuario2.id, check_in: '2021-11-06', route_id:route4.id )
     booking11.save!
 
-    booking12 = Booking.new(user_id:usuario3.id, check_in: '2021-11-26', route_id:route5.id , pago_user: rand(25987539..99999999))
+    booking12 = Booking.new(user_id:usuario3.id, check_in: '2021-11-26', route_id:route5.id , pago_user: rand(25987539..99999999), status_pago: true)
     booking12.save!
 
   # para la ruta 5
     booking11 = Booking.new(user_id:usuario2.id, check_in: '2021-11-20', route_id:route5.id , pago_user: rand(25987539..99999999))
     booking11.save!
 
-    booking13 = Booking.new(user_id:usuario3.id, check_in: '2021-11-21', route_id:route5.id, pago_user: rand(25987539..99999999) )
+    booking13 = Booking.new(user_id:usuario3.id, check_in: '2021-11-21', route_id:route5.id, pago_user: rand(25987539..99999999), status_pago: true)
     booking13.save!
 
     booking13 = Booking.new(user_id:usuario.id, check_in: '2021-11-21', route_id:route5.id )
