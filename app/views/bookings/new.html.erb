@@ -1,8 +1,8 @@
 <div class="container col-md-7 mt-4 mb-4">
-  <div class="form-book">
-          <h5 class="new-post"><%= link_to route_path(@route) do %>
+  <div class="form-book book-mars-new">
+          <h5 class="new-post d-flex justify-content-center"><%= link_to route_path(@route) do %>
             <i class="fas fa-chevron-left" id="back-arrow"></i>
-          <% end %> Reservar un guía</h5>
+          <% end %> <b>Reservar un guía </b></h5>
           <%= simple_form_for [@route, @booking] do |f| %>
             <% if @booking.errors.any? %>
             <div class="errors-container">
