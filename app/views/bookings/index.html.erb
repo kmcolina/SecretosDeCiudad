@@ -2,7 +2,7 @@
 box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
     <div class="container">
       <h1 >Mis Rutas</h1>
-      <p style><%= current_user.email %></p>
+      <p ></p>
     </div>
 </div>
 <div class="container book-mar" >
@@ -17,7 +17,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
           </div>
           <div class="descriptio-booking d-flex justify-content-between pago-div">
             <% if booking.status_pago.nil? %>
-              <p class="name-booking pagar-booking"><strong>Pago Pendiente </strong></p>
+              <p ></p>
               <%= link_to "Pagar", edit_booking_path(booking), class: "btn btn-dark" %>
             <% end %>
           </div>
