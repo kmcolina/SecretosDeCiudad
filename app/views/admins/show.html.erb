@@ -1,5 +1,5 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(<%= cl_image_path @route.photo.key %>);;
-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
     <div class="container">
       <h1 ><%= @route.name %></h1>
       <p style><%= current_user.email %></p>
@@ -10,16 +10,16 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
   <div class="sidebar-sticky border-right">
       <ul class="nav flex-column">
         <li>
-          <%= link_to "Ver Rutas", routes_path, class: 'nav-link title' %>
+          <%= link_to "Ver rutas", routes_path, class: 'nav-link title' %>
         </li>
         <li>
-          <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
+          <%= link_to "Ver guías", users_path, class:"nav-link title" %>
         </li>
         <li>
-          <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
+          <%= link_to "Ver lugares", places_path, class:"nav-link title" %>
         </li>
         <li>
-          <%= link_to "Ver Pagos", routes_path, class:"nav-link title" %>
+          <%= link_to "Ver pagos", routes_path, class:"nav-link title" %>
         </li>
       </ul>
   </div>

@@ -1,5 +1,5 @@
 <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/HTnycx0h_kk/1600x900);;
-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
     <div class="container">
       <h1 >Administrar Rutas</h1>
       <p style><%= current_user.email %></p>
@@ -11,16 +11,16 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
   <div class="sidebar-sticky border-right">
     <ul class="nav flex-column">
       <li>
-        <%= link_to "Crear Ruta", new_route_path, class:"nav-link title" %>
+        <%= link_to "Crear ruta", new_route_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
+        <%= link_to "Ver guías", users_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
+        <%= link_to "Ver lugares", places_path, class:"nav-link title" %>
       </li>
       <li>
-        <%= link_to "Ver Pagos", pago_valid_path, class:"nav-link title" %>
+        <%= link_to "Ver pagos", pago_valid_path, class:"nav-link title" %>
       </li>
     </ul>
   </div>
@@ -33,7 +33,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
           <tr>
             <th scope="col">Ruta</th>
             <th scope="col">Fechas disponibles</th>
-            <th scope="col">Duracion</th>
+            <th scope="col">Duración</th>
             <th></th>
             <th></th>
           </tr>
