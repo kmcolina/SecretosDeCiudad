@@ -84,25 +84,25 @@ puts "Iniciando creacion de datos en la BD"
 
 
 # creando rutas
-  route0 = Route.new(name: 'Casco Historico de Caracas', description: 'Una caminata al pasado, Casa del libertador Simon Bolivar, Plaza bolivar, La Casa Amarilla, estilo arquitectonico colonial y neoclasico en una ruta que te traslada a grandes momentos historicos pre y post independentistas.', duration: 4, places_interest: 'Cafeteria Paramo, Restaurante el Techo de la Ballena, Cocadas, Heladeria', available_dates: '20211007,20211108,20211109', price: 20, user_id: guide.id)
+  route0 = Route.new(name: 'Casco Histórico de Caracas', description: '  Una caminata al pasado, casa del Libertador Simón Bolívar, Plaza Bolívar, La Casa Amarilla, estilo arquitectónico colonial y neoclásico en una ruta que te traslada a grandes momentos históricos pre y post independentistas.', duration: 4, places_interest: 'Cafetería Páramo, Restaurante el Techo de la Ballena, Cocadas, Heladería', available_dates: '20211007,20211108,20211109', price: 20, user_id: guide.id)
   route0.save!
 
-  route1 = Route.new(name: 'Ruta de los Museos - Caracas', description: 'Ruta por el Arte Contemporaneo, Arte nacional y Artes plasticas que se combinan con estructuras arquitectonicas neoclasicas de mas de 100 años y estructuras con diseño brutalista, una combinación unica', duration: 4, places_interest: 'Puesto de raspados, Panaderias, Restaurantes.', available_dates:'20211110,20211112', price: 15, user_id: guide1.id)
+  route1 = Route.new(name: 'Ruta de los Museos - Caracas', description: '  Ruta por el Arte Contemporáneo, Arte Nacional y Artes plásticas que se combinan con estructuras arquitectónicas neoclásicas de más de 100 años y estructuras con diseño brutalista, una combinación única.', duration: 4, places_interest: 'Puesto de raspados, Panaderías, Restaurantes.', available_dates:'20211110,20211112', price: 15, user_id: guide1.id)
   route1.save!
 
-  route2 = Route.new(name: 'Arquitectura con estilo', description: 'Una ruta llena de estructuras arquitectonicas de distintos estilos neogótico, Neoclásico y neobarroco que se encuentran muy cerca unos de otros y que ademas tienen una historia que contar', duration: 2, places_interest: 'Cafeteria, Centro Comercial', available_dates:'20211015,20211120', price: 10, user_id: guide2.id)
+  route2 = Route.new(name: 'Arquitectura con estilo', description: '  Una ruta llena de estructuras arquitectónicas de distintos estilos, neogótico, neoclásico y neobarroco, que se encuentran muy cerca unos de otros y que, además, tienen una historia que contar.', duration: 2, places_interest: 'Cafetería, Centro Comercial', available_dates:'20211015,20211120', price: 10, user_id: guide2.id)
   route2.save!
 
-  route3 = Route.new(name: 'Rascacielos en Caracas', description: 'Toda gran ciudad tiene rascacielos, Caracas no se queda atras, las Torres de Parque central son los segundos rascacielos más alto de Sudamérica.', duration: 5, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
+  route3 = Route.new(name: 'Rascacielos en Caracas', description: '  Toda gran ciudad tiene rascacielos, Caracas no se queda atrás, las Torres de Parque Central son los segundos rascacielos más altos de Sudamérica.', duration: 5, places_interest: 'Panadería, Restaurante', available_dates:'20211116,20211120', price: 8, user_id: guide1.id)
   route3.save!
 
-  route4 = Route.new(name: 'Los 7 Templos', description: 'Tradiciones de semana santa que son joyas arquitectonicas que guarda la ciudad, estilo Neoclasico, Neogótico, historias y leyendas que se unen', duration: 4, places_interest: 'Plaza 2, Sambil 2, Edificio 2', available_dates:'20211002,20211106', price: 10,user_id: guide3.id)
+  route4 = Route.new(name: 'Los 7 Templos', description: '  Tradiciones de Semana Santa que son joyas arquitectónicas que guarda la ciudad, estilo neoclásico y neogótico, historias y leyendas que se unen.', duration: 4, places_interest: 'Souvenirs, Puestos de comida rápida', available_dates:'20211002,20211106', price: 10,user_id: guide3.id)
   route4.save!
 
-  route5 = Route.new(name: 'Las esquinas de Caracas', description: 'Una caracteristica particular de la ciudad, la torre, principal, las monjas, sociedad, descubre el porque de estos curiosos nombres', duration: 6, places_interest: 'Cafe bolivar, Restaurante, Cocada', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
+  route5 = Route.new(name: 'Las esquinas de Caracas', description: '  Una característica particular de la ciudad; la torre, la principal, las monjas, la sociedad; descubre el porqué de estos curiosos nombres.', duration: 6, places_interest: 'Cafe Bolívar, Restaurante, Cocada', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
   route5.save!
 
-  route6 = Route.new(name: 'Inspiracion Parisina', description: 'Caracas y Paris tiene muchas mas cosas en comun de lo que imaginas, calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
+  route6 = Route.new(name: 'Inspiración Parisina', description: '  Caracas y París tienen muchas más cosas en común de lo que imaginas; calles, capillas, arquitectura.', duration: 6, places_interest: 'Centro comercial, Restaurante', available_dates:'20211018,20211120,20211121', price: 20,user_id: guide.id)
   route6.save!
 
 
@@ -110,41 +110,41 @@ puts "Iniciando creacion de datos en la BD"
 
 # creado lugares
   #para la ruta 0 (casco historico)
-    place1 = Place.new(name: 'Plaza Bolívar', description: 'En ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini.', address: 'Esquina La Torre, Caracas', route_id: route0.id, latitude: 10.5048301, longitude: -66.9141038  )
+    place1 = Place.new(name: 'Plaza Bolívar', description: '  En ella se encuentra la Estatua ecuestre de Simón Bolívar, obra del escultor italiano Adamo Tadolini.', address: 'Esquina La Torre, Caracas', route_id: route0.id, latitude: 10.5048301, longitude: -66.9141038  )
     place1.save!
 
-    place2 = Place.new(name: 'Casa Amarilla', description: 'Antiguo palacio de gobierno, de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.5063928, longitude: -66.9154011)
+    place2 = Place.new(name: 'Casa Amarilla', description: '  Antiguo palacio de gobierno, de arquitectura neoclásica que data del siglo XIX, se utilizó como palacio de gobierno y residencia oficial de los presidentes.', address: 'Esquina de Principal, lado Oeste de la Plaza Bolívar, Av. Este 0, Caracas', route_id: route0.id, latitude: 10.5063928, longitude: -66.9154011)
     place2.save!
 
-    place3 = Place.new(name: 'Concejo Municipal', description: 'De estilo arquitectonico Ecléctico, Francés. Escenario donde se firmo del Acta de Independencia de Venezuela el 5 de julio de 1811.', address: 'Esquina Las Monjas, Caracas' , route_id: route0.id, latitude: 10.5060012, longitude: -66.9148397)
+    place3 = Place.new(name: 'Concejo Municipal', description: '  De estilo arquitectónico Ecléctico, Francés. Escenario donde se firmo del Acta de Independencia de Venezuela el 5 de julio de 1811.', address: 'Esquina Las Monjas, Caracas' , route_id: route0.id, latitude: 10.5060012, longitude: -66.9148397)
     place3.save!
 
  #para la ruta 1
-    place4 = Place.new(name: 'Museo de Bellas Artes', description: 'Su fundación data de 1918. Las dos estructuras que albergan al museo fueron diseñadas por el arquitecto Carlos Raúl Villanueva.', address: 'Plaza de los Museos, Bellas Artes, Caracas 1050' , route_id: route1.id, latitude: 10.5006126, longitude: -66.8991782)
+    place4 = Place.new(name: 'Museo de Bellas Artes', description: '  Su fundación data de 1918. Las dos estructuras que albergan al museo fueron diseñadas por el arquitecto Carlos Raúl Villanueva.', address: 'Plaza de los Museos, Bellas Artes, Caracas 1050' , route_id: route1.id, latitude: 10.5006126, longitude: -66.8991782)
     place4.save!
 
 
   #para la ruta 2
-    place5 = Place.new(name: 'Palacio de las Academias', description: 'Edificación Colonial con estilo neogótico de Caracas, Venezuela ubicada en la Avenida Universidad', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.5046717, longitude: -66.9168704)
+    place5 = Place.new(name: 'Palacio de las Academias', description: '  Edificación Colonial con estilo neogótico de Caracas, Venezuela. Ubicada en la Avenida Universidad.', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.5046717, longitude: -66.9168704)
     place5.save!
 
-    place6 = Place.new(name: 'Palacio Federal Legislativo', description: 'De estilo arquitectonico Neoclásico. El Capitolio Federal desde 1877 fue sede de los tres Poderes de la Nación.', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.505235, longitude: -66.9165726)
+    place6 = Place.new(name: 'Palacio Federal Legislativo', description: '  De estilo arquitectónico neoclásico. El Capitolio Federal desde 1877 fue sede de los tres Poderes de la Nación.', address: 'Esquina La Bolsa, Caracas' , route_id: route2.id, latitude: 10.505235, longitude: -66.9165726)
     place6.save!
 
   #para la ruta 3
-    place7 = Place.new(name: 'Torres Parque Central', description: 'Desde 1979 hasta 2003, ostentaron el título de los rascacielos más altos de América Latina.', address: 'Final Av. Bolivar, Caracas' , route_id: route3.id, latitude: 10.4986551, longitude: -66.9005484)
+    place7 = Place.new(name: 'Torres Parque Central', description: '  Desde 1979 hasta 2003, ostentaron el título de los rascacielos más altos de América Latina.', address: 'Final Av. Bolívar, Caracas' , route_id: route3.id, latitude: 10.4986551, longitude: -66.9005484)
     place7.save!
 
   #para la ruta 4
-    place8 = Place.new(name: 'Catedral de Caracas', description: 'Construida en 1665. Su fachada es de 1771, obra de Francisco Andrés de Meneses. Dañada por el terremoto de 1812.', address: 'Esquina La Torre, Caracas' , route_id: route4.id, latitude: 10.506324, longitude: -66.9149134)
+    place8 = Place.new(name: 'Catedral de Caracas', description: '  Construida en 1665, su fachada es de 1771, obra de Francisco Andrés de Meneses. Dañada por el terremoto de 1812.', address: 'Esquina La Torre, Caracas' , route_id: route4.id, latitude: 10.506324, longitude: -66.9149134)
     place8.save!
 
    #para la ruta 5
-    place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: 'se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.5066932, longitude: -66.9164852)
+    place9 = Place.new(name: 'Dirección de Archivos Bibliotecas y Divulgación', description: '  Se encarga de la administración del Fondo Documental y Bibliográfico, relacionado con la memoria institucional y temas relacionados con la política exterior de nuestro país, en el área de la Gestión de la Información y el Conocimiento.', address: 'Esquina El Conde, Caracas' , route_id: route5.id, latitude: 10.5066932, longitude: -66.9164852)
     place9.save!
 
    #para la ruta 6
-    place10 = Place.new(name: 'Arco de la Federación', description: 'monumento situadode estilo colonial, inspirado en el arco del triunfo de Paris.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
+    place10 = Place.new(name: 'Arco de la Federación', description: '  Monumento de estilo colonial, inspirado en el arco del triunfo de París.', address: 'El Calvario, Caracas' , route_id: route6.id, latitude: 10.5059818, longitude: -66.9216488)
     place10.save!
 
 
@@ -310,7 +310,7 @@ puts "Iniciando creacion de datos en la BD"
   ruta = [route0.id, route1.id, route2.id, route3.id, route4.id, route5.id]
 
   # comentario
-  commt = ["Maravilloso, Me encanto la caminata, esperando una nueva ruta", "Volvere a repetir, maravilloso el guia, muy atento y experto en la ruta", "Increible, cuanta historia, la hice por mi cuenta y quiero repetir con un guia.", "mis felicitaciones al guia, atencion personalizada en todo momento y contesto todas mis curiosidades sobre la ruta", "Me encanta su pagina, ¿pueden agregar mas datos de interés a algunos lugares?", "Increible todas estas joyas, muy amable el guia, volvere a repetir con ustedes", "Me encanto la ruta, nunca imagine que la ciudad tuviera tantos secretos.", "Esperando una proxima guiatura, es magnifico, los guia, la historia, los detalles que cuentan en los recorridos"]
+  commt = ["Maravilloso, me encantó la caminata, esperando una nueva ruta.", "Volveré a repetir, maravilloso el guía, muy atento y experto en la ruta.", "Increíble, cuanta historia, la hice por mi cuenta y quiero repetir con un guía.", "Mis felicitaciones al guía, atención personalizada en todo momento y contestó todas mis curiosidades sobre la ruta.", "Me encanta su página, ¿pueden agregar mas datos de interés a algunos lugares?", "Increíble todas estas joyas, muy amable el guía, volveré a repetir con ustedes.", "Me encantó la ruta, nunca imaginé que la ciudad tuviera tantos secretos.", "Esperando una próxima guiatura, es magnífico, los guías, la historia, los detalles que cuentan en los recorridos."]
 
   #rating
   ratig = [4,5]
