@@ -1,11 +1,6 @@
-<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/_hRCJ_agJuI/1600x900);;
-box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
-    <div class="container">
-      <h1 >Medios de Pago</h1>
-      <p style></p>
-    </div>
-</div>
+
 <div class="container col-md-12 mt-5">
+    <h1 class="d-flex justify-content-center">Medios de Pago</h1>
     <div class="cards d-flex justify-content-center">
       <div class="card">
         <div class="card-pago">
@@ -31,11 +26,11 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
 </div>
 
 
-<div class="container col-md-6 mt-5 book-mar">
+<div class="container col-md-6 mt-2">
+  <h1 class="d-flex justify-content-center">Numero de Referencia</h1>
   <div class="cards d-flex justify-content-center">
-    <div class="card" style="heigth:100px">
+    <div class="card">
       <div class="card-pago">
-      <p class =" title-table d-flex justify-content-center" style="font-size:20px">Numero De Referencia</p>
         <%= simple_form_for(@booking) do |f| %>
         <% if @booking.errors.any? %>
           <div class="errors-container">
@@ -47,11 +42,9 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
           </div>
         <% end %>
        <% #  <%= f.input :photo, as: :file %>
-        <%= f.input :pago_user, label: false  %>
-        <div class="btn-form mt-5">
-           <%= f.submit value: "Cargar Recibo", class: "btn btn-dark" %>
-        </div>
-
+        <%= f.input :pago_user %>
+        <%= f.submit value: "Update", class: "btn btn-dark" %>
+        <%= link_to "Back", bookings_path, class: "btn btn-dark " %>
       <% end %>
       </div>
     </div>

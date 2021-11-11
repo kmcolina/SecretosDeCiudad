@@ -1,10 +1,9 @@
-<div class="container col-md-7 mt-4 mb-4 d-flex forms-mar">
-  <div class="form-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
-  </div>
-  <div class="form">
-    <h5 class="new-post"><%= link_to root_path do %>
-      <i class="fas fa-chevron-left" id="back-arrow"></i>
-    <% end %> Nueva ruta</h5>
+<h1>Routes New</h1>
+
+
+<div class="container col-md-5" style="margin-top: 10px">
+  <div class="bg-white rounded p-3">
+    <h5 class="new-post">New post</h5>
       <%= simple_form_for(@route) do |f| %>
         <% if @route.errors.any? %>
           <div class="errors-container">
@@ -15,23 +14,16 @@
             </ul>
           </div>
         <% end %>
-        <div class="form-section">
-          <div class="form-photo"><%= f.input :photo, as: :file, label: :Foto, required: true %></div>
-          <%= f.input :name, label: :Nombre %>
-          <%= f.input :description, label: :Descripción %>
-          <%= f.input :places_interest, label: :Tendencias %>
-        </div>
-        <div class="form-flex">
-          <%= f.input :price, label: :Precio %>
-          <%= f.input :duration, label: :Duración %>
-        </div>
-        <div class="form-section">
-          <%= f.input :user_id, label: :Guía, collection: User.where(rol: 'guide'), label_method: :email  %>
-          <%= f.input :available_dates, label: :Fechas %>
-        </div>
-        <div class="btn-form">
-          <%= f.submit value:'Crear', class:'btn btn-dark btn-form'%>
-        </div>
+        <%= f.input :photo, as: :file %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :places_interest %>
+        <%= f.input :price %>
+        <%= f.input :duration %>
+        <%= f.input :available_dates %>
+        <%= f.input :user_id, collection: User.where(rol: 'guide'), label_method: :email  %>
+        <%= f.submit value:'Create', class:'btn btn-primary'%>
+        <%= link_to 'Back', root_path, class:'btn btn-dark'%>
       <% end %>
   </div>
 </div>

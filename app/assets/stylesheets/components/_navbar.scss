@@ -1,9 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
-background: rgb(16,91,79);
-background: linear-gradient(90deg, rgba(16,91,79,1) 0%, rgba(79,150,110,1) 71%, rgb(156, 201, 130) 100%);
-position:relative;
-z-index:20;
+  background: rgb(32, 106, 93);
+   position:relative;
+  z-index:20;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -31,40 +30,4 @@ z-index:20;
 }
 .logo{
   width: 80%;
-}
-.drop-photo{
-  background-color: rgba(255, 255, 255, 0.958)!important;
-  border-radius: 8px;
-}
-
-.hover-letter:hover{
-font-size: 20px;
-background-color: rgba(191, 220, 174, 0.8)!important;
-transition: all 0.4s !important;
-}
-
-.dropdown .dropdown-menu {
-  display: block;
-  visibility: hidden;
-  opacity: 0;
-  transition:         all 0.4s  ease;
-  -moz-transition:    all 0.4s  ease;
-  -webkit-transition: all 0.4s  ease;
-  -o-transition:      all 0.10s  ease;
-  -ms-transition:     all 0.4s  ease;
-}
-.dropdown:hover .dropdown-menu {
-  visibility: visible;
-  opacity: 1;
-}
-.dropdown {
-  display: inline-block;
-}
-.hover-imagen:hover{
-   transition:         all 0.2s  ease;
-   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-.header-2{
-  box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3);
-  width: 100%;
 }
