@@ -1,22 +1,22 @@
-<%# <h1>Bookings#new</h1>
-<p>Find me in app/views/bookings/new.html.erb</p> %>
-
-<div class="container col-md-5" style="margin-top: 10px; padding-bottom: 168px">
-      <div class="bg-white rounded p-3">
-        <h3>Book your reservation</h3>
-        <%= simple_form_for [@route, @booking] do |f| %>
-          <% if @booking.errors.any? %>
-          <div class="errors-container">
-            <ul>
-              <% @booking.errors.full_messages.each do |message| %>
-                <% message %>
-              <% end %>
-            </ul>
+<div class="container col-md-7 mt-4 mb-4">
+  <div class="form-book">
+          <h5 class="new-post"><%= link_to route_path(@route) do %>
+            <i class="fas fa-chevron-left" id="back-arrow"></i>
+          <% end %> Reservar un guía</h5>
+          <%= simple_form_for [@route, @booking] do |f| %>
+            <% if @booking.errors.any? %>
+            <div class="errors-container">
+              <ul>
+                <% @booking.errors.full_messages.each do |message| %>
+                  <% message %>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <%= f.input :check_in, label: :Fecha %>
+          <div class="btn-form">
+            <%= f.submit value:'Reservar', class:'btn btn-dark btn-form' %>
           </div>
-        <% end %>
-        <%= f.input :check_in %>
-        <%= f.submit value:'Book', class:'btn btn-primary' %>
-        <%= link_to 'Back', route_path(@route), class:'btn btn-dark' %>
-        <% end %>
-      </div>
+          <% end %>
+  </div>
 </div>

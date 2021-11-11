@@ -2,12 +2,21 @@ class RoutesController < ApplicationController
   # CRUD
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_route, only: [:show, :update, :destroy]
+
+  def fechas_index_guide
+    # rutas que pertenecen al guia actual
+    @guide_routes = Route.where(user_id: current_user.id)
+  end
+
+
+
   def index
     if current_user && current_user.admin?
       @routes = Route.all
       render 'admins/index'
     elsif current_user && current_user.guide?
-      @guide_routes = Route.where(user_id: current_user.id)
+      # @guide_routes = Route.where(user_id: current_user.id)
+      fechas_index_guide
       render 'guides/index'
     else
       # barra de busqueda
@@ -36,6 +45,7 @@ class RoutesController < ApplicationController
   end
 
   def data_show
+   
     @review = Review.new(route_id: @route)
     places = Place.all
     @places_route = Place.where(route_id: @route)
@@ -50,6 +60,8 @@ class RoutesController < ApplicationController
       @fechas_all << Date.strptime(fecha, "%Y%m%d")
     end
 
+
+
     # mapa
     @placess = Place.all
     @markers =  @places_route.map do |flat|
@@ -60,6 +72,31 @@ class RoutesController < ApplicationController
     end
   end
 
+  def usr_book
+    # tengo aca la ruta @guide_routes
+    # busco en los booking los route id que hacen math
+
+    @usr_fechas_book = []
+    @guide_routes.each do |ruta|
+        @usr_bookings  =  Booking.where(route_id: ruta.id)
+        @usr_fechas_book << @usr_bookings.where(check_in: params[:fecha])
+    end
+
+    # filtro por fecha
+
+    # busco a los usuarios que hacen match con esa ruta
+    @usr = []
+    @usr_fechas_book.each do |user|
+      user.each do |usr|
+         @usr << User.find(usr.user_id)
+      end
+    end
+
+    @fecha = params[:fecha]
+
+
+  end
+
   def show
     if current_user && current_user.admin?
       data_show
@@ -67,6 +104,7 @@ class RoutesController < ApplicationController
     elsif current_user && current_user.guide?
       @guide_routes = Route.where(user_id: current_user.id)
       data_show
+      usr_book
       render 'guides/show'
     else
       data_show
@@ -125,6 +163,5 @@ class RoutesController < ApplicationController
   end
 
   def route_params
-    params.require(:route).permit(:name, :duration, :places_interest, :description, :place_id, :user_id, :route_id, :price, :available_dates, :photo, :avatar)
-  end
+    params.require(:route).permit(:name, :duration, :places_interest, :description, :place_id, :user_id, :route_id, :price, :available_dates, :photo, :avatar, :fecha)  end
 end

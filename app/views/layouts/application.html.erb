@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>SecretosDeCiudad</title>
+    <link rel="icon" href="https://res.cloudinary.com/dmsb7zzg3/image/upload/v1636548745/favicon_bfugbn.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -21,7 +22,7 @@
 
     <%= render 'shared/flashes' %>
       <%= yield %>
-     <%= render "shared/footer" %>
+    <%= render 'shared/footer' %>
   </body>
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
   <script>var scroll = new SmoothScroll('a[href*="#"]', {speed:1800 });</script>

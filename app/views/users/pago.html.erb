@@ -1,0 +1,61 @@
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.4)), url(https://source.unsplash.com/HTnycx0h_kk/1600x900);;
+box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+    <div class="container">
+      <h1 >Administrar Pagos</h1>
+      <p style><%= current_user.email %></p>
+    </div>
+</div>
+
+<div class="d-flex mt-2">
+  <%# Sidebar %>
+  <div class="sidebar-sticky border-right">
+    <ul class="nav flex-column">
+      <li>
+        <%= link_to "Crear Ruta", new_route_path, class:"nav-link title" %>
+      </li>
+      <li>
+        <%= link_to "Ver Guías", users_path, class:"nav-link title" %>
+      </li>
+      <li>
+        <%= link_to "Ver Lugares", places_path, class:"nav-link title" %>
+      </li>
+      <li>
+        <%= link_to "Ver Rutas", routes_path, class:"nav-link title" %>
+      </li>
+    </ul>
+  </div>
+
+  <%# Tabla %>
+  <div class="container mt-5 admin-pago">
+    <div class="">
+      <table class="table">
+        <thead class="thead-green">
+          <tr>
+            <th scope="col">Usuario</th>
+            <th scope="col">Fechas ruta</th>
+            <th scope="col">Numero Pago</th>
+            <th scope="col">Estado</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @bookings.each do |book| %>
+            <tr>
+            <% usr = User.find(book.user_id)%>
+            <td><%=usr.email %></td>
+              <td><%=book.check_in%></td>
+              <td><%=book.pago_user %></td>
+              <%if book.status_pago.nil?%>
+                  <td>Por Pagar</td>
+              <%else%>
+                <td>Pago</td>
+              <%end%>
+              <td> <p><%= link_to "Actualizar", update_pago_path(book), method: :patch, class: "btn btn-dark" %></p></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

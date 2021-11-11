@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: %i[edit update show]
+  before_action :set_place, only: %i[edit update show destroy]
 
   def index
     if current_user && current_user.admin?
@@ -38,6 +38,16 @@ class PlacesController < ApplicationController
 
   def edit
   end
+
+  def destroy
+    if current_user && current_user.admin?
+      @place.destroy
+      redirect_to places_path
+    else
+     redirect_to places_path
+    end
+  end
+
 
   private
 

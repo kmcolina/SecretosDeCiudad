@@ -1,0 +1,47 @@
+<div class="container col-md-7 mt-4 mb-4 d-flex forms-mar">
+  <div class="form-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
+  </div>
+  <div class="form">
+    <h5 class="new-post"><%= link_to root_path do %>
+      <i class="fas fa-chevron-left" id="back-arrow"></i>
+    <% end %> Nuevo guía</h5>
+      <%= simple_form_for @user, :url => guide_users_path, :method => :post do |f| %>
+        <%= f.error_notification %>
+        <div class="form-flex">
+          <%= f.input :first_name,
+                      label: :Nombre,
+                      required: true %>
+          <%= f.input :last_name,
+                      label: :Apellido,
+                      required: true %>
+        </div>
+        <div class="form-section">
+          <%= f.input :email,
+                      label: :Correo,
+                      required: true,
+                      autofocus: true,
+                      input_html: { autocomplete: "email" }%>
+        </div>
+        <div class="form-flex">
+          <%= f.input :password,
+                      label: :Contraseña,
+                      required: true,
+                      hint: ("#{6} characters minimum" if 6),
+                      input_html: { autocomplete: "new-password" } %>
+          <%= f.input :password_confirmation,
+                      label: :Confirmar,
+                      required: true,
+                      input_html: { autocomplete: "new-password" } %>
+        </div>
+        <div class="form-photo"><%= f.input :avatar, as: :file, label: :Foto, required: true %></div>
+        <div class="form-section">
+          <%= f.input :rol,
+                      label: :Rol,
+                      required: true %>
+        </div>
+        <div class="btn-form">
+          <%= f.button :submit, "Registrar", class:'btn btn-dark btn-form' %>
+        </div>
+      <% end %>
+  </div>
+</div>

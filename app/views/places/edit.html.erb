@@ -1,14 +1,10 @@
-<h1>VISTA DE EDITAR</h1>
-
-
-
-<%# <h1>ObjetoAcuaticos#new</h1>
-<p>Find me in app/views/places/new.html.erb</p>
- %>
-
-<div class="container col-md-5" style="margin-top: 10px">
-  <div class="bg-white rounded p-3">
-    <h5 class="new-post">New post</h5>
+<div class="container col-md-7 mt-4 mb-4 d-flex">
+  <div class="form-img" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
+  </div>
+  <div class="form">
+    <h5 class="new-post"><%= link_to root_path do %>
+      <i class="fas fa-chevron-left" id="back-arrow"></i>
+    <% end %> Editar lugar</h5>
       <%= simple_form_for(@place) do |f| %>
         <% if @place.errors.any? %>
           <div class="errors-container">
@@ -19,15 +15,22 @@
             </ul>
           </div>
         <% end %>
-        <%= f.input :photo, as: :file  %>
-        <%= f.input :name %>
-        <%= f.input :description %>
-        <%= f.input :address %>
-        <%= f.input :latitude %>
-        <%= f.input :longitude %>
-        <%= f.association :route %>
-        <%= f.submit value:'Update', class:'btn btn-primary'%>
-        <%= link_to 'Back', places_path, class:'btn btn-dark'%>
+        <div class="form-section">
+          <%= f.input :photo, as: :file, label: :Foto  %>
+          <%= f.input :name, label: :Nombre %>
+          <%= f.input :description, label: :Descripción %>
+          <%= f.input :address, label: :Dirección %>
+        </div>
+        <div class="form-flex">
+          <%= f.input :latitude, label: :Latitud %>
+          <%= f.input :longitude, label: :Longitud %>
+        </div>
+        <div class="form-section">
+          <%= f.association :route, label: :Ruta %>
+        </div>
+        <div class="btn-form">
+          <%= f.submit value:'Actualizar', class:'btn btn-dark'%>
+        </div>
       <% end %>
   </div>
 </div>
