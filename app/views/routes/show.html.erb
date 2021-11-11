@@ -52,11 +52,11 @@
     <%@lugares.each do |lugar| %>
       <div class="tarjeta-wrap">
         <div class="tarjeta">
-          <div class="adelante" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          <div class="adelante" style="background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4)),
           url(<%= cl_image_path lugar.photo.key %>);">
             <h3 class="name-flip-card"><%= lugar.name %></h3>
           </div>
-          <div class="atras" style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          <div class="atras" style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
           url(<%= cl_image_path lugar.photo.key %>);">
             <p><%= lugar.description %></p>
           </div>
