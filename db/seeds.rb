@@ -88,30 +88,30 @@ puts "Iniciando creacion de datos en la BD"
     # usuario 1
     file_1 = URI.open('https://images.unsplash.com/photo-1502877828070-33b167ad6860?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHByb2ZpbGV8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-    usuario.photo.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
+    usuario.avatar.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
     usuario.save!
 
     # usuario 2
     file_1 = URI.open('https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-    usuario1.photo.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
+    usuario1.avatar.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
     usuario1.save!
 
     # usuario 3
     file_1 = URI.open('https://images.unsplash.com/photo-1542157585-ef20bfcce579?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZmlsZXxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-    usuario2.photo.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
+    usuario2.avatar.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
     usuario2.save!
 
     # usuario 4
 
     file_1 = URI.open('https://images.unsplash.com/photo-1541576980233-97577392db9a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8cHJvZmlsZXxlbnwwfDJ8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60')
 
-    usuario3.photo.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
+    usuario3.avatar.attach(io: file_1, filename: 'usuario_1.jpg', content_type: 'image/jpg')
     usuario3.save!
 
 # creando rutas
-  route0 = Route.new(name: 'Casco Histórico de Caracas', description: '  Una caminata al pasado, casa del Libertador Simón Bolívar, Plaza Bolívar, La Casa Amarilla, estilo arquitectónico colonial y neoclásico en una ruta que te traslada a grandes momentos históricos pre y post independentistas.', duration: 4, places_interest: 'Cafetería Páramo, Restaurante el Techo de la Ballena, Cocadas, Heladería', available_dates: '20211007,20211108,20211109, 20211120,20211125,20211130', price: 20, user_id: guide.id)
+  route0 = Route.new(name: 'Casco Histórico de Caracas', description: '  Una caminata al pasado, casa del Libertador Simón Bolívar, Plaza Bolívar, La Casa Amarilla, estilo arquitectónico colonial y neoclásico en una ruta que te traslada a grandes momentos históricos pre y post independentistas.', duration: 4, places_interest: 'Cafetería Páramo, Restaurante el Techo de la Ballena, Cocadas, Heladería', available_dates: '20211007,20211108,20211109,20211120,20211125,20211130', price: 20, user_id: guide.id)
   route0.save!
 
   route1 = Route.new(name: 'Ruta de los Museos - Caracas', description: '  Ruta por el Arte Contemporáneo, Arte Nacional y Artes plásticas que se combinan con estructuras arquitectónicas neoclásicas de más de 100 años y estructuras con diseño brutalista, una combinación única.', duration: 4, places_interest: 'Puesto de raspados, Panaderías, Restaurantes.', available_dates:'20211110,20211112', price: 15, user_id: guide1.id)
