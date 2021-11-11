@@ -84,7 +84,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
       <div class="second-col-guide">
         <p class = "title-table">Usuarios que reservaron</p>
         <% @usr.each  do |usuario|%>
-          <div class="card-user border-bottom">
+          <div class="card-user border-bottom card-user-guide-show">
           <% @foto = User.find(usuario.id) %>
             <% if @foto.avatar.attached? %>
               <%= cl_image_tag @foto.avatar.key , class: "avatar ", alt: "avatar"%>
