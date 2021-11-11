@@ -1,82 +1,76 @@
-  <div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path @route.photo.key %>);">
-    <div class="container">
-      <h1><%= link_to routes_path do %>
-        <i class="fas fa-chevron-left"></i>
-      <% end %><strong><%= @route.name %></strong></h1>
-      <p>Secretos de Ciudad</p>
-    </div>
-</div>
 
-<div class="container">
-  <div class="container d-flex justify-content-between">
-    <div class="first-col">
-      <%# Cards %>
-      <div class="row">
-        <div>
-          <ul class="ul-show">
-            <li class="li-description"><%= @route.description %></li>
+<%# Tendencias %>
+<div>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path @route.photo.key %>); background-size: cover;">
 
-            <%# Tendencias %>
-            <div id="trending-show">
-              <div class="row">
-                <div>
-                  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg" alt="First slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg" alt="Second slide">
-                      </div>
-                      <div class="carousel-item">
-                        <img class="d-block w-100" src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg" alt="Third slide">
-                      </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                  <strong>Tendencias: </strong><%= @route.places_interest %>
-                </div>
-              </div>
-            </div>
-
-            <li><%@lugares.each do |lugar| %>
-              <ul class="card-show">
-                <% if lugar.photo.attached? %>
-                  <%= cl_image_tag lugar.photo.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                <% else %>
-                <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-                <% end %>
-
-                <li id="name-show"><%= lugar.name %></li>
-                <li><%= lugar.description %></li>
-                <li><strong>Dirección: </strong><%= lugar.address %></li>
-              </ul>
-              <% end %>
-            </li>
-          </ul>
+        <div class="carousel-caption d-none d-md-block">
+          <div class="container text-carousel"  style="color:white">
+            <h1><strong><%= @route.name %></strong></h1>
+            <p>Secretos de Ciudad</p>
+            <h5 class = "container descrip text-justify"><%= @route.description %></h5>
+          </div>
         </div>
       </div>
+
+      <%@lugares.each do |lugar| %>
+        <div class="carousel-item" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path lugar.photo.key %>); background-size: cover;">
+
+          <div class="carousel-caption d-none d-md-block">
+            <div class="container text-carousel" style="color:white">
+              <h1><strong><%= @route.name %></strong></h1>
+              <p>Secretos de Ciudad</p>
+              <h5 class = "container descrip text-justify"><%= @route.description %></h5>
+            </div>
+          </div>
+        </div>
+      <% end %>
     </div>
 
-    <div class="second-col">
-      <%# mapa %>
-      <div id="map" class="card"
-        style="height: 30%;"
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+
+<div class="container show-container-mar ">
+
+  <div class="container column-show" >
+    <%# Cards %>
+    <div class="">
+    <%@lugares.each do |lugar| %>
+      <div class="tarjeta-wrap">
+        <div class="tarjeta">
+          <div class="adelante" style="background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url(<%= cl_image_path lugar.photo.key %>);">
+            <h3 class="name-flip-card"><%= lugar.name %></h3>
+          </div>
+          <div class="atras" style="background-image:linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+          url(<%= cl_image_path lugar.photo.key %>);">
+            <p><%= lugar.description %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+	</div>
+
+
+    <%# mapa %>
+    <div id="map" class="card mt-2 mb-5"
+        style="height: 60%;"
         data-markers="<%= @markers.to_json %>"
         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
     </div>
   </div>
 
@@ -85,31 +79,35 @@
     <div id="reviews">
       <%# Add Review %>
       <div class="d-flex justify-content-between">
-        <div id="add-review" class="bg-white rounded p-3 card">
-          <h3>Add a Review</h3>
-          <%= simple_form_for([@route, @review]) do |f| %>
-            <%= f.input :comment, placeholder: "Add your review here..." %>
-            <%= f.input :rating, as: :select, collection: (1..5), required: true, prompt: "What's your rating", input_html: { id: "review_rating" } %>
+        <div id="add-review" >
+          <h3 class = "d-flex justify-content-center mb-3 review-show-marr">¿Qué te pareció la ruta?</h3>
+          <%= simple_form_for([@route, @review] ) do |f| %>
+            <%= f.input :comment, placeholder: "agrega tu comentario aca..." , label: false , :input_html => { :class => "review-show-mar" } %>
+            <%= f.input :rating, as: :select, collection: (1..5), label: false, required: true, prompt: "What's your rating", input_html: { id: "review_rating", class: "estrella" } %>
             <%# DEBERIA IR COMPROBACION DEL USUARIO  %>
-            <%= f.submit class: "btn btn-dark", value: "Review" %>
-            <small><em class="text-muted">Login to post a review!</em></small>
+            <div class = "btn-show-mar">
+            <%= f.submit class: "btn btn-dark", value: "Comentar" %>
+
+            <small><em class="text-muted">inicia sesión para comentar!</em></small>
+          </div >
           <% end %>
         </div>
 
         <%# Card del guía %>
         <div class="scd-col-card-guide">
           <div class="card-guide">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "card-photo", alt: "avatar-large" %>
+
+            <% guide = @route.user_id %>
+            <% @foto_guide = User.find(guide) %>
+            <%= cl_image_tag @foto_guide.avatar.key , class: "card-photo", alt: "avatar-large" %>
             <div class="card-guide-info">
-              <h3>Título del card del guía</h2>
-              <h4>Descripción del guía</h3>
-              <p><strong>Duración: </strong><%= @route.duration %> hrs
-              </p>
-              <p><strong>Fechas disponibles: </strong><% @fechas_all.each do |date|%>
-                <li><%= date %></li>
-              <% end %>
-              </p>
-              <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
+              <h3><%= @route.name %></h3>
+              <h4><strong>Costo de la ruta:</strong> $<%= @route.price %></h4>
+              <p><strong>Duración: </strong><%= @route.duration %> hrs</p>
+              <p><strong>Guia: </strong>nombre apellido</p>
+              <div class="d-flex justify-content-center align-items-center">
+                <p id="btn-book"><%= link_to "Reservar", new_route_booking_path(@route), class: "btn btn-dark", id: "letter-ligth" %></p>
+              </div>
             </div>
           </div>
         </div>
@@ -117,33 +115,33 @@
       </div>
 
       <%# View Reviews %>
-      <div>
-        <h3 id="h3-review">Reviews</h3>
+      <div class = "show-review-mar">
+        <h3 class="h3-review d-flex justify-content-center;">Opiniones</h3>
         <% if @route.reviews.empty? %>
           <small><em class="text-muted">Be the first to comment!</em></small>
         <% end %>
+
         <% @route.reviews.each do |review| %>
-          <div>
+          <div class="card-review margin-reviews">
             <% @foto = User.find(review.user_id) %>
             <% if @foto.avatar.attached? %>
               <%= cl_image_tag @foto.avatar.key , class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
-              <%= image_tag "https://images.unsplash.com/photo-1529946825183-536c6317f60e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YW5vbnltb3VzfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
+              <%= image_tag "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8c21pbGV8ZW58MHwyfDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" ,class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false%>
             <% end %>
             <% review.rating.times do %>
               <%= %>
               <i class="fas fa-star fa-star-yellow"></i>
             <% end %>
             <small><em class="text-muted"><%= distance_of_time_in_words_to_now(review.created_at) %> ago</em></small>
+            <p class = "comment mt-2 ml-5" id="review-<%= review.id %>"> <%= review.comment %> </p>
+
+
           </div>
-          <p class = "comment" id="review-<%= review.id %>"> <%= review.comment %> </p>
-          <hr>
+
         <% end %>
+
       </div>
     </div>
   </div>
 </div>
-
-
-<a href="https://wa.me/5211234567890?text=Saludos,%20espero%20la%20ruta%20con%20entusiasmo" class="whatsapp" target="_blank"> <i class="fab fa-whatsapp whatsapp-icon"></i></a>
-	

@@ -1,19 +1,23 @@
-<div class="banner-bookings">
-  <h1>My Bookings</h1>
+<div class="banner-show" style="background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(https://source.unsplash.com/_hRCJ_agJuI/1600x900);;
+box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
+    <div class="container">
+      <h1 >Mis Rutas</h1>
+      <p ></p>
+    </div>
 </div>
-
-<div class="container">
+<div class="container book-mar" >
   <div class="cards" >
     <% @bookings.each do |booking| %>
-      <div class="card card-has-bg click-col p-4" style="background-image:url(<%= cl_image_path booking.route.photo.key %>);">
+      <div class="card card-has-bg click-col p-4" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(<%= cl_image_path booking.route.photo.key %>);">
         <div style="transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);  position:relative;
           z-index:20;">
-          <div class="title-booking text-center d-flex align-items-center" style="height: 165px">
+          <div class="title-booking text-center d-flex align-items-center flex-column" style="height: 165px">
+            <p class="fecha-booking">Fecha: <%= booking.check_in %></p>
             <h3 class="name-booking"><%= booking.route.name %></h3>
           </div>
-          <div class="descriptio-booking d-flex justify-content-between">
+          <div class="descriptio-booking d-flex justify-content-between pago-div">
             <% if booking.status_pago.nil? %>
-              <p class="name-booking pagar-booking"><strong>Pago Pendiente</strong></p>
+              <p ></p>
               <%= link_to "Pagar", edit_booking_path(booking), class: "btn btn-dark" %>
             <% end %>
           </div>
@@ -21,4 +25,8 @@
         </div>
     <% end %>
   </div>
+
+  <% if @bookings != [] %>
+        <a href="https://wa.me/5211234567890?text=Saludos,%20espero%20la%20ruta%20con%20entusiasmo" class="whatsapp" target="_blank"> <i class="fab fa-whatsapp whatsapp-icon"></i></a>
+  <% end %>
 </div>

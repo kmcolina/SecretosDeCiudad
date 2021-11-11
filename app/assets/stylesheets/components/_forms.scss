@@ -1,0 +1,93 @@
+#back-arrow {
+  color: rgba(128, 128, 128, 0.445);
+
+  &:hover {
+    color: #206A5D;
+  }
+}
+
+.new-post {
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.form {
+  background-color: white;
+  padding: 30px;
+  border-radius: 0px 8px 8px 0px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+.form-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-form {
+  text-align: center;
+}
+
+.form-img {
+  width: 50%;
+  border-radius: 8px 0px 0px 8px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+.form-book {
+  background-color: white;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+}
+
+.form-links {
+  margin-bottom: 0;
+  padding-top: 20px;
+  text-align: end;
+
+  a {
+    color: white;
+  }
+}
+
+.form-links-forgot {
+  margin-bottom: 0;
+  padding-top: 20px;
+  text-align: end;
+
+  a {
+    color: #206A5D;
+  }
+}
+
+.form-login {
+  background-color: rgba(255, 255, 255, 0.411);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,0.2);
+  color: white;
+  height: 50%;
+}
+
+#login-img {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#back-arrow {
+  color: mediumseagreen;
+  opacity: 0.3;
+  margin-right: 5px;
+}
+
+.title-login{
+  text-align: center;
+  margin-top: 15px;
+}
