@@ -2,7 +2,7 @@ class BookingsController < ApplicationController
 
 
   def index
-    @bookings = Booking.all.where(user: current_user)
+    @bookings = Booking.all.where(user: current_user).order(created_at: :desc)
 
   end
 
@@ -46,7 +46,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_pago_user
-    params.require(:booking).permit(:pago_user)
+    params.require(:booking).permit(:pago_user, :created_at)
   end
 
 
