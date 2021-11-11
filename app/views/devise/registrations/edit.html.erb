@@ -2,31 +2,33 @@
   <div class="form-img edit-usr-mar" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
   </div>
   <div class="form edit-usr-mar">
-    <h5 class="new-post d-flex justify-content-center"><%= link_to :back do %>
-      <i class="fas fa-chevron-left" id="back-arrow">  </i>
-    <% end %>  <b> Mi perfil </b></h5>
       <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
         <%= f.error_notification %>
 
         <div class="form-inputs ">
-          <%= f.input :avatar, as: :file , label: :Foto, direct_upload: true%>
+          <div class="form-flex justify-content-between mt-4">
+            <h5 class="new-post d-flex"><%= link_to :back do %>
+              <i class="fas fa-chevron-left" id="back-arrow">  </i>
+            <% end %>  <b> Mi perfil </b></h5>
+            <div class="form-photo"><%= f.input :avatar, input_html: {class: 'd-none'}, label: 'Agregar foto', label_html: { class: 'btn btn-dark'}, direct_upload: true %></div>
+          </div>
           <%= f.input :first_name, label: :Nombre, autofocus: true %>
           <%= f.input :last_name, label: :Apellido, autofocus: true %>
           <%= f.input :email, label: :Correo, required: true, autofocus: true %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <p>Esperando confirmación de: <%= resource.unconfirmed_email %></p>
           <% end %>
-          <div class="form-flex edit-guide-form-mar">
+          <div class="form-section edit-guide-form-mar">
           <%= f.input :password, label: :Contraseña,
                       hint: "Dejar en blanco si no deseas cambiarla",
                       required: false,
                       input_html: { autocomplete: "new-password", class: "edit-guide-form-mar" } %>
-          <%= f.input :password_confirmation, label: :Confirmar,
+          <%= f.input :password_confirmation, label: 'Confirmar contraseña',
                       required: false,
                       input_html: { autocomplete: "new-password" } %>
           </div>
 
-          <%= f.input :current_password, label: :Contraseña_Actual,
+          <%= f.input :current_password, label: 'Contraseña actual',
                       hint: "Ingresa la contraseña actual para confirmar los cambios",
                       required: true,
                       input_html: { autocomplete: "current-password" , class: "edit-guide-form-mar"} %>

@@ -2,9 +2,6 @@
   <div class="form-img edit-usr-mar" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1566344339346-7ce57083eb57?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=546&q=80);">
   </div>
   <div class="form edit-usr-mar">
-    <h5 class="new-post  d-flex justify-content-center"><%= link_to root_path do %>
-      <i class="fas fa-chevron-left" id="back-arrow"></i>
-    <% end %> <b>Nueva ruta</b></h5>
       <%= simple_form_for(@route) do |f| %>
         <% if @route.errors.any? %>
           <div class="errors-container">
@@ -16,7 +13,12 @@
           </div>
         <% end %>
         <div class="form-section">
-          <div class="form-photo"><%= f.input :photo, as: :file, label: :Foto, required: true %></div>
+          <div class="form-flex justify-content-between mt-4">
+            <h5 class="new-post  d-flex justify-content-start"><%= link_to root_path do %>
+              <i class="fas fa-chevron-left" id="back-arrow"></i>
+            <% end %> <b>Nueva ruta</b></h5>
+            <div class="form-photo"><%= f.input :photo, input_html: {class: 'd-none'}, label: 'Agregar foto', label_html: { class: 'btn btn-dark'},required: true %></div>
+          </div>
           <%= f.input :name, label: :Nombre %>
           <%= f.input :description, label: :Descripción %>
           <%= f.input :places_interest, label: :Tendencias %>
@@ -27,7 +29,7 @@
         </div>
         <div class="form-section">
           <%= f.input :user_id, label: :Guía, collection: User.where(rol: 'guide'), label_method: :email  %>
-          <%= f.input :available_dates, label: :Fechas %>
+          <%= f.input :available_dates, label: 'Fechas disponibles' %>
         </div>
         <div class="btn-form">
           <%= f.submit value:'Crear', class:'btn btn-dark btn-form'%>
