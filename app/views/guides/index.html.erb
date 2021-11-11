@@ -39,6 +39,8 @@ box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
               <% fechas= route.available_dates %>
               <% array_fechas = fechas.split(',')  %>
               <% array_fechas.each do |fecha|  @fechas_all << Date.strptime(fecha, "%Y%m%d") end %>
+              <%@fechas_all =@fechas_all.sort { |a, b| b <=> a } %>
+
               <% @fechas_all.each do |date|%>
                   <tr>
                     <td><%= link_to date , guide_show_path(route,date), class:"nav-link title"%> </td>

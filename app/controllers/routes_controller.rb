@@ -78,7 +78,7 @@ class RoutesController < ApplicationController
 
     @usr_fechas_book = []
     @guide_routes.each do |ruta|
-        @usr_bookings  =  Booking.where(route_id: ruta.id).order(created_at: :desc)
+        @usr_bookings  =  Booking.where(route_id: ruta.id)
         @usr_fechas_book << @usr_bookings.where(check_in: params[:fecha])
     end
 
