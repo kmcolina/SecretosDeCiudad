@@ -8,22 +8,22 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
 <div class="container col-md-12 mt-5">
     <div class="cards d-flex justify-content-center">
       <div class="card">
-        <div class="card-pago">
+        <div class="card-pago ">
         <p  class="text-center"><i class="fab fa-cc-visa icon-visa fa-10x"></i></p>
-          <p  class="text-center"><strong>BANCO DE VENEZUELA</strong></p>
-          <p><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
-          <p><strong>NUMERO:</strong> 0102-0000-02154-0000-0045</p>
-          <p><strong>RIF</strong>J-1234540040</p>
-          <p class="text-center mt-5"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %>$</p>
+          <p  class="text-center interlineado mt-4"><strong>BANCO DE VENEZUELA</strong></p>
+          <p class="interlineado"><strong >NOMBRE:</strong> Secretos de Ciudad C.A.</p>
+          <p class="interlineado"><strong>NUMERO:</strong> 0102-0000-02154-0000-0045</p>
+          <p class="interlineado"><strong>RIF</strong>J-1234540040</p>
+          <p class=" mt-5 text-center"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %>$</p>
         </div>
       </div>
        <div class="card">
         <div class="card-pago">
         <p  class="text-center"><i class="fas fa-mobile-alt icon-visa fa-10x"></i></p>
-          <p  class="text-center"><strong>PAGO MOVIL BANESCO</strong></p>
-          <p><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
-          <p><strong>RIF</strong>J-1234540040</p>
-          <p><strong>Numero:</strong> 04241235898</p>
+          <p  class="text-center interlineado mt-4"><strong>PAGO MOVIL BANESCO</strong></p>
+          <p class="interlineado"><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
+          <p class="interlineado"><strong>RIF</strong>J-1234540040</p>
+          <p class="interlineado"><strong>Numero:</strong> 04241235898</p>
           <p class="text-center mt-5"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %>$</p>
         </div>
       </div>
@@ -35,7 +35,7 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
   <div class="cards d-flex justify-content-center">
     <div class="card" style="heigth:100px">
       <div class="card-pago">
-      <p class =" title-table d-flex justify-content-center" style="font-size:20px">Numero De Referencia</p>
+        <p class =" title-table d-flex justify-content-center" style="font-size:20px">Numero De Referencia</p>
         <%= simple_form_for(@booking) do |f| %>
         <% if @booking.errors.any? %>
           <div class="errors-container">
@@ -47,12 +47,12 @@ box-shadow: 2px 2px 2px 3px rgba(0, 0, 0, 0.3); width: 100%;">
           </div>
         <% end %>
        <% #  <%= f.input :photo, as: :file %>
-        <%= f.input :pago_user, label: false  %>
+        <%= f.input :pago_user, label: false, input_html: { class: "margin-cuadro" }  %>
         <div class="btn-form mt-5">
            <%= f.submit value: "Cargar Recibo", class: "btn btn-dark" %>
         </div>
 
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>
