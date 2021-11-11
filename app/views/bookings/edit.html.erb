@@ -8,23 +8,23 @@ box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
 <div class="container col-md-12 mt-5">
     <div class="cards d-flex justify-content-center">
       <div class="card">
-        <div class="card-pago">
+        <div class="card-pago ">
         <p  class="text-center"><i class="fab fa-cc-visa icon-visa fa-10x"></i></p>
-          <p  class="text-center"><strong>BANCO DE VENEZUELA</strong></p>
-          <p><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
-          <p><strong>NÚMERO:</strong> 0102-0000-02154-0000-0045</p>
-          <p><strong>RIF:</strong> J-1234540040</p>
-          <p class="text-center mt-5"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %> $</p>
+          <p  class="text-center interlineado mt-4"><strong>BANCO DE VENEZUELA</strong></p>
+          <p class="interlineado"><strong>Nombre:</strong> Secretos de Ciudad C.A.</p>
+          <p class="interlineado"><strong>Número:</strong> 0102-0000-02154-0000-0045</p>
+          <p class="interlineado"><strong>RIF:</strong> J-1234540040</p>
+          <p class="text-center mt-5"><strong>Precio de ruta:</strong> <%= @booking.route.price %> $</p>
         </div>
       </div>
        <div class="card">
         <div class="card-pago">
         <p  class="text-center"><i class="fas fa-mobile-alt icon-visa fa-10x"></i></p>
-          <p  class="text-center"><strong>PAGO MÓVIL BANESCO</strong></p>
-          <p><strong>NOMBRE:</strong> Secretos de Ciudad C.A.</p>
-          <p><strong>NÚMERO:</strong> 04241235898</p>
-          <p><strong>RIF:</strong> J-1234540040</p>
-          <p class="text-center mt-5"><strong>PRECIO DE RUTA:</strong> <%= @booking.route.price %> $</p>
+          <p  class="text-center interlineado mt-4"><strong>PAGO MÓVIL BANESCO</strong></p>
+          <p class="interlineado"><strong>Nombre:</strong> Secretos de Ciudad C.A.</p>
+          <p class="interlineado"><strong>Número:</strong> 04241235898</p>
+          <p class="interlineado"><strong>RIF:</strong> J-1234540040</p>
+          <p class="text-center mt-5"><strong>Precio de ruta:</strong> <%= @booking.route.price %> $</p>
         </div>
       </div>
     </div>
@@ -47,12 +47,12 @@ box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.3); width: 100%;">
           </div>
         <% end %>
        <% #  <%= f.input :photo, as: :file %>
-        <%= f.input :pago_user, label: false  %>
+        <%= f.input :pago_user, label: false, input_html: { class: "margin-cuadro" }  %>
         <div class="btn-form mt-5">
            <%= f.submit value: "Cargar recibo", class: "btn btn-dark" %>
         </div>
 
-      <% end %>
+        <% end %>
       </div>
     </div>
   </div>

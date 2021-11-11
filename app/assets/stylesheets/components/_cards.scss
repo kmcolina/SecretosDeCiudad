@@ -309,7 +309,12 @@ ul .card-show {
   padding: 40px;
 }
 .icon-visa{
-  color:#0530AD
+
+  background: -webkit-linear-gradient(rgb(145, 233, 110), rgb(42, 100, 51));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+
 }
 
 
@@ -613,6 +618,12 @@ main {
   color: white;
 }
 
+.interlineado{
+  line-height : 35px;
+}
+.margin-cuadro{
+  margin-right: 60px;
+}
 
 .card-user-guide-show{
 
@@ -621,4 +632,5 @@ main {
   justify-content: flex-start;
   box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.2);
   margin-bottom: 20px;
+
 }
