@@ -28,7 +28,7 @@
             <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item hover-letter" %>
           <%  elsif current_user && current_user.guide? %>
-            <%= link_to "Editar Perfil", "#", class: "dropdown-item hover-letter" %>
+            <%= link_to "Editar Perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
             <%= link_to "Salir", destroy_user_session_path, method: :delete, class: "dropdown-item hover-letter" %>
           <% else %>
             <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item hover-letter" %>
